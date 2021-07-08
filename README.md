@@ -1,4 +1,4 @@
-# WildProject 2
+# Cineflix
 
 This project is your project 2 base and it was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
