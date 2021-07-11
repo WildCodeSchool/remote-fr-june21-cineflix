@@ -1,15 +1,10 @@
-import logo from './assets/logo.png';
-
 import './App.css';
+import Home from "./pages/home/Home";
 
 const App = () => {
-  return (
-    <div class="app">
-      <img src={logo} alt="WildCodeSchool Logo"/>
-      <h1>Hello Wilders 👋</h1>
-      <p>Welcome in your project 2 structure</p>
-    </div>
-  );
-}
+
+  return <Home />;
+
+};
 
 export default App;
