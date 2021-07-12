@@ -1,0 +1,63 @@
+body {
+    background-image: url("../assets/wallpaper_intro.jpg");
+    background-size:cover;
+    background-position: center center;
+}
+
+
+/*button**/
+button {
+    background-color: #8e44ad;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 24px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px #27ae60;
+}
+button:hover {
+    box-shadow: 0 3px #4df096;
+    transform: translateY(2px);
+}
+
+button:active{
+transform: translateY(4px);
+box-shadow: 0 2px #27ae60;
+
+}
+
+/*aligne button*/
+button{
+    display: flex;
+    text-align: center;
+    margin: auto;
+    margin-top: 50%;
+
+}
+
+div{
+    position :absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+
+/*la rotation du logo*/
+
+.logo-intro{
+    animation: spin 1s linear 0s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
