@@ -1,9 +1,10 @@
 import './App.css';
-import Home from "./pages/home/Home";
-import NotFound from "./pages/notfound/NotFound";
+import Home from "./components/Home/Home";
+import NotFound from "./components/Notfound/NotFound";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
+
 
   return (
     <BrowserRouter>
@@ -13,7 +14,6 @@ const App = () => {
       </Switch>
     </BrowserRouter>
   );
-
 };
 
 export default App;

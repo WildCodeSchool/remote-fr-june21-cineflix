@@ -1,9 +1,16 @@
-import { ArrowDropDown, Notifications, Search } from "@material-ui/icons";
-import { useState } from "react";
-import "./Navbar.css";
+import { ArrowDropDown, Notifications, Search } from "@material-ui/icons"
+import { useState } from "react"
+import "./Navbar.css"
 import logo from "../../assets/logo.png"
+import SearchBar from "../SearchBar/SearchBar"
+import SeriesPage from "../SeriesPage/SeriesPage"
+import MyList from "../MyList/MyList"
+import MoviesPage from "../MoviesPage/MoviesPage"
+import CategoriesPage from "../CategoriesPage/CategoriesPage"
+
 
 const Navbar = () => {
+    const [searchValue, setSearchValue] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
     window.onscroll = () => {
@@ -18,12 +25,13 @@ const Navbar = () => {
                         src={logo}
                         alt="logo cinéflix"
                     />
-                    <span>Séries</span>
-                    <span>Films</span>
-                    <span>Catégories</span>
-                    <span>Ma Liste</span>
+                    <SeriesPage />
+                    <MoviesPage />
+                    <CategoriesPage />
+                    <MyList />
                 </div>
                 <div className="right">
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <Search className="icon" />
                     <Notifications className="icon" />
                     <img
