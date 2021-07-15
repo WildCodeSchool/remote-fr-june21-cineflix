@@ -1,9 +1,0 @@
-.featured {
-    position: relative;
-    background-position: center center;
-    background-size: cover;
-    background-image: url("https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-    height: 448px;
-    color: var(--text-color);
-    object-fit: contain;
-    }
