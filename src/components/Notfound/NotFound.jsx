@@ -7,9 +7,9 @@ const NotFound = () => {
     return (
         <div className="notFound">
             <Navbar />
-            <h1>404</h1>
-            <h2>Hélas</h2>
-            <p>la page que vous cherchez regarde actuellement un film...</p>
+            <h1 className="NotFoundTitle">404</h1>
+            <h2 className="NotFoundTitle2">Hélas</h2>
+            <p className="NotFoundParagraphe">la page que vous cherchez regarde actuellement un film...</p>
         </div>
     );
 };

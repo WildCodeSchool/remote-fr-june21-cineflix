@@ -1,52 +1,40 @@
-import { ArrowDropDown, Notifications, Search } from "@material-ui/icons"
-import { useState } from "react"
-import "./Navbar.css"
-import logo from "../../assets/logo.png"
-import SearchBar from "../SearchBar/SearchBar"
-import SeriesPage from "../SeriesPage/SeriesPage"
-import MyList from "../MyList/MyList"
-import MoviesPage from "../MoviesPage/MoviesPage"
-import CategoriesPage from "../CategoriesPage/CategoriesPage"
+import "./Navbar.css";
+import logo from "../../assets/logo.png";
+import avatar from "../../assets/avatar.png";
+import { useState, useEffect } from "react";
+
 
 
 const Navbar = () => {
-    const [searchValue, setSearchValue] = useState('');
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [show, handleShow] = useState(false);
 
-    window.onscroll = () => {
-        setIsScrolled(window.pageYOffset === 0 ? false : true);
-        return () => (window.onscroll = null);
+    const transitionNavBar = () => {
+        if (window.scrollY > 100) {
+            handleShow(true);
+        } else {
+            handleShow(false)
+        }
     };
+
+    useEffect(() => {
+        window.addEventListener("scroll", transitionNavBar);
+        return () => window.removeEventListener("scroll", transitionNavBar)
+    }, []);
+
     return (
-        <div className={isScrolled ? "navbar scrolled" : "navbar"}>
-            <div className="container">
-                <div className="left">
-                    <img
-                        src={logo}
-                        alt="logo cinéflix"
-                    />
-                    <SeriesPage />
-                    <MoviesPage />
-                    <CategoriesPage />
-                    <MyList />
-                </div>
-                <div className="right">
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                    <Search className="icon" />
-                    <Notifications className="icon" />
-                    <img
-                        src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                        alt=""
-                    />
-                    <div className="profile">
-                        <ArrowDropDown className="icon" />
-                        <div className="options">
-                            <span>Settings</span>
-                            <span>Logout</span>
-                        </div>
-                    </div>
-                </div>
+        <div className={`nav ${show && "navBlack"}`}>
+            <div className="navContents">
+                <img
+                    className='navLogo'
+                    src={logo}
+                    alt='logo' />
+
+                <img
+                    className='navAvatar'
+                    src={avatar}
+                    alt='avatar' />
             </div>
+
         </div>
     );
 };
