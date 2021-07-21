@@ -1,7 +1,7 @@
-import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.png";
 import { useState, useEffect } from "react";
+import "./Navbar.css";
 
 
 

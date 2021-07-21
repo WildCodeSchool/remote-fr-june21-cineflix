@@ -1,15 +1,17 @@
 .banner {
     position: relative;
-    background-position: center center;
-    background-size: cover;
-    height: 448px;
+    /* top: 50px; */
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: auto 896px;
+    height: 896px;
     color: var(--text-color);
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .bannerContents{
-    margin-left: 30px;
-    padding-top: 140px;
+    margin-left: 5rem;
+    padding-top: 18rem;
     height: 190px;
 }
 
@@ -22,13 +24,13 @@
 .bannerDescription {
     width: 45rem;
     line-height: 1.3;
-    padding-top: 1rem;
-    font-size: 0.8rem;
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
     max-width: 360px;
     height: 80px;
 }
 
-.bannerButton {
+.bannerButton {    
     cursor: pointer;
     color: var(--text-color);
     outline: none;
@@ -50,8 +52,8 @@
 }
 
 .bannerFadeBottom {
-    /* margin-left: 0; */
-    height: 7.6rem;
+    /* top: 896px; */
+    height: 566px;
     background-image: linear-gradient(
       180deg,
       transparent,
