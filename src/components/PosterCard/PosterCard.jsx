@@ -1,8 +1,8 @@
 import { useState } from 'react';
+ import { BsStar } from "react-icons/bs";
 import './PosterCard.css';
 
 const PosterCard = ({ poster }) => {
-const [selectedPoster, setSelectedPoster] = useState('');
 const [showRate, setShowRate] = useState(false);
 
 
@@ -15,7 +15,7 @@ return (
         onMouseLeave={() => setShowRate(false)} />
         {showRate && (
         <div className="rate-overlay">
-            Note : {poster.vote_average}/10
+        <BsStar /> {poster.vote_average}/10
         </div>
         )}
     </div>

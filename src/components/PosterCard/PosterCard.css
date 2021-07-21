@@ -22,7 +22,7 @@ li {
 
 .rate-overlay {
     position: absolute;
-    top: 20%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -35,6 +35,7 @@ li {
 img {
     height: 80%;
     display: block;
+    padding: 2px;
 }
 
 img:hover {
