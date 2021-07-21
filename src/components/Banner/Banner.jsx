@@ -31,21 +31,26 @@ export default function Banner() {
     return (
         <header
             className="banner"
-            style={{
-                backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
-            }}
+        // style={{
+        //     backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+        // }}
         >
             <div className="bannerContents">
-                <h1 className="bannerTitle">
-                    {movie?.title || movie?.name || movie?.original_name}
-                </h1>
-                <div className="bannerButtons">
-                    <button className="bannerButton">liste</button>
-                    <button className="bannerButton">infos</button>
+                <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+                <div className="fillContainer">
+                    <div className="bannerInfo">
+                        <h1 className="bannerTitle">
+                            {movie?.title || movie?.name || movie?.original_name}
+                        </h1>
+                        <div className="bannerButtons">
+                            <button className="bannerButton">liste</button>
+                            <button className="bannerButton">infos</button>
+                        </div>
+                        <h2 className="bannerDescription">
+                            {truncate(movie?.overview, 150)}
+                        </h2>
+                    </div>
                 </div>
-                <h2 className="bannerDescription">
-                    {truncate(movie?.overview, 150)}
-                </h2>
             </div>
             <div className="bannerFadeBottom" />
 

@@ -1,10 +1,11 @@
 .banner {
     position: relative;
-    /* top: 50px; */
+    top: 0px;
     background-position:  center;
     background-repeat: no-repeat;
-    background-size: auto 896px;
-    height: 896px;
+    /* background-size: 100% 100%; */
+    height: auto;
+    width: 100%;
     color: var(--text-color);
     object-fit: cover;
 }
@@ -15,19 +16,46 @@
     height: 190px;
 }
 
+.bannerImg{
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-height: 896px;
+    width: 100%;
+}
+
+.fillContainer{
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.bannerInfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 35%;
+    left: 4%;
+    width: 36%;
+    z-index: 10;
+}
+
 .bannerTitle {
-    font-size: 3rem;
-    font-weight: 800;
-    padding-bottom: 0.3rem;
+   width: 100%;
 }
 
 .bannerDescription {
-    width: 45rem;
-    line-height: 1.3;
-    padding-top: 0.5rem;
-    font-size: 1.3rem;
-    max-width: 360px;
-    height: 80px;
+    width: 100%;
 }
 
 .bannerButton {    
@@ -53,12 +81,14 @@
 
 .bannerFadeBottom {
     /* top: 896px; */
-    height: 566px;
+    height: 418px;
     background-image: linear-gradient(
       180deg,
       transparent,
       rgba(37, 37, 37, 0.61),
       var(--bg-color)
     );
+    z-index: 10;
+
 }
 
