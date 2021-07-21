@@ -1,0 +1,19 @@
+.top-container {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.top-cards {
+    height: 40vh;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+h3 {
+    padding: 20px;
+    color: var(--text-color);
+}
