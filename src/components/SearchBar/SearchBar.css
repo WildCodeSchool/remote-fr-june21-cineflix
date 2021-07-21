@@ -1,0 +1,34 @@
+.search-menu {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.search-elements {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-elements > button {
+  position: relative;
+  height: 42px;
+  /*top: 3px;
+  left: -55px;*/
+  font-size: 1.5em;
+  padding: 2px 15px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+}
+
+.search-elements > input {
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  border: none;
+  font-size: 1.5em;
+  border-radius: 10px 0 0 10px;
+}

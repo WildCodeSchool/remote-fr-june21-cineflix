@@ -1,15 +1,19 @@
-import logo from './assets/logo.png';
-
+import Home from "./components/Home/Home";
+import NotFound from "./components/Notfound/NotFound";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 
 const App = () => {
+
+
   return (
-    <div class="app">
-      <img src={logo} alt="WildCodeSchool Logo"/>
-      <h1>Hello Wilders 👋</h1>
-      <p>Welcome in your project 2 structure</p>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
