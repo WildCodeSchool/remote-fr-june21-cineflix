@@ -11,8 +11,8 @@ function Intro() {
             </video>
             <img src={logo} className="logo-intro" alt="logo du site" />
                 <a href="">
-                    <span>ENTER</span>
-                    <span>ENTER</span>
+                    <span>ENTRER</span>
+                    <span>ENTRER</span>
                 </a>
         
     </>

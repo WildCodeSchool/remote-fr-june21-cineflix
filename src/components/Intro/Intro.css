@@ -22,15 +22,11 @@ body video {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     padding:200px;
+
 }
 
-{
-    margin: 0;
-    padding: 0;
-    font-family: poppins, sans-serif;
-    box-sizing: border-box;
-}
 
+/*lien vers page d'acceuil*/
 a {
     position: relative;
     width: 160px;
@@ -54,7 +50,7 @@ a::before
     left: 0;
     width: 4px;
     height: 100%;
-    background: #00fe73;
+    background: #9d59d9;
     transition: 0.2s ease-in-out;
     transition-delay: 0.5s;
 }
@@ -66,7 +62,7 @@ a::after
     right: 0;
     width: 4px;
     height: 100%;
-    background: #00fe73;
+    background: #9D59D9;
     transition: 0.2s ease-in-out;
     transition-delay: 0.5s;
 }
@@ -83,6 +79,7 @@ a span {
     color: #fff;
     font-size: 30px;
     transition: 0.5s;
+    transform: translateY(-10px)
 }
 a span:nth-child(1)
 {
@@ -98,6 +95,7 @@ a span:nth-child(2)
     opacity: 0;
     transition-delay: 0s;
     color: #111;
+    
 }
 a:hover span:nth-child(2)
 {
@@ -107,7 +105,21 @@ a:hover span:nth-child(2)
     z-index: 10;
     color: #111;
     transition-delay: 0.5s;
+    transform:translateY(-10px)
+    
 }
+div{
+    position :absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+
+
+
 
 
 
@@ -147,15 +159,6 @@ box-shadow: 0 2px #27ae60;
 
 }
 */
-div{
-    position :absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 500px;
-    margin-top: -250px;
-    margin-left: -250px;
-}
 
 /*la rotation du logo*/
 
