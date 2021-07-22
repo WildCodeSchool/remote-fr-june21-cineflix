@@ -1,0 +1,178 @@
+body {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+}
+
+body video {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    padding:200px;
+
+}
+
+
+/*lien vers page d'acceuil*/
+.button-intro {
+    position: relative;
+    width: 160px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding-top: 30px;
+    padding-left: 50px;
+    text-decoration: none;
+    background: #222;
+    opacity: 1;
+    overflow: hidden;
+}
+.button-intro::before
+{
+    position: absolute;
+    content:'';
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #9d59d9;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.5s;
+}
+.button-intro::after
+{
+    position: absolute;
+    content:'';
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #9D59D9;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.button-intro:hover::before,
+.button-intro:hover::after
+{
+width: 50%;
+transition-delay: 0.5s;
+}
+.button-intro span {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 30px;
+    transition: 0.5s;
+    transform: translateY(-10px)
+}
+.button-intro span:nth-child(1)
+{
+    transition-delay: 0.75s;
+}
+.button-intro:hover span:nth-child(1) {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.button-intro span:nth-child(2)
+{
+    transform: scale(3);
+    opacity: 0;
+    transition-delay: 0s;
+    color: #111;
+    
+}
+.button-intro:hover span:nth-child(2)
+{
+    transform: scale(1);
+    transition-delay: 0s;
+    opacity: 1;
+    z-index: 10;
+    color: #111;
+    transition-delay: 0.5s;
+    transform:translateY(-10px)
+    
+}
+div{
+    position :absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+
+
+
+
+
+
+
+
+
+
+/*button**/
+/*button {
+    background-color: #8e44ad;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 24px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px #27ae60;
+    z-index: 0;
+}
+button:hover {
+    box-shadow: 0 3px #4df096;
+    transform: translateY(2px);
+}
+
+button:active{
+transform: translateY(4px);
+box-shadow: 0 2px #27ae60;
+
+}
+
+/*align button*/
+/*button{
+    display: flex;
+    text-align: center;
+    margin: auto;
+
+}
+*/
+
+/*la rotation du logo*/
+
+/*
+.logo-intro{
+    animation: spin 3s linear 0s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+*/

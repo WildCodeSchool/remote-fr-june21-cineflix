@@ -1,3 +1,6 @@
+import logo from './assets/logo.png';
+import Intro from './components/Intro/Intro';
+import Footer from './components/Footer/Footer'
 import Home from "./components/Home/Home";
 import NotFound from "./components/Notfound/NotFound";
 import MovieCard from "./components/MovieCard/MovieCard";
