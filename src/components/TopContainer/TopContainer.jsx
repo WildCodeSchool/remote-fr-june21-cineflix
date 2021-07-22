@@ -33,18 +33,18 @@ const mapPoster = (state) => {
 
 return (
     <>
-<div className="top-container">
-    <h3>Top 20 Movies</h3>
-    <div className="top-cards">
-        {mapPoster(popularMovie)}
-    </div> 
-    <h3>Top 20 Shows</h3>
-    <div className="top-cards">
-        {mapPoster(popularShow)}
-</div>
-</div>
-</>
-);
+    <div className="top-container">
+        <h3>Top 20 Films</h3>
+        <div className="top-cards">
+            {mapPoster(popularMovie)}
+        </div> 
+        <h3>Top 20 Séries</h3>
+        <div className="top-cards">
+            {mapPoster(popularShow)}
+        </div>
+    </div>
+    </>
+    );
 }
 
 export default TopContainer;

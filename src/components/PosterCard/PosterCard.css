@@ -5,7 +5,8 @@ ul {
 
 li {
     color: var(--text-color);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
     text-align: center;
 }
 
@@ -29,6 +30,11 @@ li {
     margin: 0 auto;
     text-align: center;
     color: var(--text-color);
+    width: 50%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 1px;
 }
 
 

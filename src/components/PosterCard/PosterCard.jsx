@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
- import { BsStar } from "react-icons/bs";
+import { BsStar } from "react-icons/bs";
 import './PosterCard.css';
 
 const PosterCard = ({ poster }) => {
 const [showRate, setShowRate] = useState(false);
-
 
 return (
     <>
@@ -14,9 +14,9 @@ return (
         onMouseEnter={() => setShowRate(true)}
         onMouseLeave={() => setShowRate(false)} />
         {showRate && (
-        <div className="rate-overlay">
-        <BsStar /> {poster.vote_average}/10
-        </div>
+            <div className="rate-overlay">
+            <BsStar />  {poster.vote_average}/10
+            </div>
         )}
     </div>
     </>
