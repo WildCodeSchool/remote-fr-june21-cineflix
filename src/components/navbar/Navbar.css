@@ -1,4 +1,4 @@
-.nav{
+.Navbar .nav{
     position: fixed;
     top: 0;
     padding: 10px;
@@ -11,17 +11,17 @@
     transition: all 0.5s;
 }
 
-.navBlack{
+.Navbar .navBlack{
     background: var(--bg-color);
 }
 
-.navContents {
+.Navbar .navContents {
     display: flex;
     justify-content: space-between;
 }
 
 
-.navLogo{
+.Navbar .navLogo{
     position: fixed;
     top: 5px;
     object-fit: contain;
@@ -30,9 +30,9 @@
     cursor: pointer;
 }
 
-.navAvatar{
+.Navbar .navAvatar{
     position: fixed;
-    top: 30px;
+    top: 20px;
     right: 3rem;
     width: 30px;
     height: 30px;

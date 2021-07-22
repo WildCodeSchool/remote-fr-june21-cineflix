@@ -1,7 +1,6 @@
 .banner {
     position: relative;
     top: 0px;
-    /* height: 100%; */
     color: var(--text-color);
 }
 
