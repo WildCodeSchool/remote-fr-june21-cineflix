@@ -2,15 +2,21 @@ import
 { BrowserRouter as Router,
 Switch,
 Route,
-Link
 } from "react-router-dom";
-import TopMovieContainer from './components/TopContainer/TopContainer';
+import Home from "./components/Home/Home";
+import NotFound from "./components/Notfound/NotFound";
 import './App.css';
 
 const App = () => {
+
   return (
-    <TopMovieContainer />
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
