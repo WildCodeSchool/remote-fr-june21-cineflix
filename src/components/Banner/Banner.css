@@ -19,7 +19,7 @@
 .bannerImgContainer {
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .bannerImg{
@@ -102,7 +102,7 @@
       rgba(37, 37, 37, 0.61),
       var(--bg-color)
     ); */
-    background-color: rgba(34,123,123,0.3);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 10;
 
 }
