@@ -29,6 +29,9 @@ const Navbar = () => {
                     src={logo}
                     alt='logo' />
 
+                {/* <span>Séries</span>
+                <span>Films</span> */}
+
                 <img
                     className='navAvatar'
                     src={avatar}
