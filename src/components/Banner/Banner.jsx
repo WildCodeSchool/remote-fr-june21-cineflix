@@ -29,9 +29,7 @@ export default function Banner() {
 
 
     return (
-        <header
-            className="banner"
-        >
+        <header className="banner">
             <div className="bannerContents">
                 <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
                 <div className="fillContainer">
@@ -49,7 +47,6 @@ export default function Banner() {
                     </div>
                 </div>
             </div>
-            
 
         </header>
     );

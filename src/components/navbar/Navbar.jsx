@@ -28,24 +28,24 @@ const Navbar = () => {
     }, []);
 
     return (
-      <div className="Navbar">
-        <div className={`nav ${show && "navBlack"}`}>
-            <div className="navContents">
-                <img
-                    className='navLogo'
-                    src={logo}
-                    alt='logo' />
-                  
-                <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
+        <div className="Navbar">
+            <div className={`nav ${show && "navBlack"}`}>
+                <div className="navContents">
+                    <img
+                        className='navLogo'
+                        src={logo}
+                        alt='logo' />
 
-                <img
-                    className='navAvatar'
-                    src={avatar}
-                alt='avatar' />
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
+
+                    <img
+                        className='navAvatar'
+                        src={avatar}
+                        alt='avatar' />
+                </div>
             </div>
+            {searchResult && <SearchResult searchResult={searchResult} />}
         </div>
-        {searchResult && <SearchResult searchResult={searchResult} />}
-      </div>
     );
 };
 
