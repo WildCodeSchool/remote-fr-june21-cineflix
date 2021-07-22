@@ -63,3 +63,10 @@ button {
 .containerDetail {
     padding: 10px;
 }
+
+@media only screen and (max-width: 870px) {
+    .containerFlex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
