@@ -28,7 +28,7 @@ const Navbar = () => {
     }, []);
 
     return (
-      <div>
+      <div className="Navbar">
         <div className={`nav ${show && "navBlack"}`}>
             <div className="navContents">
                 <img
