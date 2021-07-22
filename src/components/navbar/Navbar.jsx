@@ -12,7 +12,7 @@ const Navbar = () => {
 
     // Search states
     const [searchValue, setSearchValue] = useState("")
-    const [searchResult, setSearchResult] = useState([])
+    const [searchResult, setSearchResult] = useState(null)
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
