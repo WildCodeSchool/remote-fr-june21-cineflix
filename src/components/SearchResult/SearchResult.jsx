@@ -1,20 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
+import { NavLink } from "react-router-dom"
 //import MovieShow from "./MovieShow"
 import "./SearchResult.css"
 
-const SearchResult = ({searchResult, setIDMovie}) => {
+const SearchResult = ({searchResult}) => {
   
   console.log(searchResult)
 
   return (
       <div className="SearchResult">
-        {/*movieChoice && <MovieShow movieID={movieChoice} />*/}
         <ul>
           {searchResult.map((movie, index) => (
           <li key={index}>
             <figure>
-              <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" onClick={() => setIDMovie(movie.id)}/>
-              {/*<h5>{movie.id}</h5>*/}
+              <NavLink to={`/movie-card/${movie.id}`}>
+                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+              </NavLink>
             </figure>
           </li>
           ))}

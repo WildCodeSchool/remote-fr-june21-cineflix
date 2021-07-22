@@ -1,5 +1,6 @@
 import Home from "./components/Home/Home";
 import NotFound from "./components/Notfound/NotFound";
+import MovieCard from "./components/MovieCard/MovieCard";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 
@@ -10,6 +11,9 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/movie-card/:IdMovie">
+          <MovieCard />
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
