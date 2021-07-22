@@ -2,14 +2,14 @@
   margin-top: 50px;
 }
 
-ul {
+.SearchResult ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   justify-content: space-around;
 }
 
-li {
+.SearchResult li {
   cursor: pointer;
   transform: scale(0.6);
   margin: -100px;
