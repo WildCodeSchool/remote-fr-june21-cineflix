@@ -27,7 +27,7 @@ body video {
 
 
 /*lien vers page d'acceuil*/
-a {
+.button-intro {
     position: relative;
     width: 160px;
     height: 50px;
@@ -42,7 +42,7 @@ a {
     opacity: 1;
     overflow: hidden;
 }
-a::before
+.button-intro::before
 {
     position: absolute;
     content:'';
@@ -54,7 +54,7 @@ a::before
     transition: 0.2s ease-in-out;
     transition-delay: 0.5s;
 }
-a::after
+.button-intro::after
 {
     position: absolute;
     content:'';
@@ -67,13 +67,13 @@ a::after
     transition-delay: 0.5s;
 }
 
-a:hover::before,
-a:hover::after
+.button-intro:hover::before,
+.button-intro:hover::after
 {
 width: 50%;
 transition-delay: 0.5s;
 }
-a span {
+.button-intro span {
     position: absolute;
     z-index: 1;
     color: #fff;
@@ -81,15 +81,15 @@ a span {
     transition: 0.5s;
     transform: translateY(-10px)
 }
-a span:nth-child(1)
+.button-intro span:nth-child(1)
 {
     transition-delay: 0.75s;
 }
-a:hover span:nth-child(1) {
+.button-intro:hover span:nth-child(1) {
     transform: scale(0);
     transition-delay: 0s;
 }
-a span:nth-child(2)
+.button-intro span:nth-child(2)
 {
     transform: scale(3);
     opacity: 0;
@@ -97,7 +97,7 @@ a span:nth-child(2)
     color: #111;
     
 }
-a:hover span:nth-child(2)
+.button-intro:hover span:nth-child(2)
 {
     transform: scale(1);
     transition-delay: 0s;

@@ -10,11 +10,10 @@ function Intro() {
                 <source src={film}/>
             </video>
             <img src={logo} className="logo-intro" alt="logo du site" />
-                <a href="">
-                    <span>ENTRER</span>
-                    <span>ENTRER</span>
-                </a>
-        
+            <a className="button-intro" href="./home/home.jsx">
+                <span>ENTRER</span>
+                <span>ENTRER</span>
+            </a>
     </>
         
 
