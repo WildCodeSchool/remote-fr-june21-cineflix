@@ -2,6 +2,8 @@ import React from "react"
 import "./SearchBar.css"
 
 const SearchBar = ({searchValue, setSearchValue, setSearchResult}) => {
+
+  // Function to call the API with the name of the movie seized bu the user and change the state value in Navbar
   const handleChange = (userValue) => {
     console.log(userValue)
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=cda80ca49e23464f07b0b27ac89f1fdd&query=${userValue}`)

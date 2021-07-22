@@ -14,6 +14,9 @@ const Navbar = () => {
     const [searchValue, setSearchValue] = useState("")
     const [searchResult, setSearchResult] = useState([])
 
+    // ID movie state
+    const [IDMovie, setIDMovie] = useState()
+
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
             handleShow(true);
@@ -29,6 +32,7 @@ const Navbar = () => {
 
     return (
       <div>
+        {console.log(IDMovie)}
         <div className={`nav ${show && "navBlack"}`}>
             <div className="navContents">
                 <img
@@ -36,7 +40,7 @@ const Navbar = () => {
                     src={logo}
                     alt='logo' />
                   
-                <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult}/>
+                <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} setIDMovie={setIDMovie}/>
 
                 <img
                     className='navAvatar'
@@ -44,7 +48,7 @@ const Navbar = () => {
                 alt='avatar' />
             </div>
         </div>
-        {searchResult && <SearchResult searchResult={searchResult}/>}
+        {searchResult && <SearchResult searchResult={searchResult} setIDMovie={setIDMovie} />}
       </div>
     );
 };
