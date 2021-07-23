@@ -1,4 +1,4 @@
-body {
+body .container{
     position: relative;
     background-color: black;
     height: 75vh;
@@ -8,7 +8,7 @@ body {
     opacity: 1;
 }
 
-body video {
+body .container video {
     position: absolute;
     top: 75%;
     left: 50%;
@@ -108,7 +108,7 @@ transition-delay: 0.5s;
     transform:translateY(-10px)
     
 }
-div{
+.container div{
     position :absolute;
     top: 50%;
     left: 50%;
