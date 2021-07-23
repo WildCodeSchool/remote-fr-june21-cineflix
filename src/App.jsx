@@ -1,3 +1,6 @@
+import logo from './assets/logo.png';
+import Intro from './components/Intro/Intro';
+import Footer from './components/Footer/Footer'
 import Home from "./components/Home/Home";
 import NotFound from "./components/Notfound/NotFound";
 import MovieCard from "./components/MovieCard/MovieCard";
@@ -10,7 +13,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Intro} />
+        <Route path="/home" exact component={Home} />
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>

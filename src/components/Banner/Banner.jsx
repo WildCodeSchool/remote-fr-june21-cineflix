@@ -29,14 +29,9 @@ export default function Banner() {
 
 
     return (
-        <header
-            className="banner"
-        >
+        <header className="banner">
             <div className="bannerContents">
-                <div className="bannerImgContainer">
-                  <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
-                  <div className="bannerFadeBottom"></div>
-                </div>
+                <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
                 <div className="fillContainer">
                     <div className="bannerInfo">
                         <h1 className="bannerTitle">
@@ -52,7 +47,6 @@ export default function Banner() {
                     </div>
                 </div>
             </div>
-            
 
         </header>
     );
