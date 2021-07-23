@@ -13,7 +13,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Intro} />
+        <Route path="/home" exact component={Home} />
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
