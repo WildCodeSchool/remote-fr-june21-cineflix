@@ -108,7 +108,7 @@ transition-delay: 0.5s;
     transform:translateY(-10px)
     
 }
-div{
+div .container{
     position :absolute;
     top: 50%;
     left: 50%;

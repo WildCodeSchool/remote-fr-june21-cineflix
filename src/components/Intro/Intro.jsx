@@ -16,8 +16,6 @@ function Intro() {
             </a>
     </>
         
-
-
     )
 
     }
