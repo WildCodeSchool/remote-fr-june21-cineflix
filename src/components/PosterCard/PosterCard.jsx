@@ -9,10 +9,12 @@ const [showRate, setShowRate] = useState(false);
 return (
     <>
     <div className="poster-card">
+        {/* <Link to={`/movie-card/${poster.id}`}> */}
         <img src={`https://image.tmdb.org/t/p/w500${poster.poster_path}`} 
         className='poster-img' alt='poster'
         onMouseEnter={() => setShowRate(true)}
         onMouseLeave={() => setShowRate(false)} />
+        {/* </Link> */}
         {showRate && (
             <div className="rate-overlay">
             <BsStar />  {poster.vote_average}/10

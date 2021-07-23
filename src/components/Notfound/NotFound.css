@@ -16,8 +16,8 @@
 }
 
 .NotFoundTitle:hover {
-    font-size: 20rem;
-    color: var(--primary-color);
+    font-size: 15rem;
+    color: var(--secondary-color);
     transition: 2s;
 }
 

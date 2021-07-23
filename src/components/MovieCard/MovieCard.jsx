@@ -53,7 +53,7 @@ const checkCategorie = () => {
 }
 }
     return (
-        <div>
+        <div className="MovieCard">
         <ul className="navB">NavBar</ul>
         <h1>{Movie.title}</h1>
         <div className="containerFlex">

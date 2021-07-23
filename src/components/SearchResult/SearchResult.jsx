@@ -1,14 +1,11 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-//import MovieShow from "./MovieShow"
 import "./SearchResult.css"
 
 const SearchResult = ({searchResult}) => {
-  
-  console.log(searchResult)
 
   return (
-      <div className="SearchResult">
+      <div className={`${searchResult ? "SearchResult searchShow" : "SearchResult"}`}>
         <ul>
           {searchResult.map((movie, index) => (
           <li key={index}>

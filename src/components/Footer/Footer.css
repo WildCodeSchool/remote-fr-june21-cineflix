@@ -1,0 +1,20 @@
+footer
+{
+    width: 100%;
+    position: absolute;
+}
+.media
+{
+    width: 20px;
+}
+.footer-container
+{
+    width: 1200px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    
+    border-top: 1px solid black;
+}
