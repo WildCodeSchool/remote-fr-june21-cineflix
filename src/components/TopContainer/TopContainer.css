@@ -1,6 +1,8 @@
 .top-container {
+    z-index: 100;
     height: 100%;
     background-color: var(--bg-color);
+    margin-top: 50vh; 
 }
 
 .top-cards {
@@ -9,6 +11,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
