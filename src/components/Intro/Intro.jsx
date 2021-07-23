@@ -1,4 +1,5 @@
 import "./Intro.css";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo-site.png"; 
 import film from "../../assets/film.mp4"
 
@@ -10,10 +11,10 @@ function Intro() {
                 <source src={film}/>
             </video>
             <img src={logo} className="logo-intro" alt="logo du site" />
-            <a className="button-intro" href="./home/home.jsx">
+            <NavLink to="/home" className="button-intro">
                 <span>ENTRER</span>
                 <span>ENTRER</span>
-            </a>
+            </NavLink>
     </>
         
     )

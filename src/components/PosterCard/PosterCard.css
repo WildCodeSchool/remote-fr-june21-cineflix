@@ -1,0 +1,51 @@
+.poster-card ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.poster-card li {
+  color: var(--text-color);
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+  text-align: center;
+}
+
+.poster-card .title {
+  font-weight: bold;
+}
+
+.poster-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.rate-overlay {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-color);
+  width: 50%;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--text-color);
+  border-width: 1px;
+}
+
+
+.poster-img {
+  height: 80%;
+  display: block;
+  padding: 2px;
+}
+
+.poster-img:hover {
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.2);
+}

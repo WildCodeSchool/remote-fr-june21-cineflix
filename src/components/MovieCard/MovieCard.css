@@ -30,7 +30,7 @@
     width: 65%;
 }
 
-.MovieCard button {
+.buttonBA {
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: #240046;
     border: none;
@@ -46,6 +46,7 @@
 }
 
 .favButton {
+    color: #f5e2ff;
     background-color: #141414;
     border: 2px solid white;
     font-size: 25px;
