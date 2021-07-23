@@ -19,7 +19,7 @@
     padding: 20px;
 }
 
-.MovieCard img {
+.MovieCard .image-movie-card {
     height: 800px;
 }
 

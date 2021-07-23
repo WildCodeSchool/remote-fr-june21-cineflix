@@ -59,7 +59,7 @@ const checkCategorie = () => {
         <Navbar />
         <h1>{Movie.title}</h1>
         <div className="containerFlex">
-            <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt=""/>
+            <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
             <div className="containerDetail">
             <h3>Réalisateur : {Cast.crew ? `${real[0].name}` : null}</h3>
             <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
@@ -76,7 +76,7 @@ const checkCategorie = () => {
             <h3>Note : {Movie.vote_average}/10</h3>
             </div>
         </div>
-            <h3>Similaire :</h3>
+            {/*<h3>Similaire :</h3>*/}
         </div>
         )
 
