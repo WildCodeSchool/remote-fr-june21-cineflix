@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
+import Navbar from '../Navbar/Navbar';
 
 
 import './MovieCard.css'
@@ -52,9 +53,10 @@ const checkCategorie = () => {
     }
 }
 }
+
     return (
-        <div>
-        <ul className="navB">NavBar</ul>
+        <div className="MovieCard">
+        <Navbar />
         <h1>{Movie.title}</h1>
         <div className="containerFlex">
             <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt=""/>

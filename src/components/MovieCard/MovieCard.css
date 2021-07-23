@@ -1,4 +1,4 @@
-* {
+.MovieCard {
     background-color: #141414;
 }
 
@@ -10,7 +10,8 @@
     text-align: center;
     font-size: 50px;
 }
-h1{
+
+.MovieCard h1{
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: #141414;
     color: #f5e2ff;
@@ -19,18 +20,18 @@ h1{
     padding: 20px;
 }
 
-img {
+.MovieCard img {
     height: 800px;
 }
 
-h3{
+.MovieCard h3{
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: #141414;
     color: #f5e2ff;
     width: 65%;
 }
 
-button {
+.buttonBA {
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: #240046;
     border: none;
@@ -46,6 +47,7 @@ button {
 }
 
 .favButton {
+    color: #f5e2ff;
     background-color: #141414;
     border: 2px solid white;
     font-size: 25px;
