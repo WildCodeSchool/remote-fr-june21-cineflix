@@ -5,7 +5,7 @@ import "./SearchResult.css"
 const SearchResult = ({searchResult}) => {
 
   return (
-      <div className="SearchResult">
+      <div className={`${searchResult ? "SearchResult searchShow" : "SearchResult"}`}>
         <ul>
           {searchResult.map((movie, index) => (
           <li key={index}>
