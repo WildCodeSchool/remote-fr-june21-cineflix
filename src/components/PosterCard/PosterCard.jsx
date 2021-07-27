@@ -5,6 +5,7 @@ import './PosterCard.css';
 
 const PosterCard = ({ poster }) => {
     const [showRate, setShowRate] = useState(false);
+    const truncateDate = poster.release_date;
 
     return (
         <>
@@ -15,11 +16,10 @@ const PosterCard = ({ poster }) => {
                         onMouseEnter={() => setShowRate(true)}
                         onMouseLeave={() => setShowRate(false)} />
                     {showRate && (
-                        <>
                             <div className="rate-overlay">
-                                <BsStar />  {poster.vote_average}/10
+                                <li><BsStar />  {poster.vote_average}/10</li>
+                                <li>{truncateDate}</li>
                             </div>
-                        </>
                     )}
                 </NavLink>
             </div>

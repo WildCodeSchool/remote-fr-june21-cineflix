@@ -25,6 +25,9 @@
     border-width: 1px;
 }
 
+.rate-overlay li {
+    list-style-type: none;
+}
 
 .poster-img {
     height: 80%;
