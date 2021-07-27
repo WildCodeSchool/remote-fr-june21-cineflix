@@ -7,8 +7,9 @@ export default function Banner() {
     const API_KEY = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
 
+
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=FR`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=10`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

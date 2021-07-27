@@ -1,10 +1,10 @@
 import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.png";
 import { useState, useEffect } from "react";
-import "./Navbar.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResult from "../SearchResult/SearchResult";
 import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 
 
@@ -40,10 +40,11 @@ const Navbar = () => {
 
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
 
-                    <img
+                    <NavLink to="/login"><img
                         className='navAvatar'
                         src={avatar}
                         alt='avatar' />
+                    </NavLink>
                 </div>
             </div>
             {searchResult && <SearchResult searchResult={searchResult} />}
