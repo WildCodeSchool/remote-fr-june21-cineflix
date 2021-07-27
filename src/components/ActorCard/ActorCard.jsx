@@ -1,5 +1,9 @@
 import  { useState, useEffect } from 'react'
 
+import Navbar from '../Navbar/Navbar';
+
+import './ActorCard.css'
+
 function ActorCard() {
     const [Actor, setActor] = useState([])
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
@@ -13,13 +17,18 @@ function ActorCard() {
     console.log(Actor)
 
     return(
-        <div>
+        <div className="ActorCard">
+            <Navbar />
             <h2>{Actor.name}</h2>
-            <img src={`https://image.tmdb.org/t/p/w500${Actor.profile_path}`} alt={Actor.name}/>
-            <h3>Métier : {Actor.known_for_department}</h3>
-            <h3>Naissance : {Actor.birthday} à {Actor.place_of_birth}</h3>
-            <h3>Biographie : </h3>
-            <p>{Actor.biography}</p>
+            <div className="ActorContainerFlex">
+                <img src={`https://image.tmdb.org/t/p/w500${Actor.profile_path}`} alt={Actor.name}/>
+                <div className="ActorContainerDetail">
+                <h3>Métier : {Actor.known_for_department}</h3>
+                <h3>Naissance : {Actor.birthday} à {Actor.place_of_birth}</h3>
+                <h3>Biographie : </h3>
+                <p>{Actor.biography}</p>
+                </div>
+            </div>
         </div>
     )
 

@@ -1,0 +1,37 @@
+.ActorCard {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 100px;
+}
+
+.ActorContainerFlex {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ActorCard h2 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+}
+
+.ActorContainerFlex h3 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    width: 65%;
+    padding: 15px;
+}
+
+.ActorContainerDetail {
+    padding: 10px;
+}
+
+.ActorContainerDetail p {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding: 15px;
+}
