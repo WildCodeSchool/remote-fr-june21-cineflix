@@ -76,7 +76,6 @@ const checkCategorie = () => {
             <h3>Note : {Movie.vote_average}/10</h3>
             </div>
         </div>
-            {/*<h3>Similaire :</h3>*/}
         </div>
         )
 
