@@ -1,23 +1,24 @@
 import "./Intro.css";
-import logo from "../../assets/logo-site.png"; 
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo_transparent.png"; 
 import film from "../../assets/film.mp4"
 
 function Intro() {
     return (
-    <>
-        <div className="container"></div>
+        <div className="container">
+          <div className="videoContainer">
             <video playsInline="playsinline" autoPlay="autoplay" muted="muted" loop="loop">
                 <source src={film}/>
             </video>
+          </div>
+          <div className="buttonContainer">
             <img src={logo} className="logo-intro" alt="logo du site" />
-            <a className="button-intro" href="./home/home.jsx">
+            <NavLink to="/home" className="button-intro">
                 <span>ENTRER</span>
                 <span>ENTRER</span>
-            </a>
-    </>
-        
-
-
+            </NavLink>
+            </div>
+        </div>
     )
 
     }

@@ -14,7 +14,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Intro} />
-        <Route path="/home" component={Home} />
+        <Route path="/home" exact component={Home} />
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
