@@ -1,15 +1,3 @@
-.poster-card ul {
-  list-style-type: none;
-  text-align: center;
-}
-
-.poster-card li {
-  color: var(--text-color);
-  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-
-  text-align: center;
-}
-
 .poster-card .title {
   font-weight: bold;
 }
