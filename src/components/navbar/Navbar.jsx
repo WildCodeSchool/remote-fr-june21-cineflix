@@ -3,7 +3,6 @@ import avatar from "../../assets/avatar.png";
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchResult from "../SearchResult/SearchResult";
 import { NavLink } from "react-router-dom";
 
 
