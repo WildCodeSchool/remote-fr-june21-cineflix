@@ -13,7 +13,7 @@ const Navbar = () => {
 
     // Search states
     const [searchValue, setSearchValue] = useState("")
-    const [searchResult, setSearchResult] = useState(null)
+    // const [searchResult, setSearchResult] = useState(null)
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
@@ -38,7 +38,7 @@ const Navbar = () => {
                         alt='logo' />
                     </NavLink>
 
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
 
                     <img
                         className='navAvatar'
@@ -46,7 +46,6 @@ const Navbar = () => {
                         alt='avatar' />
                 </div>
             </div>
-            {searchResult && <SearchResult searchResult={searchResult} />}
         </div>
     );
 };

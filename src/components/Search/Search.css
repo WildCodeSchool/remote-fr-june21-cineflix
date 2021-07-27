@@ -1,15 +1,19 @@
-.SearchResult {
-  margin-top: 50px;
+.searchContainer {
+  background-color: var(--bg-color);
 }
 
-.SearchResult ul {
+.Search {
+  padding-top: 50px;
+}
+
+.Search ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   justify-content: space-around;
 }
 
-.SearchResult li {
+.Search li {
   cursor: pointer;
   transform: scale(0.6);
   margin: -100px;
