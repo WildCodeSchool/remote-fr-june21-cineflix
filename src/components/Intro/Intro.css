@@ -1,7 +1,7 @@
-body .container {
+body .container{
     position: relative;
-    background-color: black;
-    height: 75vh;
+    /*background-color: black;*/
+    height: 100vh;
     min-height: 25rem;
     max-width: 100vw;
     overflow: hidden;
@@ -9,25 +9,29 @@ body .container {
 }
 
 
-body .container video {
+.videoContainer{
     position: absolute;
-    top: 75%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     z-index: -1;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    padding:200px;
+}
 
+.buttonContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .logo-intro {
-  width: 100%;
+  width: 70%;
+  position: relative;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -0%);
 }
 
 
@@ -114,13 +118,4 @@ transition-delay: 0.5s;
     transition-delay: 0.5s;
     transform:translateY(-10px)
     
-}
-div .container {
-    position :absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 500px;
-    margin-top: -250px;
-    margin-left: -250px;
 }
