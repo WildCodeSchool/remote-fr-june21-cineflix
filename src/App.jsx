@@ -1,10 +1,14 @@
-import logo from './assets/logo.png';
-import Intro from './components/Intro/Intro';
-import Footer from './components/Footer/Footer'
-import Home from "./components/Home/Home";
-import NotFound from "./components/Notfound/NotFound";
-import MovieCard from "./components/MovieCard/MovieCard";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Home from "./components/Home/Home";
+import Intro from './components/Intro/Intro';
+import MovieCard from "./components/MovieCard/MovieCard";
+import NotFound from "./components/Notfound/NotFound";
+import ActorCard from "./components/ActorCard/ActorCard"
+
+// import logo from './assets/logo.png';
+// import Footer from './components/Footer/Footer'
+
 import './App.css';
 
 const App = () => {
@@ -17,6 +21,9 @@ const App = () => {
         <Route path="/home" exact component={Home} />
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
+        </Route>
+        <Route path="/person-card">
+          <ActorCard />
         </Route>
         <Route component={NotFound} />
       </Switch>

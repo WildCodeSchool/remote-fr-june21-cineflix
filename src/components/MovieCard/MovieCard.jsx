@@ -34,8 +34,7 @@ function MovieCard() {
         if(a[0]) {
             if(a[2]) {
                 return `${a[0].name}, ${a[1].name}, ${a[2].name}`
-            }
-            if(a[1]) {
+            } else if(a[1]) {
                 return `${a[0].name}, ${a[1].name}`
         } else {
             return `${a[0].name}`
@@ -69,8 +68,8 @@ const checkCategorie = () => {
             <h3>Date de sortie : {Movie.release_date}</h3>
             <h3>Synopsis : {Movie.overview}
             </h3>
-            <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
             <button className="favButton" type="button"> + </button>
+            <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
             <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
             </a>
             <h3>Note : {Movie.vote_average}/10</h3>
