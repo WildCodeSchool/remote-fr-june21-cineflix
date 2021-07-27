@@ -8,7 +8,7 @@ export default function Banner() {
 
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=FR`)
+        fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
