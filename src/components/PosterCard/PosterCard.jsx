@@ -18,7 +18,7 @@ const PosterCard = ({ poster }) => {
                     {showRate && (
                             <div className="rate-overlay">
                                 <li><BsStar />  {poster.vote_average}/10</li>
-                                <li>{truncateDate}</li>
+                                <li>{poster.release_date.slice(0, 4)}</li>
                             </div>
                     )}
                 </NavLink>
