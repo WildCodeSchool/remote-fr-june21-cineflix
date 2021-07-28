@@ -25,7 +25,7 @@ function MovieCard() {
         .then(data => setCast(data))
     }, [])
 
-    const auteur = Cast.cast ? Cast.crew.filter(e => (e.department === "Writing" && e.job === "Screenplay") || e.job === "Novel") : null
+    const auteur = Cast.cast ? Cast.crew.filter(e => e.department === "Writing") : null
     const acteur = Cast.cast ? Cast.cast.filter(e => e.known_for_department === "Acting") : null
     const real = Cast.cast ? Cast.crew.filter(e => e.job === "Director") : null
 
@@ -52,6 +52,9 @@ const checkCategorie = () => {
     }
 }
 }
+
+console.log(Movie.id)
+console.log(Cast.crew)
 
     return (
         <div className="MovieCard">
