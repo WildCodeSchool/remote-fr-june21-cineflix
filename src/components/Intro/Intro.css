@@ -61,7 +61,7 @@ body .container{
     left: 0;
     width: 4px;
     height: 100%;
-    background: #9d59d9;
+    background: var(--secondary-color);
     transition: 0.2s ease-in-out;
     transition-delay: 0.5s;
 }

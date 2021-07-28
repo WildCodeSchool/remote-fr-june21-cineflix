@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Footer.css';
 
 
@@ -13,6 +14,9 @@ function Footer () {
                     <li><a href="#"><img className="media" src="" alt="icone réseau sociaux"/>Github</a></li>
                     <li><a href="#"><img className="media" src="" alt="icone réseau sociaux"/>Youtube</a></li>
                 </ul>
+            </div>
+            <div className="footer-containt">
+                <p>© 2021 Racoon Team - Hébergement GitHub, <NavLink to="/loading">À propos et mentions légales</NavLink>et<NavLink to="/contact">nous contacter</NavLink></p>
             </div>
 
 
