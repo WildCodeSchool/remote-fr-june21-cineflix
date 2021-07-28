@@ -26,7 +26,7 @@ function ActorCard() {
 
 
 
-    // console.log(Actor)
+    console.log(Actor)
     console.log(ActorMovies)
 
     return(
@@ -36,7 +36,7 @@ function ActorCard() {
             <div className="ActorContainerFlex">
                 <img src={`https://image.tmdb.org/t/p/w500${Actor.profile_path}`} alt={Actor.name}/>
                 <div className="ActorContainerDetail">
-                    <h3>Métier : {Actor.known_for_department}</h3>
+                    <h3>Métier : {Actor.gender === 1 ? "Actrice" : "Acteur"}</h3>
                     <h3>Naissance : {Actor.birthday} à {Actor.place_of_birth}</h3>
                     <h3>Biographie : </h3>
                     <p>{Actor.biography}</p>
