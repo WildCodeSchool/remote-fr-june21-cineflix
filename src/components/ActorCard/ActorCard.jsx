@@ -43,19 +43,19 @@ function ActorCard() {
                 </div>
             </div>
 
-            <h3>Filmographie :</h3>
-            <ul>
+            <h2>Filmographie :</h2>
+            <div className="FilmoContainer">
                 {ActorMovies.cast ? ActorMovies.cast.map((movie, index) => (
                     index < 10 &&
-                    <li>
-                        <NavLink to={`/movie-card/${movie.id}`}>
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
+                    <figure>
+                        <NavLink to={`/movie-card/${movie.id}`} >
+                            <img className="FilmoImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
                             <p>{movie.title}</p> 
                         </NavLink>
-                    </li>
+                    </figure>
                 )) : null}
                 
-            </ul>
+            </div>
         </div>
     )
 
