@@ -1,23 +1,25 @@
 import  { useState, useEffect } from 'react'
+import { NavLink, useParams } from "react-router-dom"
 
 import Navbar from '../Navbar/Navbar';
 
 import './ActorCard.css'
 
 function ActorCard() {
+    let { IdActor } = useParams()
     const [Actor, setActor] = useState([])
     const [ActorMovies, setActorMovies] = useState([])
 
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/person/287?api_key=${api_key}&language=fr`)
+        fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setActor(data))
     }, [])
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3//person/287/movie_credits?api_key=${api_key}&language=fr`)
+        fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setActorMovies(data))
     }, [])
@@ -43,11 +45,14 @@ function ActorCard() {
 
             <h3>Filmographie :</h3>
             <ul>
-                {ActorMovies.cast ? ActorMovies.cast.map((movie) => (
-                    <li><img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
-                    {console.log(movie.title)}
-                    {console.log(movie.backdrop_path)}
-                    <p>{movie.title}</p> </li>
+                {ActorMovies.cast ? ActorMovies.cast.map((movie, index) => (
+                    index < 10 &&
+                    <li>
+                        <NavLink to={`/movie-card/${movie.id}`}>
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
+                            <p>{movie.title}</p> 
+                        </NavLink>
+                    </li>
                 )) : null}
                 
             </ul>
