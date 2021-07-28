@@ -1,44 +1,33 @@
-.title {
-    font-weight: bold;
+
+/* .poster-card {
+  position: relative;
+} */
+
+.poster-card img {
+  /* height: 40vh; */
+  padding: 3px;
+  width: 13vw;
+  z-index: 400;
 }
 
-.poster-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
+.poster-card img:hover {
+  z-index: 500;
+  transform: scale(1.2);
+  transition: 0.5s ease-in-out;
 }
 
 .rate-overlay {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    margin: 0 auto;
-    text-align: center;
-    color: var(--text-color);
-    width: 70%;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: var(--text-color);
-    border-width: 1px;
-}
-
-.rate-overlay li {
-    list-style-type: none;
-}
-
-.poster-img {
-    height: 80%;
-    display: block;
-    padding: 2px;
-    width: auto;
-}
-
-.poster-img:hover {
-    z-index: 250;
-    cursor: pointer;
-    transition: transform 0.4s ease-in-out;
-    transform: scale(1.2);
+  z-index: 800;
+  /* position: absolute; */
+  background-color: var(--bg-color);
+  top: 80%;
+  /* left: 50%; */
+  transform: translate(25%, -50%);
+  width: 65%;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--text-color);
+  border-width: 1px;
+  text-align: center;
+  color: var(--text-color);
 }

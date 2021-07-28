@@ -22,26 +22,17 @@ const TopContainer = () => {
 
     }, [])
 
-    const mapPoster = (state) => {
-        return (
-            <>
-                {state.map((poster, id) =>
-                    <PosterCard key={poster.id} poster={poster} />)}
-            </>
-        );
-    }
-
-    return (
-            <div className="top-container">
-                <h3>Top 20 Films</h3>
-                <div className="top-cards">
-                    {mapPoster(popularMovie)}
-                </div>
-                <h3>Top 20 Séries</h3>
-                <div className="top-cards">
-                    {mapPoster(popularShow)}
-                </div>
-            </div>
+return (
+    <div className="top-container">
+        <h3>Top 20 Films</h3>
+        <div className="top-cards">
+            {mapPoster(popularMovie)}
+        </div> 
+        <h3>Top 20 Séries</h3>
+        <div className="top-cards">
+            {mapPoster(popularShow)}
+        </div>
+    </div>
     );
 }
 
