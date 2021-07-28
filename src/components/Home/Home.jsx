@@ -1,6 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import Banner from '../Banner/Banner';
-import TopContainer from "../TopContainer/TopContainer";
+import TopContainer from './../TopContainer/TopContainer';
 import "./Home.css";
 
 const Home = () => {
