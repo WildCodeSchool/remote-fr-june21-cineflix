@@ -32,7 +32,6 @@ const mapPoster = (state) => {
 }
 
 return (
-    <>
     <div className="top-container">
         <h3>Top 20 Films</h3>
         <div className="top-cards">
@@ -43,7 +42,6 @@ return (
             {mapPoster(popularShow)}
         </div>
     </div>
-    </>
     );
 }
 
