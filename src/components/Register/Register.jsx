@@ -1,25 +1,34 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import loginImg from "../../assets/loginImg.png";
 import logo from "../../assets/logo.png";
-import avatar from "../../assets/avatar.png";
 
 import "./Register.css";
 
 export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
 
     const emailRef = useRef();
     const passwordRef = useRef();
+    const usernameRef = useRef();
 
     const handleStart = () => {
         setEmail(emailRef.current.value);
     };
-    const handleFinish = () => {
+
+    const handleFinish = async (e) => {
+        e.preventDefault();
         setPassword(passwordRef.current.value);
+        setUsername(usernameRef.current.value);
+        try {
+            await axios.post("auth/register", { email, username, password });
+        } catch (err) { }
     };
+
     return (
         <div className="register">
             <div className="registerNavbar">
@@ -31,7 +40,7 @@ export default function Register() {
                     </Link>
                     <Link to="/login"><img
                         className='registerNavAvatar'
-                        src={avatar}
+                        src={loginImg}
                         alt='avatar' />
                     </Link>
                 </div>
@@ -39,7 +48,7 @@ export default function Register() {
             <div className="register-container">
                 <h1>Toutes les infos sur vos films et séries préférés.</h1>
                 <p>
-                    Entrez votre email pour créer votre compte.
+                    Pour entrer créer votre compte, c'est 100% gratuit.
                 </p>
                 {!email ? (
                     <div className="input">
@@ -50,6 +59,7 @@ export default function Register() {
                     </div>
                 ) : (
                     <form className="input">
+                        <input type="username" placeholder="username" ref={usernameRef} />
                         <input type="password" placeholder="mot de passe" ref={passwordRef} />
                         <button className="registerButton" onClick={handleFinish}>
                             Commencer

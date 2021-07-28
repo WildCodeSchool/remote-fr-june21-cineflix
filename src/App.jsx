@@ -6,22 +6,36 @@ import NotFound from "./components/Notfound/NotFound";
 import MovieCard from "./components/MovieCard/MovieCard";
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { AuthContext } from './authContext/AuthContext';
+import { useContext } from 'react';
+
 import './App.css';
 
 const App = () => {
 
+  const { user } = useContext(AuthContext);
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Intro} />
-        <Route path="/home" exact component={Home} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
-        <Route path="/movie-card/:IdMovie">
-          <MovieCard />
+        <Route exact path="/" component={Intro} />
+        <Route exact path="/home">
+          {user ? <Home /> : <Redirect to="/register" />}
         </Route>
+        <Route exact path="/register">
+          {!user ? <Register /> : <Redirect to="/home" />}
+        </Route>
+        <Route exact path="/login">
+          {!user ? <Login /> : <Redirect to="/" />}
+        </Route>
+        {user && (
+          <>
+            <Route path="/movie-card/:IdMovie">
+              <MovieCard />
+            </Route>
+          </>
+        )}
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

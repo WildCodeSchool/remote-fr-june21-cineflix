@@ -1,11 +1,24 @@
+import { AuthContext } from "../../authContext/AuthContext";
 import { Link } from "react-router-dom";
+import { login } from "../../authContext/apiCalls";
+import { useContext, useState } from "react";
 
-import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.png";
+import logo from "../../assets/logo.png";
 
 import "./Login.css";
 
 export default function Login() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { dispatch } = useContext(AuthContext);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login({ email, password }, dispatch);
+    };
+
     return (
         <div className="login">
             <div className="loginNavbar">
@@ -15,19 +28,27 @@ export default function Login() {
                         src={logo}
                         alt='logo' />
                     </Link>
-                    <Link to="/login"><img
+                    {/* <Link to="/login"><img
                         className='loginNavAvatar'
                         src={avatar}
                         alt='avatar' />
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
             <div className="login-container">
                 <form>
                     <h1>S'identifier</h1>
-                    <input type="email" placeholder="Email or phone number" />
-                    <input type="password" placeholder="Password" />
-                    <button className="loginButton">S'identifier</button>
+                    <input
+                        type="email"
+                        placeholder="Adresse Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Mot de Passe"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <button className="loginButton" onClick={handleLogin}>S'identifier</button>
                     <span>
                         Nouveau sur Cinéflix?<br />
                         <Link to="/register"><b>l'inscription c'est par ici.</b></Link>
