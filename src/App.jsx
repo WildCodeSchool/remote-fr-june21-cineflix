@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
-        <Route path="/person-card">
+        <Route path="/actor">
           <ActorCard />
         </Route>
         <Route component={NotFound} />
