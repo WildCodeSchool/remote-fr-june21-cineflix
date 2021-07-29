@@ -6,5 +6,14 @@
     --text-color: #f5e2ff;
 }
 
+body::-webkit-scrollbar {
+    width: 0.75rem;
+}
 
+body::-webkit-scrollbar-track {
+    background-color: var(--bg-color)
+}
 
+body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+}
