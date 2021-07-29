@@ -11,11 +11,14 @@ const Search = () => {
   const [searchResult, setSearchResult] = useState()
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/search/multi?api_key=cda80ca49e23464f07b0b27ac89f1fdd&query=${searchValue}&inlude_adult=false`)
-      .then((response) => response.json())
-      .then((data) => {
-        setSearchResult(data.results)
-      })
+    const getData = () => {
+      fetch(`https://api.themoviedb.org/3/search/multi?api_key=cda80ca49e23464f07b0b27ac89f1fdd&query=${searchValue}&inlude_adult=false`)
+        .then((response) => response.json())
+        .then((data) => {
+          setSearchResult(data.results)
+        })
+    }
+    getData()
   }, [])
   
   return (
@@ -25,10 +28,10 @@ const Search = () => {
           <ul>
             {searchResult &&
             searchResult.map((movie, index) => (
-            <li key={index}>
+            <li>
               <figure>
                 <NavLink to={`/movie-card/${movie.id}`}>
-                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
               </figure>
             </li>
