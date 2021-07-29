@@ -14,7 +14,7 @@ function MovieCard() {
         fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setMovie(data))
-    }, [])
+    }, [IdMovie])
 
     
     const [Cast, setCast] = useState([])
@@ -23,7 +23,7 @@ function MovieCard() {
         fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setCast(data))
-    }, [])
+    }, [IdMovie])
 
     const auteur = Cast.cast ? Cast.crew.filter(e => e.department === "Writing") : null
     const acteur = Cast.cast ? Cast.cast.filter(e => e.known_for_department === "Acting") : null
@@ -33,17 +33,25 @@ function MovieCard() {
         if(a[0]) {
             if(a[2]) {
                 return (
-                <div>
+                <>
                     <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
                     <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>,
                     <NavLink to={`/actor/${acteur[2].id}`}>{a[2].name}</NavLink>
-                </div>
+                </>
                 )
             } else if(a[1]) {
-                return <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
-                <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>;
+                return (
+                    <>
+                        <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
+                        <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>;
+                    </>
+                    )
         } else {
-            return <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>;
+            return (
+                <>
+                    <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>;
+                </>
+            )
         }
     }
     }

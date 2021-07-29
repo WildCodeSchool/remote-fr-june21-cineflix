@@ -16,13 +16,13 @@ function ActorCard() {
         fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setActor(data))
-    }, [])
+    }, [IdActor])
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
         .then(response => response.json())
         .then(data => setActorMovies(data))
-    }, [])
+    }, [IdActor])
 
 
 

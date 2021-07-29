@@ -22,7 +22,7 @@
 }
 
 .MovieCard .image-movie-card {
-    height: 800px;
+    height: 72vh;
 }
 
 .MovieCard h3{
@@ -64,11 +64,21 @@
     background-color: #141414;
     display: flex;
     justify-content: flex-start;
+    padding-left: 40vh;
 }
 
 .containerDetail {
     padding: 10px;
 }
+
+.containerDetail a {
+    color: var(--text-color);
+    padding: 3px;
+}
+
+.containerDetail a:visited {
+    color: var(--secondary-color);
+  }
 
 @media only screen and (max-width: 870px) {
     .containerFlex {
