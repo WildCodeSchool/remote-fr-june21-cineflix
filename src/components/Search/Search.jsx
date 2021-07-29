@@ -19,7 +19,7 @@ const Search = () => {
         })
     }
     getData()
-  }, [])
+  }, [searchValue])
   
   return (
       <div className="searchContainer">
