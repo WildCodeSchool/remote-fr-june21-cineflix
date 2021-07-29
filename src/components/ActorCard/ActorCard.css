@@ -55,11 +55,15 @@
     padding-left: 50vh;
 }
 
+
 .FilmoContainer p {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     color: #f5e2ff;
     padding: 5px;
-    font-size: 12px;
+    font-size: 11px;
+    width: 125px;
     text-align: center;
+    margin: 5px;
 }
 
 .FilmoContainer a {

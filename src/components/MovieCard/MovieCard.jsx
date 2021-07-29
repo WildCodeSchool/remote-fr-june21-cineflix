@@ -30,7 +30,6 @@ function MovieCard() {
     const real = Cast.cast ? Cast.crew.filter(e => e.job === "Director") : null
 
     const checkCast = (a) => {
-        console.log(a[0])
         if(a[0]) {
             if(a[2]) {
                 return (
@@ -74,8 +73,6 @@ const checkCategorie = () => {
 }
 }
 
-
-console.log(Cast.cast)
 
     return (
         <div className="MovieCard">

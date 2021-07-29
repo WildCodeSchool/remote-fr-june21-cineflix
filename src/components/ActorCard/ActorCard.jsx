@@ -47,7 +47,7 @@ function ActorCard() {
             <div className="FilmoContainer">
                 {ActorMovies.cast ? ActorMovies.cast.map((movie, index) => (
                     index < 10 &&
-                    <figure>
+                    <figure key={index}>
                         <NavLink to={`/movie-card/${movie.id}`} >
                             <img className="FilmoImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
                             <p>{movie.title}</p> 
