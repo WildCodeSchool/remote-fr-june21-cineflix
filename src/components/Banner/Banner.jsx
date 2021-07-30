@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./Banner.css";
 
 export default function Banner() {
@@ -38,13 +39,17 @@ export default function Banner() {
                         <h1 className="bannerTitle">
                             {movie?.title || movie?.name || movie?.original_name}
                         </h1>
-                        <div className="bannerButtons">
-                            <button className="bannerButton">liste</button>
-                            <button className="bannerButton">infos</button>
+                        <div className="flex-banner">
+                            <div className="bannerButtons">
+                                <button className="bannerButton">liste</button>
+                                <Link to={`/movie-card/${movie.id}`}>
+                                    <button className="bannerButton">infos</button>
+                                </Link>
+                            </div>
+                            <h2 className="bannerDescription">
+                                {truncate(movie?.overview, 150)}
+                            </h2>
                         </div>
-                        <h2 className="bannerDescription">
-                            {truncate(movie?.overview, 150)}
-                        </h2>
                     </div>
                 </div>
             </div>
