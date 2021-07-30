@@ -1,0 +1,78 @@
+.ActorCard {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 100px;
+}
+
+.ActorCard h2 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+}
+
+.ActorCard ul li {
+    list-style-type: none;
+}
+
+.ActorContainerFlex {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 40vh;
+}
+
+.ActorContainerFlex img {
+    height: 60vh;
+}
+
+
+.ActorCard h3 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    width: 65%;
+    padding: 15px;
+}
+
+.ActorContainerDetail {
+    padding: 10px;
+}
+
+.ActorContainerDetail p {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding: 15px;
+    width: 70vh;
+}
+
+.FilmoContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-left: 50vh;
+}
+
+
+.FilmoContainer p {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #f5e2ff;
+    padding: 5px;
+    font-size: 11px;
+    width: 125px;
+    text-align: center;
+    margin: 5px;
+}
+
+.FilmoContainer a {
+    text-decoration: none;
+    height: 25vh;
+    /* box-shadow: 7px 7px 5px rgb(114, 110, 110); */
+    padding: 10px;
+}
+
+.FilmoImg {
+    height: 25vh;
+}

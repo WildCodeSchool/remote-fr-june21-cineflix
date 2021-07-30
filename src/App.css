@@ -1,9 +1,11 @@
 :root {
     --bg-color: #141414;
+    --bg-op-color: #141414b0;
     --primary-color: #240046;
     --secondary-color: #9d59d9;
     --third-color: #5ef973;
-    --text-color: #f5e2ff;
+    --text-color: #fbf5ff;
+    --text-op-color: #fbf5ffbe;
 }
 
 body::-webkit-scrollbar {
