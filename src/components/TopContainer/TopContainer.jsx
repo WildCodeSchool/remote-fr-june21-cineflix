@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 import PosterCard from "../PosterCard/PosterCard";
 import './TopContainer.css';
 
@@ -30,24 +31,36 @@ const TopContainer = () => {
     const mapPoster = (state) => {
         return (
             <>
-                {state.map((poster, id) =>
-                    <PosterCard key={poster.id} poster={poster} />)}
+                {state.map((poster) =>
+                    <PosterCard key={poster.id} {...poster} />)}
             </>
         );
     }
 
+    // const topListRef = useRef();
+    // const handleArrowClick = (direction) => {
+    //     if (direction === 'left') {
+            
+            
+    //     if (direction === 'right') {
+            
+    // }
+
+
     return (
         <div className="top-container">
-            <h3>Top 20 Films</h3>
+            <h2>Top 20 Films</h2>
             <div className="top-cards">
+                {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularMovie)}
+                {/* <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleArrowClick("right")} /> */}
             </div>
-            <h3>Top 20 Séries</h3>
+            <h2>Top 20 Séries</h2>
             <div className="top-cards">
+                {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularShow)}
+                {/* <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleArrowClick("right")} /> */}
             </div>
         </div>
     );
 }
-
-export default TopContainer;
