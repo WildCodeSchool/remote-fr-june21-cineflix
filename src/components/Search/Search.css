@@ -17,14 +17,21 @@
 }
 
 .Search li {
+  position: relative;
+  z-index: 10;
   cursor: pointer;
   transform: scale(0.6);
   margin: -100px;
 }
- /*
+
 .searchMovieCard {
+ position: relative;
+ z-index: 1;
+}
+
+.searchMovieCard:hover {
   position: relative;
-  margin: 10px;
-  border: 3px solid red;
-  width: 150px;
-}*/
+  z-index: 500;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 5px black;
+}
