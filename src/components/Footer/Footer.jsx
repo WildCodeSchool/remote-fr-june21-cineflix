@@ -16,13 +16,13 @@ function Footer () {
     return (
         <footer>
             <div className="footer-container">
-                <h3>Nos réseaux</h3>
+                
                 <ul className="list-media">
-                    <li><a href="#"><img className="media" src={face} alt="icone réseau sociaux"/>Facebook</a></li>
-                    <li><a href="#"><img className="media" src={insta} alt="icone réseau sociaux"/>Instagram</a></li>
-                    <li><a href="#"><img className="media" src={twit} alt="icone réseau sociaux"/>Twitter</a></li>
-                    <li><a href="#"><img className="media" src={git} alt="icone réseau sociaux"/>Github</a></li>
-                    <li><a href="#"><img className="media" src={you} alt="icone réseau sociaux"/>Youtube</a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
             <div className="footer-containt">
