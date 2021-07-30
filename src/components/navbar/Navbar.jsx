@@ -1,10 +1,11 @@
-import logo from "../../assets/logo.png";
-import avatar from "../../assets/avatar.png";
 import { useState, useEffect } from "react";
-import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+
+import avatar from "../../assets/avatar.png";
+import logo from "../../assets/logo.png";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResult from "../SearchResult/SearchResult";
-import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 
 

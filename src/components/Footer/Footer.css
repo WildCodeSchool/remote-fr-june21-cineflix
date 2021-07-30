@@ -1,21 +1,25 @@
 footer {
     width: 100%;
     position: absolute;
-    bottom: 0;
     height: 250px;
     background-color: #38424e;
 }
 .media {
     width: 20px;
 }
+.list-media a {
+    text-decoration: none;
+}
 .footer-container {
     width: 1200px;
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: c;
     align-items: flex-start;
     font-size: 20px;
 }
 .footer-containt {
     padding: 50px;
+    display: flex;
+    justify-content: center;
 }

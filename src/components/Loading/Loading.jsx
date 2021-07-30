@@ -1,10 +1,10 @@
 import "./Loading.css";
 
-function Loading () {
+const Loading= () => {
     return (
 
-        <section>
-        <div class="loading">
+    <div className="section-loading">
+        <div className="loading">
             <div className="blocks" style="--i:1;"></div>
             <div className="blocks" style="--i:2;"></div>
             <div className="blocks" style="--i:3;"></div>
@@ -27,10 +27,8 @@ function Loading () {
             <div className="blocks" style="--i:20;"></div>
             <h3 className="loading">Loading</h3>
         </div>
-    </section>
-    
-
-
-
+    </div>    
     )
 }
+
+export default Loading;

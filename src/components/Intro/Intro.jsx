@@ -1,5 +1,7 @@
-import "./Intro.css";
 import { NavLink } from "react-router-dom";
+
+import "./Intro.css";
+
 import logo from "../../assets/logo_transparent.png"; 
 import film from "../../assets/film.mp4"
 

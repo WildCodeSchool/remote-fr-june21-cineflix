@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { BsStar } from "react-icons/bs";
+
 import './PosterCard.css';
 
 const PosterCard = ({ poster }) => {

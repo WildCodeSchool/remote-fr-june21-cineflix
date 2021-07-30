@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import PosterCard from "../PosterCard/PosterCard";
 import './TopContainer.css';
 

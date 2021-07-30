@@ -4,6 +4,8 @@ import Footer from './components/Footer/Footer'
 import Home from "./components/Home/Home";
 import NotFound from "./components/Notfound/NotFound";
 import MovieCard from "./components/MovieCard/MovieCard";
+import Contact from "./components/Contact/Contact";
+import Loading from "./components/Loading/Loading";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
+        <Route path="/loading" exact component={Loading} />
+        <Route path="/contact" exact component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
