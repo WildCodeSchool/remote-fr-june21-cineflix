@@ -13,6 +13,7 @@ footer {
 .list-media {
     list-style: none;
     display: flex;
+    margin-left: 70vh;
 }
 .list-media a {
     text-decoration: none;
