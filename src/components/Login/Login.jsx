@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { login } from "../../authContext/apiCalls";
 import { useContext, useState } from "react";
 
-import avatar from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
 
 import "./Login.css";
@@ -28,11 +27,6 @@ export default function Login() {
                         src={logo}
                         alt='logo' />
                     </Link>
-                    {/* <Link to="/login"><img
-                        className='loginNavAvatar'
-                        src={avatar}
-                        alt='avatar' />
-                    </Link> */}
                 </div>
             </div>
             <div className="login-container">
