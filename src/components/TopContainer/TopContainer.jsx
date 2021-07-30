@@ -49,13 +49,13 @@ const TopContainer = () => {
 
     return (
         <div className="top-container">
-            <h3>Top 20 Films</h3>
+            <h2>Top 20 Films</h2>
             <div className="top-cards">
                 {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularMovie)}
                 {/* <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleArrowClick("right")} /> */}
             </div>
-            <h3>Top 20 Séries</h3>
+            <h2>Top 20 Séries</h2>
             <div className="top-cards">
                 {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularShow)}

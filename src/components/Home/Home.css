@@ -1,5 +1,12 @@
-.home{
+.home {
     background-color: var(--bg-color);
     overflow: hidden;
 }
 
+/* .home::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+
+.home::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+} */
