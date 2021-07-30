@@ -1,28 +1,35 @@
 import  { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
+// import Similar from '../Similar/Similar';
 
 
 import './MovieCard.css'
 
 function MovieCard() {
     let { IdMovie } = useParams()
+    const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
-        .then(response => response.json())
-        .then(data => setMovie(data))
+        const getMovie = () => {
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
+            .then(response => response.json())
+            .then(data => setMovie(data))
+        }
+        getMovie()
     }, [IdMovie])
 
     
-    const [Cast, setCast] = useState([])
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
-        .then(response => response.json())
-        .then(data => setCast(data))
+        const getCast = () => {
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
+            .then(response => response.json())
+            .then(data => setCast(data))
+        }
+        getCast()
     }, [IdMovie])
 
     const auteur = Cast.cast ? Cast.crew.filter(e => e.department === "Writing") : null
@@ -103,6 +110,7 @@ const checkCategorie = () => {
             </a>
             <h3>Note : {Movie.vote_average}/10</h3>
             </div>
+            {/* <Similar {...Movie}/> */}
         </div>
         </div>
         )

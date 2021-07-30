@@ -13,15 +13,21 @@ function ActorCard() {
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
-        .then(response => response.json())
-        .then(data => setActor(data))
+        const getActor = () => {
+            fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
+            .then(response => response.json())
+            .then(data => setActor(data))
+        }
+        getActor()
     }, [IdActor])
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
-        .then(response => response.json())
-        .then(data => setActorMovies(data))
+        const getMovie = () => {
+            fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
+            .then(response => response.json())
+            .then(data => setActorMovies(data))
+        }
+        getMovie()
     }, [IdActor])
 
 
