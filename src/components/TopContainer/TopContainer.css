@@ -22,27 +22,6 @@ margin-top: 20vh;
   display: none;
 }
 
-.top-cards .sliderArrowLeft, .top-cards .sliderArrowRight {
-  color: var(--secondary-color);
-  background-color: var(--bg-color);
-  width: 40px;
-  height: 82%;
-  position: absolute;
-  opacity: 0.7;
-  border-style: none;
-  border-radius: 7px;
-  z-index: 50;
-  cursor: pointer;
-}
-
-.top-cards .sliderArrowLeft {
-  left: 0;
-}
-
-.top-cards .sliderArrowRight {
-  right: 0;
-}
-
 @media screen and (max-width: 800px) {
   .top-container {
     margin-top: 25px;
