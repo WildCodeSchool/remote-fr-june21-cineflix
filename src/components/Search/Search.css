@@ -17,8 +17,6 @@
 }
 
 .Search li {
-  position: relative;
-  z-index: 10;
   cursor: pointer;
   transform: scale(0.6);
   margin: -100px;
@@ -27,6 +25,7 @@
 .searchMovieCard {
  position: relative;
  z-index: 1;
+ margin: 20px;
 }
 
 .searchMovieCard:hover {
