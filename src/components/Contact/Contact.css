@@ -163,22 +163,19 @@ section::before {
 }
 
 @media (max-width : 1200px) {
-    .container-contact
-    {
+    .container-contact {
         width: 90%;
         min-width: auto;
         margin: 20px;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     }
-    .container-contact .contact-info
-    {
+    .container-contact .contact-info {
         top: 0;
         height: 550px;
         position: relative;
         box-shadow: none;
     }
-    .container-contact .contact-form
-    {
+    .container-contact .contact-form {
         position: relative;
         width: calc(100% -350px);
         padding-left: 0;
@@ -189,22 +186,18 @@ section::before {
     }
 }
 @media (max-width : 950px) {
-    section::before
-    {
+    section::before {
         background: #240046;
         display: none;
     }
-    .container-contact
-    {
+    .container-contact {
         display: flex;
         flex-direction: column-reverse;
     }
-    .container-contact .contact-form
-    {
+    .container-contact .contact-form {
         width: 100%;
     }
-    .container-contact .contact-info
-    {
+    .container-contact .contact-info {
         width: 100%;
     } 
 }
