@@ -1,7 +1,9 @@
 import Navbar from "../Navbar/Navbar";
 import Banner from '../Banner/Banner';
-import TopContainer from "../TopContainer/TopContainer";
+import Footer from './../Footer/Footer';
+import TopContainer from './../TopContainer/TopContainer';
 import "./Home.css";
+
 
 const Home = () => {
 

@@ -3,6 +3,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import { useContext } from 'react';
 
+import ActorCard from "./components/ActorCard/ActorCard"
 import Home from "./components/Home/Home";
 //import Footer from './components/Footer/Footer'
 import Intro from './components/Intro/Intro';
@@ -39,6 +40,9 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
+        <Route path="/actor/:IdActor">
+          <ActorCard />
+        </Route>
         {/* </> */}
         {/* )} */}
         <Route path="/search/:searchValue">
@@ -50,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
