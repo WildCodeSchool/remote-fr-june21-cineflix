@@ -1,12 +1,12 @@
 import './Contact.css';
-import loc from "../../assets/localisation";
-import mail from "../../assets/mail";
-import tel from "../../assets/tel";
-import Face from "../../assets/facebook";
-import twit from "../../assets/twitter";
-import insta from "../../assets/instagram";
-import pint from "../../assets/pinterest";
-import link from "../../assets/linkedin";
+import loc from "../../assets/localisation.png";
+import mail from "../../assets/mail.png";
+import tel from "../../assets/tel.png";
+import face from "../../assets/facebook.png";
+import twit from "../../assets/twitter.png";
+import insta from "../../assets/instagram.png";
+import pint from "../../assets/pinterest.png";
+import link from "../../assets/linkedin.png";
 
 const Contact= () => {
     return (
@@ -35,7 +35,7 @@ const Contact= () => {
                     </ul>
                 </div>
                     <ul className="sci">
-                        <li><a href="#"><img src={Face} /></a></li>
+                        <li><a href="#"><img src={face} /></a></li>
                         <li><a href="#"><img src={twit} /></a></li>
                         <li><a href="#"><img src={insta} /></a></li>
                         <li><a href="#"><img src={pint} /></a></li>
@@ -44,7 +44,7 @@ const Contact= () => {
                 </div>
             </div>
             <div className="contact-form">
-            <h2>Envoyez nous un message</h2>
+                <h2>Envoyez nous un message</h2>
                     <div className="form-box">
                         <div className="input-box y">
                             <input type="text" required/>

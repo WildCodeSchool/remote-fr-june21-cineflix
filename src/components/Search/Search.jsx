@@ -29,11 +29,13 @@ const Search = () => {
             {searchResult &&
             searchResult.map((movie, index) => (
             <li>
-              <figure>
+              {movie.poster_path &&
+              <div className="searchMovieCard">
                 <NavLink to={`/movie-card/${movie.id}`}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
-              </figure>
+              </div>
+              }
             </li>
             ))}
             </ul>
