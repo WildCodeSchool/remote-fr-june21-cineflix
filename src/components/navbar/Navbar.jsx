@@ -10,9 +10,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     const [show, handleShow] = useState(false);
 
-    // Search states
+    // Search value states
     const [searchValue, setSearchValue] = useState("")
-    // const [searchResult, setSearchResult] = useState(null)
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
