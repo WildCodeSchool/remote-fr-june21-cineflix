@@ -37,29 +37,17 @@ const TopContainer = () => {
         );
     }
 
-    // const topListRef = useRef();
-    // const handleArrowClick = (direction) => {
-    //     if (direction === 'left') {
-            
-            
-    //     if (direction === 'right') {
-            
-    // }
-
-
     return (
         <div className="top-container">
             <h2>Top 20 Films</h2>
             <div className="top-cards">
-                {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularMovie)}
-                {/* <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleArrowClick("right")} /> */}
+                
             </div>
             <h2>Top 20 Séries</h2>
             <div className="top-cards">
-                {/* <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleArrowClick("left")} /> */}
                 {mapPoster(popularShow)}
-                {/* <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleArrowClick("right")} /> */}
+                
             </div>
         </div>
     );
