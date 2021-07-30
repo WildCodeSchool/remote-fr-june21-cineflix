@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchResult from "../SearchResult/SearchResult";
 
 import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
@@ -15,9 +14,8 @@ const Navbar = () => {
     const [show, handleShow] = useState(false);
     const { dispatch } = useContext(AuthContext);
 
-    // Search states
+    // Search value states
     const [searchValue, setSearchValue] = useState("")
-    const [searchResult, setSearchResult] = useState(null)
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
@@ -42,7 +40,7 @@ const Navbar = () => {
                         alt='logo' />
                     </NavLink>
 
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
 
                     <img
                         className='navLogout'
@@ -50,14 +48,15 @@ const Navbar = () => {
                         alt='logout'
                         onClick={() => dispatch(logout())}
                     />
-                    <img
-                        className='navAvatar'
-                        src={avatar}
-                        alt='avatar'
-                    />
+                    <NavLink to="/login">
+                        <img
+                            className='navAvatar'
+                            src={avatar}
+                            alt='avatar'
+                        />
+                    </NavLink>
                 </div>
             </div>
-            {searchResult && <SearchResult searchResult={searchResult} />}
         </div>
     );
 };

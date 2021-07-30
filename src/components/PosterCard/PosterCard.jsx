@@ -7,8 +7,6 @@ const PosterCard = ({ poster }) => {
 const [showRate, setShowRate] = useState(false);
 
 return (
-    <>
-    
     <div className="poster-card">
       <NavLink to={`/movie-card/${poster.id}`} className="poster-img">
         <img src={`https://image.tmdb.org/t/p/w500${poster.poster_path}`} 
@@ -23,8 +21,6 @@ return (
         )}
       </NavLink>
     </div>
-    
-    </>
     );
 }
 

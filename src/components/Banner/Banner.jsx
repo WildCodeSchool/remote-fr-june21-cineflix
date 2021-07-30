@@ -9,7 +9,7 @@ export default function Banner() {
 
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=10`)
+        fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
