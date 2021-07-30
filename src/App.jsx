@@ -12,6 +12,8 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import NotFound from "./components/Notfound/NotFound";
 import Search from './components/Search/Search';
+import Contact from './components/Contact/Contact';
+import Loading from './components/Loading/Loading';
 
 import './App.css';
 

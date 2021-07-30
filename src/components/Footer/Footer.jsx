@@ -5,7 +5,8 @@ import twit from "../../assets/twitter.png";
 import insta from "../../assets/instagram.png";
 import pint from "../../assets/pinterest.png";
 import link from "../../assets/linkedin.png";
-
+import git from "../../assets/github.png";
+import you from "../../assets/youtube.png";
 
 
 import './Footer.css';
@@ -20,8 +21,8 @@ function Footer () {
                     <li><a href="#"><img className="media" src={face} alt="icone réseau sociaux"/>Facebook</a></li>
                     <li><a href="#"><img className="media" src={insta} alt="icone réseau sociaux"/>Instagram</a></li>
                     <li><a href="#"><img className="media" src={twit} alt="icone réseau sociaux"/>Twitter</a></li>
-                    <li><a href="#"><img className="media" src="" alt="icone réseau sociaux"/>Github</a></li>
-                    <li><a href="#"><img className="media" src="" alt="icone réseau sociaux"/>Youtube</a></li>
+                    <li><a href="#"><img className="media" src={git} alt="icone réseau sociaux"/>Github</a></li>
+                    <li><a href="#"><img className="media" src={you} alt="icone réseau sociaux"/>Youtube</a></li>
                 </ul>
             </div>
             <div className="footer-containt">

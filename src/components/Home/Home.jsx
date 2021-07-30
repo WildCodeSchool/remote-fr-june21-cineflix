@@ -1,6 +1,7 @@
 import Banner from '../Banner/Banner';
 import Footer from './../Footer/Footer';
 import TopContainer from './../TopContainer/TopContainer';
+import Navbar from './../Navbar/Navbar'
 import "./Home.css";
 
 
