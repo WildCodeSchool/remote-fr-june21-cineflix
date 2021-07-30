@@ -9,17 +9,10 @@ const SearchBar = ({searchValue, setSearchValue }) => {
     let history = useHistory();
     let location = useLocation();
 
-    const handleClick = () => {
-      if(location.pathname.includes('search/')) {
-        history.push(`${searchValue}`);
-      } else {
-        history.push(`search/${searchValue}`);
-      }
-      
-    }
+  
 
-    const handleKeyPress = (event) => {
-      if(event.charCode === 13 ) {
+    const handleClick = () => {
+      if(searchValue !== "") {
         if(location.pathname.includes('search/')) {
           history.push(`${searchValue}`);
         } else {
@@ -27,6 +20,19 @@ const SearchBar = ({searchValue, setSearchValue }) => {
         }
       }
     }
+
+    const handleKeyPress = (event) => {
+      if(searchValue !== "") {
+        if(event.charCode === 13 ) {
+          if(location.pathname.includes('search/')) {
+            history.push(`${searchValue}`);
+          } else {
+            history.push(`search/${searchValue}`);
+          }
+        }
+      }
+    }
+  
 
     useEffect(() => {
       if(searchValue) {
