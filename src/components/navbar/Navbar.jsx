@@ -39,12 +39,9 @@ const Navbar = () => {
                         src={logo}
                         alt='logo' />
                     </NavLink>
-
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                    <NavLink to="/movie-categories" className="categoriesLink">Films
+                    <NavLink to="/movie-categories" className="categorieLink">Films
                     </NavLink>
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
-
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <img
                         className='navLogout'
                         src={exit}

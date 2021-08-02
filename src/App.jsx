@@ -52,10 +52,11 @@ const App = () => {
         {/* )} */}
         <Route path="/search/:searchValue">
           <Search />
+        </Route>
         <Route path="/movie-categories">
           <MovieCategories />
         </Route>
-        <Route component={NotFound} />
+        <Route path='/not-found' component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

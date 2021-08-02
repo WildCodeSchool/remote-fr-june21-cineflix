@@ -33,7 +33,6 @@ const SearchBar = ({searchValue, setSearchValue }) => {
       }
     }
   
-
     useEffect(() => {
       if(searchValue) {
         const timer = setTimeout(() => {
