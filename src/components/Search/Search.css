@@ -1,36 +1,40 @@
 .searchContainer {
   min-height: 100vh;
-  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
   background-color: var(--bg-color);
-  min-height: 100vh;
 }
 
 .Search {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .Search ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  justify-content: space-around;
 }
 
 .Search li {
   cursor: pointer;
-  transform: scale(0.6);
-  margin: -100px;
+  /*transform: scale(0.6);
+  margin: -100px;*/
 }
 
 .searchMovieCard {
  position: relative;
  z-index: 1;
  margin: 20px;
+ transition: 0.2s linear;
+}
+
+.searchMovieCard img {
+  width: 250px;
+  min-height: 380px;
 }
 
 .searchMovieCard:hover {
-  position: relative;
   z-index: 500;
-  transform: scale(1.1);
-  box-shadow: 0px 0px 10px 5px black;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 3px black;
 }
