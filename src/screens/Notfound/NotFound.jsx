@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import "./NotFound.css"
 
 

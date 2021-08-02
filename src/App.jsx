@@ -3,16 +3,15 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import { useContext } from 'react';
 
-import ActorCard from "./components/ActorCard/ActorCard"
+import ActorCard from "./screens/ActorCard/ActorCard"
 import Home from "./screens/Home/Home";
-//import Footer from './components/Footer/Footer'
 import Intro from './screens/Intro/Intro';
 import Login from './screens/Login/Login';
-import Register from './components/Register/Register';
+import Register from './screens/Register/Register';
 import MovieCard from './screens/MovieCard/MovieCard';
-import NotFound from "./components/Notfound/NotFound";
+import NotFound from "./screens/Notfound/NotFound";
 import Search from './screens/Search/Search';
-import Contact from './components/Contact/Contact';
+import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
 
 import './App.css';
