@@ -31,9 +31,15 @@ const Search = () => {
             <li>
               {movie.poster_path &&
               <div className="searchMovieCard">
+                {movie.media_type === 'tv' ? 
+                <NavLink to={`/tv-card/${movie.id}`}>
+                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+                </NavLink>
+                : 
                 <NavLink to={`/movie-card/${movie.id}`}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
+                }
               </div>
               }
             </li>
