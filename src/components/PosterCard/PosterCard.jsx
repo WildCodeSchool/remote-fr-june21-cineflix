@@ -17,7 +17,7 @@ const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_dat
                     {showRate && (
                             <div className="rate-overlay">
                                 <li><BsStar />  {vote_average}/10</li>
-                                <li>{release_date ? release_date.slice(0, 4) : first_air_date.slice(0, 4)}</li>
+                                <li>{release_date ? release_date.slice(0, 4) : first_air_date ? first_air_date.slice(0, 4) : null}</li>
                             </div>
                     )}
                 </NavLink>
