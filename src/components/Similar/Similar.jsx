@@ -18,8 +18,6 @@ const Similar = ({ id }) => {
         getSimMovies()
     }, [id])
 
-    console.log(SimMovies)
-
     return (
         <>
             <h2 className="SimH2">Similaires : </h2>

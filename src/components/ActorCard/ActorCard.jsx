@@ -31,10 +31,6 @@ function ActorCard() {
     }, [IdActor])
 
 
-
-    console.log(Actor)
-    console.log(ActorMovies)
-
     return (
         <div className="ActorCard">
             <Navbar />
