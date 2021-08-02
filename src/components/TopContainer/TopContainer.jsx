@@ -39,30 +39,17 @@ const TopContainer = () => {
     }
 
     const listRefMovies = useRef();
-    const handleClickMovies = (direction) => {
-        let distance = listRefMovies.current.getBoundingClientRect().x
+    const listRefShows = useRef();
+    const handleClick = (direction, type) => {
+        let distance = type.current.getBoundingClientRect().x
 
         if (direction === 'left' && slideNumber > 0) {
-            setSlideNumber(slideNumber-1);
-            listRefMovies.current.style.transform = `translateX(${200 + distance}px)`
+            setSlideNumber(slideNumber - 1);
+            type.current.style.transform = `translateX(${200 + distance}px)`
         }
         if (direction === 'right' && slideNumber <= 13) {
-            setSlideNumber(slideNumber+1);
-            listRefMovies.current.style.transform = `translateX(${-255 + distance}px)`
-        }
-    }
-
-    const listRefShows = useRef();
-    const handleClickShows = (direction) => {
-        let distance = listRefShows.current.getBoundingClientRect().x
-
-        if (direction === 'left' && slideNumber > 0) {
-            setSlideNumber(slideNumber-1);
-            listRefShows.current.style.transform = `translateX(${200 + distance}px)`
-        }
-        if (direction === 'right'&& slideNumber <= 13) {
-            setSlideNumber(slideNumber+1);
-            listRefShows.current.style.transform = `translateX(${-255 + distance}px)`
+            setSlideNumber(slideNumber + 1);
+            type.current.style.transform = `translateX(${-255 + distance}px)`
         }
     }
 
@@ -70,19 +57,19 @@ const TopContainer = () => {
         <div className="top-container">
             <h2>Top 20 Films</h2>
             <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClickMovies('left')} />
+                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefMovies)} />
                 <div className="popularLists" ref={listRefMovies}>
                     {mapPoster(popularMovie)}
                 </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClickMovies('right')} />
+                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefMovies)} />
             </div>
             <h2>Top 20 Séries</h2>
             <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClickShows('left')} />
+                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefShows)} />
                 <div className="popularLists" ref={listRefShows} >
                     {mapPoster(popularShow)}
                 </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClickShows('right')} />
+                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
             </div>
         </div>
     );

@@ -38,3 +38,12 @@
     height: 30px;
     cursor: pointer;
 }
+
+.categoriesLink {
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--bg-color);
+    padding-top: 15px;
+    margin-left: 15vw;
+}

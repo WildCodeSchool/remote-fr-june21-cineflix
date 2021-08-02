@@ -37,7 +37,8 @@ const Navbar = () => {
                         src={logo}
                         alt='logo' />
                     </NavLink>
-
+                    <NavLink to="/movie-categories" className="categoriesLink">Films
+                    </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setSearchResult={setSearchResult} />
 
                     <img
