@@ -1,15 +1,22 @@
 .top-container {
+  margin-top: 25vh;
+  width: 100%;
   position: relative;
-  margin-top: 20vh;
+  }
+
+  .top-cards {
+    position: relative;
+    overflow: hidden;
   }
   
-  .top-cards {
+  .top-cards .popularLists {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
-    overflow-x: auto;
     height: 50vh;
-    position: relative;
+    margin-left: 30px;
+    width: max-content;
+    transform: translateX(0px);
+    transition: all 0.8s ease;
   }
   
   .top-container h2 {
@@ -18,29 +25,30 @@
     text-shadow: 2px 2px 2px var(--bg-color);
   }
   
-  .top-cards::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .top-cards .sliderArrowLeft, .top-cards .sliderArrowRight {
+.sliderArrowLeft, .sliderArrowRight {
     color: var(--secondary-color);
     background-color: var(--bg-color);
-    width: 40px;
-    height: 82%;
     position: absolute;
-    opacity: 0.7;
+    /* opacity: 0.8; */
     border-style: none;
     border-radius: 7px;
     z-index: 50;
     cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto;
   }
-  
+
   .top-cards .sliderArrowLeft {
     left: 0;
+    height: 82%;
+    width: 30px;
   }
-  
+
   .top-cards .sliderArrowRight {
+    height: 82%;
     right: 0;
+    width: 30px;
   }
   
   @media screen and (max-width: 800px) {
