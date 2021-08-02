@@ -15,6 +15,7 @@ import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
 
 import './App.css';
+import MovieCategories from './components/MovieCategories/MovieCategories';
 
 
 const App = () => {
@@ -51,6 +52,8 @@ const App = () => {
         {/* )} */}
         <Route path="/search/:searchValue">
           <Search />
+        <Route path="/movie-categories">
+          <MovieCategories />
         </Route>
         <Route component={NotFound} />
       </Switch>
