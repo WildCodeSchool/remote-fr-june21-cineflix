@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 // import Similar from '../Similar/Similar';
 
 
