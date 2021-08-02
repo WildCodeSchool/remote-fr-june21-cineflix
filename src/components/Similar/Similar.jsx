@@ -22,17 +22,17 @@ const Similar = ({ id }) => {
         <>
             <h2 className="SimH2">Similaires : </h2>
             <div className="SimContainer">
-            {SimMovies.results ? SimMovies.results.map((movie, index) => (
-                        index < 10 &&
-                        <figure key={index}>
-                            <NavLink to={`/movie-card/${movie.id}`} >
-                                <img  className="SimImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`} />
-                                <p>{movie.title}</p>
-                            </NavLink>
-                        </figure> )) : null }
+                {SimMovies.results ? SimMovies.results.map((movie, index) => (
+                    index < 10 &&
+                    <figure key={index}>
+                        <NavLink to={`/movie-card/${movie.id}`} >
+                            <img className="SimImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`} />
+                            <p>{movie.title}</p>
+                        </NavLink>
+                    </figure>)) : null}
             </div>
         </>
     )
-    }
- 
+}
+
 export default Similar;

@@ -75,6 +75,7 @@ function MovieCard() {
                 return `${a[0].name}`
             }
         }
+        return "Seigneur Poulet"
     }
 
 
@@ -96,7 +97,7 @@ function MovieCard() {
             <div className="containerFlex">
                 <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
                 <div className="containerDetail">
-                    <h3>Réalisateur : {Cast.crew ? `${real[0].name}` : null}</h3>
+                    <h3>Réalisateur : {Cast.crew ? checkCrew(real) : null}</h3>
                     <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
                     <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
                     <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
