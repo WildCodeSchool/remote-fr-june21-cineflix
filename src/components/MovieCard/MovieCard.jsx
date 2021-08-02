@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-// import Similar from '../Similar/Similar';
+import Similar from '../Similar/Similar';
 
 
 import './MovieCard.css'
@@ -110,8 +110,8 @@ function MovieCard() {
                     </a>
                     <h3>Note : {Movie.vote_average}/10</h3>
                 </div>
-                {/* <Similar {...Movie}/> */}
             </div>
+                <Similar id={IdMovie}/>
         </div>
     )
 
