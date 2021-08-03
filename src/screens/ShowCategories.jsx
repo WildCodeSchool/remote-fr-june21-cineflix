@@ -1,74 +1,72 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
-import PosterCard from "../PosterCard/PosterCard";
-import './MovieCategories.css';
-import Navbar from "../Navbar/Navbar";
+import PosterCard from "../components/PosterCard/PosterCard";
+import Navbar from "../components/Navbar/Navbar";
 
+import './ShowCategories.css'
 
-const MovieCategories = () => {
-    const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
-    const [animationMovies, setAnimationMovies] = useState([]);
-    const [actionMovies, setActionMovies] = useState([]);
-    const [comedyMovies, setComedyMovies] = useState([]);
-    const [documentaries, setDocumentaries] = useState([]);
-    const [horrorMovies, setHorrorMovies] = useState([]);
-    const [thrillerMovies, setThrillerMovies] = useState([]);
+const ShowCategories = () => {
+    const [animationShows, setAnimationShows] = useState([]);
+    const [actionShows, setActionShows] = useState([]);
+    const [comedyShows, setComedyShows] = useState([]);
+    const [documentaryShows, setDocumentaryShows] = useState([]);
+    const [fantasyShows, setFantasyShows] = useState([]);
+    const [thrillerShows, setThrillerShows] = useState([]);
     const [slideNumber, setSlideNumber] = useState(0);
 
+    useEffect(() => {
+        const fetchAnimationShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=16')
+                .then(res => res.json())
+                .then(data => setAnimationShows(data.results))
+        }
+        fetchAnimationShows()
+    }, [])
 
     useEffect(() => {
-        const fetchAnimationMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${apiKey}&language=en-US`)
+        const fetchActionShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=10759')
                 .then(res => res.json())
-                .then(data => setAnimationMovies(data.results));
+                .then(data => setActionShows(data.results))
         }
-        fetchAnimationMovies()
-    }, []);
+        fetchActionShows()
+    }, [])
+    
+    useEffect(() => {
+        const fetchComedyShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=35')
+                .then(res => res.json())
+                .then(data => setComedyShows(data.results))
+        }
+        fetchComedyShows()
+    }, [])
 
     useEffect(() => {
-        const fetchActionMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=28,12&api_key=${apiKey}&language=en-US`)
+        const fetchDocumentaryShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=99')
                 .then(res => res.json())
-                .then(data => setActionMovies(data.results));
+                .then(data => setDocumentaryShows(data.results))
         }
-        fetchActionMovies()
-    }, []);
+        fetchDocumentaryShows()
+    }, [])
 
     useEffect(() => {
-        const fetchComedyMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${apiKey}&language=en-US`)
+        const fetchFantasyShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=10765')
                 .then(res => res.json())
-                .then(data => setComedyMovies(data.results));
+                .then(data => setFantasyShows(data.results))
         }
-        fetchComedyMovies()
-    }, []);
+        fetchFantasyShows()
+    }, [])
 
     useEffect(() => {
-        const fetchDocumentaries = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${apiKey}&language=en-US&primary_release_year=2021`)
+        const fetchThrillerShows = () => {
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=80')
                 .then(res => res.json())
-                .then(data => setDocumentaries(data.results));
+                .then(data => setThrillerShows(data.results))
         }
-        fetchDocumentaries()
-    }, []);
-
-    useEffect(() => {
-        const fetchHorrorMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${apiKey}&language=en-US`)
-                .then(res => res.json())
-                .then(data => setHorrorMovies(data.results));
-        }
-        fetchHorrorMovies()
-    }, []);
-
-    useEffect(() => {
-        const fetchThrillerMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=53,80&api_key=${apiKey}&language=en-US`)
-                .then(res => res.json())
-                .then(data => setThrillerMovies(data.results));
-        }
-        fetchThrillerMovies()
-    }, []);
+        fetchThrillerShows()
+    }, [])
 
     const mapPoster = (state) => {
         return (
@@ -83,7 +81,7 @@ const MovieCategories = () => {
     const refAction = useRef();
     const refComedy = useRef();
     const refDocumentary = useRef();
-    const refHorror = useRef();
+    const refFantasy = useRef();
     const refThriller = useRef();
 
     const handleClick = (direction, type) => {
@@ -99,6 +97,7 @@ const MovieCategories = () => {
         }
     }
 
+
     return (
         <div className="categorie-container">
             <Navbar />
@@ -107,7 +106,7 @@ const MovieCategories = () => {
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAnimation)} />
                     <div className="popularLists" ref={refAnimation}>
-                        {mapPoster(animationMovies)}
+                        {mapPoster(animationShows)}
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAnimation)} />
                 </div>
@@ -115,7 +114,7 @@ const MovieCategories = () => {
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAction)} />
                     <div className="popularLists" ref={refAction}>
-                        {mapPoster(actionMovies)}
+                        {mapPoster(actionShows)}
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAction)} />
                 </div>
@@ -123,7 +122,7 @@ const MovieCategories = () => {
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refComedy)} />
                     <div className="popularLists" ref={refComedy}>
-                        {mapPoster(comedyMovies)}
+                        {mapPoster(comedyShows)}
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refComedy)} />
                 </div>
@@ -131,29 +130,32 @@ const MovieCategories = () => {
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refDocumentary)} />
                     <div className="popularLists" ref={refDocumentary}>
-                        {mapPoster(documentaries)}
+                        {mapPoster(documentaryShows)}
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refDocumentary)} />
                 </div>
-                <h2>Horreur</h2>
+                <h2>Science-Fiction/Fantasy</h2>
                 <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refHorror)} />
-                    <div className="popularLists" ref={refHorror}>
-                        {mapPoster(horrorMovies)}
+                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refFantasy)} />
+                    <div className="popularLists" ref={refFantasy}>
+                        {mapPoster(fantasyShows)}
                     </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refHorror)} />
+                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refFantasy)} />
                 </div>
                 <h2>Thriller/Policier</h2>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refThriller)} />
                     <div className="popularLists" ref={refThriller}>
-                        {mapPoster(thrillerMovies)}
+                        {mapPoster(thrillerShows)}
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refThriller)} />
                 </div>
+
             </div>
         </div>
+
+
     );
 }
 
-export default MovieCategories;
+export default ShowCategories;

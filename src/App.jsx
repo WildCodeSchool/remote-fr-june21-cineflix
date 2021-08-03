@@ -7,6 +7,7 @@ import MovieCard from "./components/MovieCard/MovieCard";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 import MovieCategories from './components/MovieCategories/MovieCategories';
+import ShowCategories from './screens/ShowCategories';
 
 const App = () => {
 
@@ -21,6 +22,9 @@ const App = () => {
         </Route>
         <Route path="/movie-categories">
           <MovieCategories />
+        </Route>
+        <Route path="/serie-categories">
+          <ShowCategories />
         </Route>
         <Route component={NotFound} />
       </Switch>
