@@ -14,11 +14,9 @@ import NotFound from "./screens/Notfound/NotFound";
 import Search from './screens/Search/Search';
 import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
+import ShowCategories from './screens/ShowCategories';
 
 import './App.css';
-
-
-
 const App = () => {
 
   // const { user } = useContext(AuthContext);
@@ -57,7 +55,10 @@ const App = () => {
         <Route path="/movie-categories">
           <MovieCategories />
         </Route>
-        <Route path='/not-found' component={NotFound} />
+        <Route path="/serie-categories">
+          <ShowCategories />
+        </Route>
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
