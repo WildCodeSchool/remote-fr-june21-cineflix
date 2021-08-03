@@ -1,5 +1,5 @@
 // import { AuthContext } from './authContext/AuthContext';
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import { useContext } from 'react';
 
@@ -22,6 +22,7 @@ const App = () => {
   // const { user } = useContext(AuthContext);
 
   return (
+    <>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Intro} />
@@ -42,6 +43,9 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
+        <Route path="/tv-card/:IdMovie">
+          <TvCard />
+        </Route>
         <Route path="/loading" exact component={Loading} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/actor/:IdActor">
@@ -61,6 +65,7 @@ const App = () => {
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
+    </>
   );
 };
 

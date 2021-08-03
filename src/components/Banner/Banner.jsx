@@ -34,7 +34,9 @@ export default function Banner() {
     return (
         <header className="banner">
             <div className="bannerContents">
-                <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+              {movie &&
+               <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+              }
                 <div className="fillContainer">
                     <div className="bannerInfo">
                         <h1 className="bannerTitle">
