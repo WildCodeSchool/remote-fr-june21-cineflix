@@ -20,6 +20,10 @@ const Search = () => {
     }
     getData()
   }, [searchValue])
+
+  const resetSearch = () => {
+    setSearchResult('')
+  }
   
   return (
       <div className="searchContainer">
@@ -31,9 +35,15 @@ const Search = () => {
             <li>
               {movie.poster_path &&
               <div className="searchMovieCard">
-                <NavLink to={`/movie-card/${movie.id}`}>
+                {movie.media_type === 'tv' ? 
+                <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
+                : 
+                <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
+                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+                </NavLink>
+                }
               </div>
               }
             </li>
