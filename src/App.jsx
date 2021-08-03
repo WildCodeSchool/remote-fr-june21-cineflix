@@ -9,13 +9,14 @@ import Intro from './screens/Intro/Intro';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';
 import MovieCard from './screens/MovieCard/MovieCard';
+import MovieCategories from './screens/MovieCategories/MovieCategories';
 import NotFound from "./screens/Notfound/NotFound";
 import Search from './screens/Search/Search';
 import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
 
 import './App.css';
-import MovieCategories from './components/MovieCategories/MovieCategories';
+
 
 
 const App = () => {

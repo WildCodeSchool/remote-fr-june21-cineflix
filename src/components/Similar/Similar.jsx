@@ -1,11 +1,11 @@
-const Similar = ({genre}) => {
+const Similar = ({ genre }) => {
     console.log(genre)
-    const movieGenre ={genre}
-    return ( 
+    const movieGenre = { genre }
+    return (
         <>
-        {/* {Movie.genres} */}
+            {/* {Movie.genres} */}
         </>
-     );
-    }
- 
+    );
+}
+
 export default Similar;

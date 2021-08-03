@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
+
 import PosterCard from "../PosterCard/PosterCard";
+
 import './TopContainer.css';
 
 const TopContainer = () => {

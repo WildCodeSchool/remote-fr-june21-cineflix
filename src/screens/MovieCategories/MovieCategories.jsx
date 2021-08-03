@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
-import PosterCard from "../PosterCard/PosterCard";
+
+import Navbar from "../../components/Navbar/Navbar";
+import PosterCard from "../../components/PosterCard/PosterCard";
+
 import './MovieCategories.css';
-import Navbar from "../Navbar/Navbar";
 
 
 const MovieCategories = () => {

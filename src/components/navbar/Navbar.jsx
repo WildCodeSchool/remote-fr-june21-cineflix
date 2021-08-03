@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
 import SearchBar from "../SearchBar/SearchBar";
