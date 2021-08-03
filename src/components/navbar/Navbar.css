@@ -51,14 +51,13 @@
     z-index: 30;
 }
 
-.categorieLink {
+.categoriesLink {
     text-decoration: none;
     font-size: 20px;
     color: var(--text-color);
     text-shadow: 2px 2px 2px var(--bg-color);
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
+    padding: 10px;
     margin-top: 15px;
     margin-left: 12vw;
+    font-family: cursive;
 }
