@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import Navbar from '../../components/Navbar/Navbar';
 import Loading from '../../components/Loading/Loading';
 
-import './TvCard.css';
+//import './TvCard.css';
 
 function TvCard() {
     let { IdTv } = useParams()
