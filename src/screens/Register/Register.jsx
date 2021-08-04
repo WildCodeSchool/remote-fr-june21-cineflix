@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useRef, useState } from "react";
 
 import loginImg from "../../assets/loginImg.png";
@@ -16,6 +16,7 @@ export default function Register() {
     const passwordRef = useRef();
     const usernameRef = useRef();
 
+    
     const handleStart = () => {
         setEmail(emailRef.current.value);
     };
@@ -60,11 +61,16 @@ export default function Register() {
                     </div>
                 ) : (
                     <form className="input">
-                        <input type="username" placeholder="username" ref={usernameRef} />
+                        <input type="username" placeholder="username" ref={usernameRef} /> <br />
                         <input type="password" placeholder="mot de passe" ref={passwordRef} />
+
+                        {/* <Redirect to="/home"> */}
+
                         <button className="registerButton" onClick={handleFinish}>
                             Commencer
                         </button>
+                        {/* </Redirect> */}
+
                     </form>
                 )}
             </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useParams } from "react-router-dom"
 
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 
 import './ActorCard.css'
 

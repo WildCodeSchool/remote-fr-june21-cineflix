@@ -1,8 +1,8 @@
 import  { useState, useEffect } from 'react'
-import { useParams } from 'react-router';
-import { NavLink } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
-import Loading from '../Loading/Loading';
+import { NavLink } from 'react-router-dom';
+import { useParams } from "react-router";
+import Navbar from '../../components/Navbar/Navbar';
+import Loading from '../../components/Loading/Loading';
 
 import './TvCard.css';
 
