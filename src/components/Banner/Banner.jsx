@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+
 import "./Banner.css";
 
 export default function Banner() {
@@ -13,7 +14,7 @@ export default function Banner() {
         fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setMovie(
                     data.results[
                     Math.floor(Math.random() * data.results.length - 1)
@@ -22,7 +23,7 @@ export default function Banner() {
             })
     }, [])
 
-    console.log(movie);
+    // console.log(movie);
 
 
     function truncate(str, n) {
@@ -33,7 +34,9 @@ export default function Banner() {
     return (
         <header className="banner">
             <div className="bannerContents">
-                <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+              {movie &&
+               <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+              }
                 <div className="fillContainer">
                     <div className="bannerInfo">
                         <h1 className="bannerTitle">

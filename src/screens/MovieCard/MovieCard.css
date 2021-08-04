@@ -1,13 +1,14 @@
 .MovieCard {
     background-color: #141414;
     padding-top: 100px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .navB {
     margin: 0px;
     color: #f5e2ff;
-    background-color: #141414;
+    background-color: hsl(0, 0%, 8%);
     height: 80px;
     text-align: center;
     font-size: 50px;
