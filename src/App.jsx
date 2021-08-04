@@ -4,16 +4,17 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import { useContext } from 'react';
 
 import ActorCard from "./components/ActorCard/ActorCard"
+import Contact from './components/Contact/Contact';
 import Home from "./components/Home/Home";
 //import Footer from './components/Footer/Footer'
 import Intro from './components/Intro/Intro';
-import MovieCard from "./components/MovieCard/MovieCard";
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import NotFound from "./components/Notfound/NotFound";
-import Search from './components/Search/Search';
-import Contact from './components/Contact/Contact';
 import Loading from './components/Loading/Loading';
+import Login from './components/Login/Login';
+import MovieCard from "./components/MovieCard/MovieCard";
+import NotFound from "./components/Notfound/NotFound";
+import Register from './components/Register/Register';
+import Search from './components/Search/Search';
+import TvCard from './components/TvCard/TvCard';
 
 import './App.css';
 
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
+        <Route path="tv-card/:IdTv" component={TvCard} />
         <Route path="/loading" exact component={Loading} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/actor/:IdActor">

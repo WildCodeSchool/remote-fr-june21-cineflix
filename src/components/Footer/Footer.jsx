@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
-import face from "../../assets/facebook.png";
+/*import face from "../../assets/facebook.png";
 import twit from "../../assets/twitter.png";
 import insta from "../../assets/instagram.png";
 import pint from "../../assets/pinterest.png";
 import link from "../../assets/linkedin.png";
 import git from "../../assets/github.png";
-import you from "../../assets/youtube.png";
+import you from "../../assets/youtube.png";*/
 
 
 import './Footer.css';
