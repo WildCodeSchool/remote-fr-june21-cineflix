@@ -9,6 +9,7 @@ const Search = () => {
   let { searchValue } = useParams();
 
   const [searchResult, setSearchResult] = useState()
+  const [showFavoriteButton, setShowFavoriteButton] = useState(false)
 
   useEffect(() => {
     const getData = () => {
@@ -21,12 +22,17 @@ const Search = () => {
     getData()
   }, [searchValue])
 
+  const switchFavorite = () => {
+    setShowFavoriteButton(!showFavoriteButton)
+  }
+
   const resetSearch = () => {
     setSearchResult('')
   }
   
   return (
       <div className="searchContainer">
+        {console.log(showFavoriteButton)}
         <Navbar />
         <div className="Search searchShow">
           <ul>
@@ -44,6 +50,10 @@ const Search = () => {
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
                 }
+                {/* <i className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'} onClick={switchFavorite}></i> */}
+                <input type="checkbox" className="add-to-favorite" id={`add-to-favorite-${index}`} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label>
+               
+               {/* <i onClick={setShowFavoriteButton(!showFavoriteButton)} className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'}></i> */}
               </div>
               }
             </li>
