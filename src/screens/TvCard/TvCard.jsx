@@ -1,10 +1,10 @@
 import  { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router";
-import Navbar from '../../components/Navbar/Navbar';
-import Loading from '../../components/Loading/Loading';
+import Navbar from '../Navbar/Navbar';
+import Loading from '../Loading/Loading';
 
-//import './TvCard.css';
+import './TvCard.css';
 
 function TvCard() {
     let { IdTv } = useParams()
@@ -87,7 +87,7 @@ const checkGenre = (movies) => {
         if(movies.genres[1]) {
             return `${movies.genres[0].name}, ${movies.genres[1].name}`
         } else {
-            return `${movies.genres[0].name}`
+            return `${tv.genres[0].name}`
         }
     }
   return "Seigneur Poulet"
@@ -100,6 +100,7 @@ return (
     <div className="TvCard">
         <Navbar />
         <h1>{tv.name}</h1>
+        <div className="flex">
             <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
                 <div className="detail-content">
                 <h3>Réalisateur : {credit.cast ? checkReal(real) : null} </h3>
@@ -109,8 +110,13 @@ return (
                 <h3>Nombre de saisons : {tv.number_of_seasons}</h3>
                 <h3>Date de sortie : {tv.first_air_date}</h3>
                 <h3>Synopsis : {tv.overview}</h3>
-
+                <button className="favButton" type="button"> + </button>
+            <a href={`https://www.youtube.com/results?search_query=${tv.title}+bande+annonce`} target="_blank" rel="noreferrer">
+            <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+            </a>
+            <h3>Note : {tv.vote_average}/10</h3>
                 </div>
+        </div>
     </div>
             }
 
