@@ -1,80 +1,98 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+
 import './Contact.css';
-import loc from "../../assets/localisation";
-import mail from "../../assets/mail";
-import tel from "../../assets/tel";
-import Face from "../../assets/facebook";
-import twit from "../../assets/twitter";
-import insta from "../../assets/instagram";
-import pint from "../../assets/pinterest";
-import link from "../../assets/linkedin";
 
-const Contact= () => {
+
+const Contact = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        sendFeedback("***TEMPLAYE_ID***", {
+            name,
+            email,
+            message,
+        });
+    };
+
+    const sendFeedback = (templateId, variables) => {
+
+        window.emailjs
+            .send("gmail", templateId, variables)
+            .then((res) => {
+                console.log('success !');
+                setName("");
+                setEmail("");
+                setMessage("");
+            })
+            .catch(
+                (err) =>
+                    document.querySelector('.form-message').innerHTML =
+                    "Une erreur s'est produite, veuillez réessayer.")
+    };
+
     return (
-        <>
-        <section>
+        <div className="contact">
+            {/* <div className="loginNavbar">
+                <div className="loginNavContents">
+                    <Link to="/home"><img
+                        className='loginNavLogo'
+                        src={logo}
+                        alt='logo' />
+                    </Link>
+                </div>
+            </div> */}
+            <form className="contact-form">
+                <h2 className="contact-title">Contactez-nous</h2>
+                <div className="form-content">
+                    <input
+                        className="contact-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="nom *"
+                        value={name}
+                        autoComplete="off"
+                    />
 
-        <div className="container-contact">
-            <div className="contact-info">
-                <div>
-                    <h2>Contact Info</h2>
-                    <ul className="info">
-                        <li>
-                            <span><img src={loc}/></span>
-                            <span>
-                                 9 Allée Serr<br/>33100 Bordeaux
-                            </span>
-                        </li>
-                        <li>
-                            <span><img src={mail}/></span>
-                            <span>lorem@ipsum.com</span>
-                        </li>
-                        <li>
-                            <span><img src={tel}/></span>
-                            <span>01.40.24.12.78</span>
-                        </li>                        
-                    </ul>
-                </div>
-                    <ul className="sci">
-                        <li><a href="#"><img src={Face} /></a></li>
-                        <li><a href="#"><img src={twit} /></a></li>
-                        <li><a href="#"><img src={insta} /></a></li>
-                        <li><a href="#"><img src={pint} /></a></li>
-                        <li><a href="#"><img src={link} /></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="contact-form">
-            <h2>Envoyez nous un message</h2>
-                    <div className="form-box">
-                        <div className="input-box y">
-                            <input type="text" required/>
-                            <span>Nom</span>
-                        </div>
-                        <div className="input-box y">
-                            <input type="text" required/>
-                            <span>Prénom</span>
-                        </div>
-                        <div className="input-box y">
-                            <input type="email" required/>
-                            <span>Email</span>
-                        </div>
-                        <div className="input-box y">
-                            <input type="text" required/>
-                            <span>Téléphone</span>
-                        </div>
-                        <div className="input-box y1">
-                            <textarea required></textarea>
-                            <span>Ecrivez votre message ici...</span>
-                        </div>
-                        <div className="input-box y1">
-                        <input type="submit" value="Envoyer"/>
+                    <div className="email-content">
+                        <label id="not-mail">Email non valide</label>
+                        <input
+                            className="contact-input"
+                            type="mail"
+                            id="email"
+                            name="email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="email *"
+                            value={email}
+                            autoComplete="off"
+                        />
                     </div>
+                    <textarea
+                        className="contact-text"
+                        id="message"
+                        name="message"
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="message *"
+                        value={message}
+                    />
                 </div>
-            </div>
-        </section>
-        </>
-        )
-}
-
+                <input
+                    className="contact-button"
+                    type="button"
+                    value="Envoyer"
+                    onClick={handleSubmit}
+                />
+                <div className="form-message"></div>
+            </form>
+        </div>
+    );
+};
 
 export default Contact;

@@ -1,9 +1,10 @@
-// import { AuthContext } from './authContext/AuthContext';
-// import { Redirect } from "react-router-dom";
+import { AuthContext } from './authContext/AuthContext';
+import { Redirect } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { useContext } from 'react';
+import { useContext } from 'react';
 
 import ActorCard from "./components/ActorCard/ActorCard"
+import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 //import Footer from './components/Footer/Footer'
 import Intro from './components/Intro/Intro';
@@ -24,7 +25,6 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Intro} />
         <Route exact path="/home">
-          {/* {user ? <Home /> : <Redirect to="/register" />} */}
           <Home />
         </Route>
         <Route exact path="/register">
@@ -32,22 +32,19 @@ const App = () => {
           <Register />
         </Route>
         <Route exact path="/login">
-          {/* {!user ? <Login /> : <Redirect to="/" />} */}
+          {/* {!user ? <Login /> : <Redirect to="/home" />} */}
           <Login />
         </Route>
-        {/* {user && ( */}
-        {/* <> */}
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
         <Route path="/actor/:IdActor">
           <ActorCard />
         </Route>
-        {/* </> */}
-        {/* )} */}
         <Route path="/search/:searchValue">
           <Search />
         </Route>
+        <Route exact path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
