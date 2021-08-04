@@ -14,9 +14,7 @@ function Footer() {
                     <li><a href="#"><i className="fab fa-github"></i></a></li>
                     <li><a href="#"><i className="fab fa-youtube"></i></a></li>
                 </ul>
-                <Link to="/contact">
-                    <h3 className="contact-link">contact</h3>
-                </Link>
+                
 
             </div>
             <div className="footer-containt">
