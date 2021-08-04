@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
 import SearchBar from "../SearchBar/SearchBar";
@@ -39,9 +40,17 @@ const Navbar = () => {
                         src={logo}
                         alt='logo' />
                     </NavLink>
-
+                    <NavLink activeStyle={{
+                        borderColor: '#9d59d9',
+                        borderBottomStyle: 'solid',
+                    }} to="/movie-categories" className="categoriesLink">Films
+                    </NavLink>
+                    <NavLink activeStyle={{
+                        borderColor: '#9d59d9',
+                        borderBottomStyle: 'solid',
+                    }} to="/serie-categories" className="categoriesLink">Séries
+                    </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-
                     <img
                         className='navLogout'
                         src={exit}
