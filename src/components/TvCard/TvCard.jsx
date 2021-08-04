@@ -1,10 +1,10 @@
 import  { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router";
-import Navbar from '../../components/Navbar/Navbar';
-import Loading from '../../components/Loading/Loading';
+import Navbar from '../Navbar/Navbar';
+import Loading from '../Loading/Loading';
 
-//import './TvCard.css';
+import './TvCard.css';
 
 function TvCard() {
     let { IdTv } = useParams()
@@ -82,11 +82,11 @@ const checkActeur = (element) => {
         
 
 const checkGenre = () => {
-    if(elem.genres[0]) {
-        if(elem.genres[1]) {
-            return `${elem.genres[0].name}, ${elem.genres[1]}`
+    if(tv.genres[0]) {
+        if(tv.genres[1]) {
+            return `${tv.genres[0].name}, ${tv.genres[1]}`
         } else {
-            return `${elem.genres[0].name}`
+            return `${tv.genres[0].name}`
         }
     }
 }
@@ -104,7 +104,7 @@ return (
                 <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
                 <h3>Auteur : {credit.crew ? checkReal(auteur) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
-                <h3>Catégorie :{tv.genres ? checkGenre(elem) : null}</h3>
+                <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
                 <h3>nombre de saisons : {tv.number_of_seasons}</h3>
                 <h3>Date de sortie : {tv.first_air_date}</h3>
                 <h3>Synopsis : {tv.overview}</h3>
