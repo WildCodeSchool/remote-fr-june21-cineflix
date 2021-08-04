@@ -96,19 +96,19 @@ const checkCategorie = () => {
         <div className="containerFlex">
             <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
             <div className="containerDetail">
-            <h3>Réalisateur : {Cast.crew ? `${real[0].name}` : null}</h3>
-            <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
-            <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
-            <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
-            <h3>Durée : {Movie.runtime} minutes</h3>
-            <h3>Date de sortie : {Movie.release_date}</h3>
-            <h3>Synopsis : {Movie.overview}
-            </h3>
-            <button className="favButton" type="button" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")}> + </button>
-            <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
-            <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
-            </a>
-            <h3>Note : {Movie.vote_average}/10</h3>
+              <h3>Réalisateur : {Cast.crew ? `${real[0].name}` : null}</h3>
+              <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
+              <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
+              <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
+              <h3>Durée : {Movie.runtime} minutes</h3>
+              <h3>Date de sortie : {Movie.release_date}</h3>
+              <h3>Synopsis : {Movie.overview}
+              </h3>
+              <button className="favButton" type="button" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")}> + </button>
+              <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
+              <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+              </a>
+              <h3>Note : {Movie.vote_average}/10</h3>
             </div>
             {/* <Similar {...Movie}/> */}
         </div>
