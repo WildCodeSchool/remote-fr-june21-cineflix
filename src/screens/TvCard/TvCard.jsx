@@ -41,17 +41,18 @@ const acteur = credit.cast ? credit.cast.filter(e => e.known_for_department === 
 
 
 const checkReal = (element) => {
-    if(element[0]) {
-        if(element[2]){
-            return `${element[0].name}, ${element[1].name}, ${element[2].name}`
-            }
-            if(element[1]) {
-                return `${element[0].name}, ${element[1].name}`
-                    } else {
-                        return `${element[0].name}`
-                }
-            }
-        }
+  if(element[0]) {
+    if(element[2]){
+      return `${element[0].name}, ${element[1].name}, ${element[2].name}`
+      }
+      if(element[1]) {
+        return `${element[0].name}, ${element[1].name}`
+      } else {
+        return `${element[0].name}`
+      }
+    }
+    return "Seigneur Poulet"
+}
 
 const checkActeur = (element) => {
     if(element[0]) {
