@@ -90,6 +90,7 @@ const checkGenre = (movies) => {
             return `${movies.genres[0].name}`
         }
     }
+  return "Seigneur Poulet"
 }
         
 
@@ -101,7 +102,7 @@ return (
         <h1>{tv.name}</h1>
             <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
                 <div className="detail-content">
-                <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
+                <h3>Réalisateur : {credit.cast ? checkReal(real) : null} </h3>
                 <h3>Auteur : {credit.crew ? checkReal(auteur) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
                 <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
