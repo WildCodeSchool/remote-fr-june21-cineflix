@@ -4,12 +4,15 @@ import { BsStar } from "react-icons/bs";
 
 import './PosterCard.css';
 
-const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_date }) => {
+const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_date, media_type }) => {
     const [showRate, setShowRate] = useState(false);
+
+    let mediaType = null;
     
     return (
             <div className="poster-card">
-                <NavLink to={`/movie-card/${id}`} className='poster-img'>
+              {media_type === 'tv' ? mediaType = 'tv-card' : mediaType = 'movie-card'}
+              <NavLink to={`/${mediaType}/${id}`} className='poster-img'>
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                         className='poster-img' alt='poster'
                         onMouseEnter={() => setShowRate(true)}
@@ -17,10 +20,10 @@ const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_dat
                     {showRate && (
                             <div className="rate-overlay">
                                 <li><BsStar />  {vote_average}/10</li>
-                                <li>{release_date ? release_date.slice(0, 4) : first_air_date.slice(0, 4)}</li>
+                                <li>{release_date ? release_date.slice(0, 4) : first_air_date ? first_air_date.slice(0, 4) : null}</li>
                             </div>
                     )}
-                </NavLink>
+              </NavLink>
             </div>
     );
 }

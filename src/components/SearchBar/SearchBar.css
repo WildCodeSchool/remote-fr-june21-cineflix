@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.search-elements > button {
+.search-button {
   position: relative;
   height: 42px;
   font-size: 1.5em;

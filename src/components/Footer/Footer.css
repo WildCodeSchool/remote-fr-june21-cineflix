@@ -10,9 +10,13 @@ footer {
     background-color:transparent;
     margin: 20px;
 }
-.list-media {
+
+.list-media ul{
     list-style: none;
-    display: flex;
+}
+.list-media li{
+    list-style-type: none;
+    display: inline;
 }
 .list-media a {
     text-decoration: none;
@@ -33,4 +37,5 @@ footer {
 }
 .footer-containt p {
     color: white;
+    text-align: center;
 }
