@@ -1,5 +1,5 @@
 import { AuthContext } from "../../authContext/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { login } from "../../authContext/apiCalls";
 import { useContext, useState } from "react";
 
@@ -42,7 +42,9 @@ export default function Login() {
                         placeholder="Mot de Passe"
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                    {/* <Redirect to="/home"> */}
                     <button className="loginButton" onClick={handleLogin}>S'identifier</button>
+                    {/* </Redirect> */}
                     <span>
                         Nouveau sur Cinéflix?<br />
                         <Link to="/register"><b>l'inscription c'est par ici.</b></Link>
