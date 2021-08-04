@@ -1,7 +1,5 @@
 // import { AuthContext } from './authContext/AuthContext';
-import { Redirect } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { useContext } from 'react';
 
 import ActorCard from "./screens/ActorCard/ActorCard"
 import Home from "./screens/Home/Home";
@@ -20,7 +18,6 @@ import TvCard from './screens/TvCard/TvCard';
 import './App.css';
 const App = () => {
 
-  // const { user } = useContext(AuthContext);
 
   return (
     <>
