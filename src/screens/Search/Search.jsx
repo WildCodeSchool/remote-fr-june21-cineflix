@@ -31,38 +31,37 @@ const Search = () => {
   const resetSearch = () => {
     setSearchResult('')
   }
-  
+
   return (
-      <div className="searchContainer">
-        {console.log(showFavoriteButton)}
-        <Navbar />
-        <div className="Search searchShow">
-          <ul>
-            {searchResult &&
+    <div className="searchContainer">
+      {console.log(showFavoriteButton)}
+      <Navbar />
+      <div className="Search searchShow">
+        <ul>
+          {searchResult &&
             searchResult.map((movie, index) => (
-            <li>
-              {movie.poster_path &&
-              <div className="searchMovieCard">
-                {movie.media_type === 'tv' ? 
-                <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
-                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
-                </NavLink>
-                : 
-                <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
-                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
-                </NavLink>
+              <li>
+                {movie.poster_path &&
+                  <div className="searchMovieCard">
+                    {movie.media_type === 'tv' ?
+                      <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
+                        <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+                      </NavLink>
+                      :
+                      <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
+                        <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
+                      </NavLink>
+                    }
+                    {/* <i className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'} onClick={switchFavorite}></i> */}
+                    <input type="checkbox" className="add-to-favorite" id={`add-to-favorite-${index}`} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label>
+                    {/* <i onClick={setShowFavoriteButton(!showFavoriteButton)} className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'}></i> */}
+                  </div>
                 }
-                {/* <i className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'} onClick={switchFavorite}></i> */}
-                <input type="checkbox" className="add-to-favorite" id={`add-to-favorite-${index}`} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label>
-               
-               {/* <i onClick={setShowFavoriteButton(!showFavoriteButton)} className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'}></i> */}
-              </div>
-              }
-            </li>
+              </li>
             ))}
-            </ul>
-        </div>
+        </ul>
       </div>
+    </div>
   )
 }
 
