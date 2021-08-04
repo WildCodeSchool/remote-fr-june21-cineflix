@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { BsStar } from "react-icons/bs";
 
@@ -7,8 +7,21 @@ import './PosterCard.css';
 const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_date, media_type }) => {
     const [showRate, setShowRate] = useState(false);
 
+    const { tv } = useParams()
+
     let mediaType = null;
-    { media_type === 'tv' ? mediaType = 'tv-card' : mediaType = 'movie-card' }
+    if (media_type) {
+        if (media_type === 'tv') {
+            mediaType = 'tv-card'
+        } else {
+            mediaType = 'movie-card'
+        }
+    } else if (tv) {
+        mediaType = 'tv-card'
+    } else {
+        mediaType = 'movie-card'
+    }
+
     return (
         <div className="poster-card">
             <NavLink to={`/${mediaType}/${id}`} className='poster-img'>

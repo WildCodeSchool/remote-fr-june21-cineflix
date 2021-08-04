@@ -101,7 +101,7 @@ return (
             <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
                 <div className="detail-content">
                 <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
-                <h3>Auteur : {credit.crew ? checkReal(real) : null}</h3>
+                <h3>Auteur : {credit.crew ? checkReal(auteur) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
                 <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
                 <h3>nombre de saisons : {tv.number_of_seasons}</h3>
