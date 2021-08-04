@@ -14,7 +14,7 @@ function MovieCard() {
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdMovie}?api_key=${api_key}&language=fr`)
             .then(response => response.json())
             .then(data => setMovie(data))
         }
@@ -25,7 +25,7 @@ function MovieCard() {
 
     useEffect(() => {
         const getCast = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdMovie}/credits?api_key=${api_key}&language=fr`)
             .then(response => response.json())
             .then(data => setCast(data))
         }
