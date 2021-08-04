@@ -44,7 +44,9 @@ const App = () => {
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
-        <Route path="tv-card/:IdTv" component={TvCard} />
+        <Route path="/tv-card/:IdTv">
+          <TvCard />
+        </Route>
         <Route path="/loading" exact component={Loading} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/actor/:IdActor">
