@@ -1,7 +1,8 @@
-import Banner from '../Banner/Banner';
-import Footer from './../Footer/Footer';
-import TopContainer from './../TopContainer/TopContainer';
-import Navbar from './../Navbar/Navbar'
+import Banner from '../../components/Banner/Banner';
+import Footer from '../../components/Footer/Footer';
+import TopContainer from '../../components/TopContainer/TopContainer';
+import Navbar from '../../components/Navbar/Navbar';
+
 import "./Home.css";
 
 

@@ -5,7 +5,6 @@
 }
 
 .poster-card img:hover {
-  z-index: 500;
   transform: scale(1.2);
 }
 
@@ -14,7 +13,6 @@
 }
 
 .rate-overlay {
-  z-index: 800;
   background-color: var(--bg-color);
   top: 80%;
   transform: translate(25%, -50%);
