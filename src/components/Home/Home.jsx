@@ -1,8 +1,8 @@
-import Navbar from "../Navbar/Navbar";
 import Banner from '../Banner/Banner';
 import Footer from './../Footer/Footer';
 
 import TopContainer from './../TopContainer/TopContainer';
+import Navbar from './../Navbar/Navbar'
 import "./Home.css";
 
 
@@ -13,6 +13,7 @@ const Home = () => {
             <Navbar />
             <Banner />
             <TopContainer />
+            <Footer />
         </div>
     );
 };

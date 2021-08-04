@@ -1,23 +1,75 @@
 .searchContainer {
   min-height: 100vh;
-  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
   background-color: var(--bg-color);
-  min-height: 100vh;
 }
 
 .Search {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .Search ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  justify-content: space-around;
 }
 
 .Search li {
   cursor: pointer;
-  transform: scale(0.6);
-  margin: -100px;
+  /*transform: scale(0.6);
+  margin: -100px;*/
+}
+
+.searchMovieCard {
+ position: relative;
+ z-index: 1;
+ margin: 20px;
+ transition: 0.2s linear;
+}
+
+.searchMovieCard img {
+  width: 250px;
+  min-height: 380px;
+}
+
+.searchMovieCard:hover {
+  z-index: 500;
+  /*transform: scale(1.2);*/
+  box-shadow: 0px 0px 3px black;
+}
+/*
+.add-favorite-button {
+  position: absolute;
+  color: grey;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  text-shadow: 0px 0px 3px black;
+  font-size: 2rem;
+}
+*/
+.button-hide{
+  color: grey;
+  
+}
+
+.button-show {
+  color: gold;
+}
+
+input[type=checkbox] + .add-favorite-button {
+  position: absolute;
+  color: grey;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  text-shadow: 0px 0px 3px black;
+  font-size: 2rem;
+
+}
+
+input[type=checkbox]:checked + .add-favorite-button {
+  color: gold;
+  border: 1px solid red;
 }
