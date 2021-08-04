@@ -41,17 +41,18 @@ const acteur = credit.cast ? credit.cast.filter(e => e.known_for_department === 
 
 
 const checkReal = (element) => {
-    if(element[0]) {
-        if(element[2]){
-            return `${element[0].name}, ${element[1].name}, ${element[2].name}`
-            }
-            if(element[1]) {
-                return `${element[0].name}, ${element[1].name}`
-                    } else {
-                        return `${element[0].name}`
-                }
-            }
-        }
+  if(element[0]) {
+    if(element[2]){
+      return `${element[0].name}, ${element[1].name}, ${element[2].name}`
+      }
+      if(element[1]) {
+        return `${element[0].name}, ${element[1].name}`
+      } else {
+        return `${element[0].name}`
+      }
+    }
+    return "Seigneur Poulet"
+}
 
 const checkActeur = (element) => {
     if(element[0]) {
@@ -81,14 +82,15 @@ const checkActeur = (element) => {
         }
         
 
-const checkGenre = () => {
-    if(tv.genres[0]) {
-        if(tv.genres[1]) {
-            return `${tv.genres[0].name}, ${tv.genres[1]}`
+const checkGenre = (movies) => {
+    if(movies.genres[0]) {
+        if(movies.genres[1]) {
+            return `${movies.genres[0].name}, ${movies.genres[1].name}`
         } else {
             return `${tv.genres[0].name}`
         }
     }
+  return "Seigneur Poulet"
 }
         
 
@@ -101,11 +103,11 @@ return (
         <div className="flex">
             <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
                 <div className="detail-content">
-                <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
+                <h3>Réalisateur : {credit.cast ? checkReal(real) : null} </h3>
                 <h3>Auteur : {credit.crew ? checkReal(auteur) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
                 <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
-                <h3>nombre de saisons : {tv.number_of_seasons}</h3>
+                <h3>Nombre de saisons : {tv.number_of_seasons}</h3>
                 <h3>Date de sortie : {tv.first_air_date}</h3>
                 <h3>Synopsis : {tv.overview}</h3>
                 <button className="favButton" type="button"> + </button>
