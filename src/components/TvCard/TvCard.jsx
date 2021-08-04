@@ -1,12 +1,13 @@
 import  { useState, useEffect } from 'react'
-import { useParams, NavLink } from "react-router-dom";
+import { useParams } from 'react-router';
+import { NavLink } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Loading from '../Loading/Loading';
 
 import './TvCard.css';
 
 function TvCard() {
-    let { idTv } = useParams()
+    let { IdTv } = useParams()
     const [tv, setTv] = useState([])
     const [credit, setCredit] = useState([])
     const [loader, setLoader] = useState(true)
@@ -32,7 +33,7 @@ function TvCard() {
         }
         getCredit()
         setLoader(false)
-    }, [idTv])
+    }, [IdTv])
 
 const real = credit.cast ? credit.crew.filter(e => e.job === "Producer") : null;
 const auteur = credit.cast ? credit.crew.filter(e => e.department === "Writing") : null;
@@ -80,7 +81,7 @@ const checkActeur = (element) => {
         }
         
 
-const checkGenre = () => {
+const checkGenre = (movies) => {
     if(movies.genres[0]) {
         if(movies.genres[1]) {
             return `${movies.genres[0].name}, ${movies.genres[1]}`
@@ -102,10 +103,10 @@ return (
                 <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
                 <h3>Auteur : {credit.crew ? checkReal(real) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
-                <h3>Catégorie :{movies.genres ? checkGenre(movies) : null}</h3>
-                <h3>nombre de saisons : {movies.number_of_seasons}</h3>
-                <h3>Date de sortie : {movies.first_air_date}</h3>
-                <h3>Synopsis : {movies.overview}</h3>
+                <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
+                <h3>nombre de saisons : {tv.number_of_seasons}</h3>
+                <h3>Date de sortie : {tv.first_air_date}</h3>
+                <h3>Synopsis : {tv.overview}</h3>
 
                 </div>
     </div>
