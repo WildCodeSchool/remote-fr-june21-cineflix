@@ -1,7 +1,5 @@
 // import { AuthContext } from './authContext/AuthContext';
-import { Redirect } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { useContext } from 'react';
 
 import ActorCard from "./screens/ActorCard/ActorCard"
 import Home from "./screens/Home/Home";
@@ -20,50 +18,42 @@ import TvCard from './screens/TvCard/TvCard';
 import './App.css';
 const App = () => {
 
-  // const { user } = useContext(AuthContext);
 
   return (
     <>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Intro} />
-        <Route exact path="/home">
-          {/* {user ? <Home /> : <Redirect to="/register" />} */}
-          <Home />
-        </Route>
-        <Route exact path="/register">
-          {/* {!user ? <Register /> : <Redirect to="/home" />} */}
-          <Register />
-        </Route>
-        <Route exact path="/login">
-          {/* {!user ? <Login /> : <Redirect to="/" />} */}
-          <Login />
-        </Route>
-        {/* {user && ( */}
-        {/* <> */}
-        <Route path="/movie-card/:IdMovie">
-          <MovieCard />
-        </Route>
-        <Route path="tv-card/:IdTv" component={TvCard} />
-        <Route path="/loading" exact component={Loading} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/actor/:IdActor">
-          <ActorCard />
-        </Route>
-        {/* </> */}
-        {/* )} */}
-        <Route path="/search/:searchValue">
-          <Search />
-        </Route>
-        <Route path="/movie-categories">
-          <MovieCategories />
-        </Route>
-        <Route path="/serie-categories">
-          <ShowCategories />
-        </Route>
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Intro} />
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route path="/movie-card/:IdMovie">
+            <MovieCard />
+          </Route>
+          <Route path="/tv-card/:IdTv" component={TvCard} />
+          <Route path="/loading" exact component={Loading} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/actor/:IdActor">
+            <ActorCard />
+          </Route>
+          <Route path="/search/:searchValue">
+            <Search />
+          </Route>
+          <Route path="/movie-categories">
+            <MovieCategories />
+          </Route>
+          <Route path="/serie-categories">
+            <ShowCategories />
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 };
