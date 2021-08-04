@@ -3,9 +3,9 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icon
 
 import Navbar from "../../components/Navbar/Navbar";
 import PosterCard from "../../components/PosterCard/PosterCard";
+import Footer from './../../components/Footer/Footer';
 
-import './MovieCategories.css';
-
+import './Categories.css';
 
 const MovieCategories = () => {
     const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
@@ -20,7 +20,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchAnimationMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${apiKey}&language=en-US`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${apiKey}&language=fr`)
                 .then(res => res.json())
                 .then(data => setAnimationMovies(data.results));
         }
@@ -29,7 +29,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchActionMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=28,12&api_key=${apiKey}&language=en-US`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=28,12&api_key=${apiKey}&language=fr`)
                 .then(res => res.json())
                 .then(data => setActionMovies(data.results));
         }
@@ -38,7 +38,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchComedyMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${apiKey}&language=en-US`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${apiKey}&language=fr`)
                 .then(res => res.json())
                 .then(data => setComedyMovies(data.results));
         }
@@ -47,7 +47,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchDocumentaries = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${apiKey}&language=en-US&primary_release_year=2021`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${apiKey}&language=fr&primary_release_year=2021`)
                 .then(res => res.json())
                 .then(data => setDocumentaries(data.results));
         }
@@ -56,7 +56,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchHorrorMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${apiKey}&language=en-US`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${apiKey}&language=fr`)
                 .then(res => res.json())
                 .then(data => setHorrorMovies(data.results));
         }
@@ -65,7 +65,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchThrillerMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=53,80&api_key=${apiKey}&language=en-US`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=53,80&api_key=${apiKey}&language=fr`)
                 .then(res => res.json())
                 .then(data => setThrillerMovies(data.results));
         }
@@ -105,7 +105,7 @@ const MovieCategories = () => {
         <div className="categorie-container">
             <Navbar />
             <div className="categorie-wrapper">
-                <h2>Animation</h2>
+                <h3>Animation</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAnimation)} />
                     <div className="popularLists" ref={refAnimation}>
@@ -113,7 +113,7 @@ const MovieCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAnimation)} />
                 </div>
-                <h2>Action/Aventure</h2>
+                <h3>Action / Aventure</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAction)} />
                     <div className="popularLists" ref={refAction}>
@@ -121,7 +121,7 @@ const MovieCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAction)} />
                 </div>
-                <h2>Comedie</h2>
+                <h3>Comedie</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refComedy)} />
                     <div className="popularLists" ref={refComedy}>
@@ -129,7 +129,7 @@ const MovieCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refComedy)} />
                 </div>
-                <h2>Documentaire</h2>
+                <h3>Documentaire</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refDocumentary)} />
                     <div className="popularLists" ref={refDocumentary}>
@@ -137,7 +137,7 @@ const MovieCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refDocumentary)} />
                 </div>
-                <h2>Horreur</h2>
+                <h3>Horreur</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refHorror)} />
                     <div className="popularLists" ref={refHorror}>
@@ -145,7 +145,7 @@ const MovieCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refHorror)} />
                 </div>
-                <h2>Thriller/Policier</h2>
+                <h3>Thriller / Policier</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refThriller)} />
                     <div className="popularLists" ref={refThriller}>
@@ -154,6 +154,7 @@ const MovieCategories = () => {
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refThriller)} />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

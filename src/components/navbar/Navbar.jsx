@@ -43,15 +43,11 @@ const Navbar = () => {
                     <NavLink activeStyle={{
                         borderColor: '#9d59d9',
                         borderBottomStyle: 'solid',
-                        borderTopStyle: 'solid',
-                        borderRadius: '5px'
                     }} to="/movie-categories" className="categoriesLink">Films
                     </NavLink>
                     <NavLink activeStyle={{
                         borderColor: '#9d59d9',
                         borderBottomStyle: 'solid',
-                        borderTopStyle: 'solid',
-                        borderRadius: '5px'
                     }} to="/serie-categories" className="categoriesLink">Séries
                     </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

@@ -14,7 +14,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const fetchMovies = () => {
-            fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`)
+            fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=fr`)
                 .then((res) => res.json())
                 .then((data) => setPopularMovie(data.results));
         }
@@ -23,7 +23,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const fetchShows = () => {
-            fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}`)
+            fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&language=fr`)
                 .then((res) => res.json())
                 .then((data) => setPopularShow(data.results));
         }

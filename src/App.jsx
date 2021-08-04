@@ -14,7 +14,8 @@ import NotFound from "./screens/Notfound/NotFound";
 import Search from './screens/Search/Search';
 import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
-import ShowCategories from './screens/ShowCategories';
+import ShowCategories from './screens/ShowCategories/ShowCategories';
+import TvCard from './screens/TvCard/TvCard';
 
 import './App.css';
 const App = () => {

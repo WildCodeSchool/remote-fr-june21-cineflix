@@ -14,30 +14,29 @@
     display: flex;
     align-items: center;
     height: 50vh;
+    margin-left: 15px;
+    margin-right: 20px;
 }
 
 .categorie-cards .popularLists {
     display: flex;
     align-items: center;
-    margin-left: 30px;
     width: max-content;
     transform: translateX(0px);
     transition: all 0.8s ease;
+    position: relative;
 }
 
-.categorie-container h2 {
+.categorie-container h3 {
     color: var(--text-color);
     padding-top: 20px;
     padding-left: 35px;
-    text-shadow: 2px 2px 2px var(--bg-color);
 }
     
 .sliderArrowLeft, .sliderArrowRight {
     color: var(--secondary-color);
     background-color: var(--bg-color);
     position: absolute;
-    border-style: none;
-    border-radius: 7px;
     z-index: 50;
     cursor: pointer;
     top: 0;

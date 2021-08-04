@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
-import PosterCard from "../components/PosterCard/PosterCard";
-import Navbar from "../components/Navbar/Navbar";
+import PosterCard from "../../components/PosterCard/PosterCard";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from './../../components/Footer/Footer';
 
-import './ShowCategories.css'
+import '../MovieCategories/Categories.css'
 
 const ShowCategories = () => {
     const [animationShows, setAnimationShows] = useState([]);
@@ -16,7 +17,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchAnimationShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=16')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=16')
                 .then(res => res.json())
                 .then(data => setAnimationShows(data.results))
         }
@@ -25,7 +26,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchActionShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=10759')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=10759')
                 .then(res => res.json())
                 .then(data => setActionShows(data.results))
         }
@@ -34,7 +35,7 @@ const ShowCategories = () => {
     
     useEffect(() => {
         const fetchComedyShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=35')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=35')
                 .then(res => res.json())
                 .then(data => setComedyShows(data.results))
         }
@@ -43,7 +44,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchDocumentaryShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=99')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=99')
                 .then(res => res.json())
                 .then(data => setDocumentaryShows(data.results))
         }
@@ -52,7 +53,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchFantasyShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=10765')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=10765')
                 .then(res => res.json())
                 .then(data => setFantasyShows(data.results))
         }
@@ -61,7 +62,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchThrillerShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=en-US&with_genres=80')
+            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=80')
                 .then(res => res.json())
                 .then(data => setThrillerShows(data.results))
         }
@@ -102,7 +103,7 @@ const ShowCategories = () => {
         <div className="categorie-container">
             <Navbar />
             <div className="categorie-wrapper">
-                <h2>Animation</h2>
+                <h3>Animation</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAnimation)} />
                     <div className="popularLists" ref={refAnimation}>
@@ -110,7 +111,7 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAnimation)} />
                 </div>
-                <h2>Action/Aventure</h2>
+                <h3>Action/Aventure</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAction)} />
                     <div className="popularLists" ref={refAction}>
@@ -118,7 +119,7 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAction)} />
                 </div>
-                <h2>Comedie</h2>
+                <h3>Comedie</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refComedy)} />
                     <div className="popularLists" ref={refComedy}>
@@ -126,7 +127,7 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refComedy)} />
                 </div>
-                <h2>Documentaire</h2>
+                <h3>Documentaire</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refDocumentary)} />
                     <div className="popularLists" ref={refDocumentary}>
@@ -134,7 +135,7 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refDocumentary)} />
                 </div>
-                <h2>Science-Fiction/Fantasy</h2>
+                <h3>Science-Fiction/Fantasy</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refFantasy)} />
                     <div className="popularLists" ref={refFantasy}>
@@ -142,7 +143,7 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refFantasy)} />
                 </div>
-                <h2>Thriller/Policier</h2>
+                <h3>Thriller/Policier</h3>
                 <div className="categorie-cards">
                     <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refThriller)} />
                     <div className="popularLists" ref={refThriller}>
@@ -150,8 +151,8 @@ const ShowCategories = () => {
                     </div>
                     <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refThriller)} />
                 </div>
-
             </div>
+            <Footer />
         </div>
 
 
