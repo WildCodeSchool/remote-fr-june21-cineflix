@@ -57,10 +57,10 @@ const App = () => {
         <Route path="/search/:searchValue">
           <Search />
         </Route>
-        <Route path="/movie-categories">
+        <Route path="/movie-categories/:movie">
           <MovieCategories />
         </Route>
-        <Route path="/serie-categories">
+        <Route path="/serie-categories/:tv">
           <ShowCategories />
         </Route>
         <Route component={NotFound} />
