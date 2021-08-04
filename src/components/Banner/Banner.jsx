@@ -11,7 +11,7 @@ export default function Banner() {
 
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
+        fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
                 // console.log(data)
