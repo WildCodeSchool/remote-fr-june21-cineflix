@@ -106,7 +106,7 @@ return (
                 <h3>Auteur : {credit.crew ? checkReal(auteur) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
                 <h3>Catégorie :{tv.genres ? checkGenre(tv) : null}</h3>
-                <h3>nombre de saisons : {tv.number_of_seasons}</h3>
+                <h3>Nombre de saisons : {tv.number_of_seasons}</h3>
                 <h3>Date de sortie : {tv.first_air_date}</h3>
                 <h3>Synopsis : {tv.overview}</h3>
 
