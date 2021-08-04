@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, useParams } from "react-router-dom"
 
 import Navbar from '../Navbar/Navbar';
@@ -15,8 +15,8 @@ function ActorCard() {
     useEffect(() => {
         const getActor = () => {
             fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
-            .then(response => response.json())
-            .then(data => setActor(data))
+                .then(response => response.json())
+                .then(data => setActor(data))
         }
         getActor()
     }, [IdActor])
@@ -24,23 +24,19 @@ function ActorCard() {
     useEffect(() => {
         const getMovie = () => {
             fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
-            .then(response => response.json())
-            .then(data => setActorMovies(data))
+                .then(response => response.json())
+                .then(data => setActorMovies(data))
         }
         getMovie()
     }, [IdActor])
 
 
-
-    console.log(Actor)
-    console.log(ActorMovies)
-
-    return(
+    return (
         <div className="ActorCard">
             <Navbar />
             <h2>{Actor.name}</h2>
             <div className="ActorContainerFlex">
-                <img src={`https://image.tmdb.org/t/p/w500${Actor.profile_path}`} alt={Actor.name}/>
+                <img src={`https://image.tmdb.org/t/p/w500${Actor.profile_path}`} alt={Actor.name} />
                 <div className="ActorContainerDetail">
                     <h3>Métier : {Actor.gender === 1 ? "Actrice" : "Acteur"}</h3>
                     <h3>Naissance : {Actor.birthday} à {Actor.place_of_birth}</h3>
@@ -55,12 +51,12 @@ function ActorCard() {
                     index < 10 &&
                     <figure key={index}>
                         <NavLink to={`/movie-card/${movie.id}`} >
-                            <img className="FilmoImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`}/>
-                            <p>{movie.title}</p> 
+                            <img className="FilmoImg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Affiche ${movie.title}`} />
+                            <p>{movie.title}</p>
                         </NavLink>
                     </figure>
                 )) : null}
-                
+
             </div>
         </div>
     )

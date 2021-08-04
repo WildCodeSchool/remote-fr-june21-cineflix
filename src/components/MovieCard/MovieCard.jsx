@@ -1,7 +1,7 @@
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-// import Similar from '../Similar/Similar';
+import Similar from '../Similar/Similar';
 
 
 import './MovieCard.css'
@@ -14,20 +14,20 @@ function MovieCard() {
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3/tv/${IdMovie}?api_key=${api_key}&language=fr`)
-            .then(response => response.json())
-            .then(data => setMovie(data))
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
+                .then(response => response.json())
+                .then(data => setMovie(data))
         }
         getMovie()
     }, [IdMovie])
 
-    
+
 
     useEffect(() => {
         const getCast = () => {
-            fetch(`https://api.themoviedb.org/3/tv/${IdMovie}/credits?api_key=${api_key}&language=fr`)
-            .then(response => response.json())
-            .then(data => setCast(data))
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
+                .then(response => response.json())
+                .then(data => setCast(data))
         }
         getCast()
     }, [IdMovie])
@@ -37,83 +37,84 @@ function MovieCard() {
     const real = Cast.cast ? Cast.crew.filter(e => e.job === "Director") : null
 
     const checkCast = (a) => {
-        if(a[0]) {
-            if(a[2]) {
+        if (a[0]) {
+            if (a[2]) {
                 return (
-                <>
-                    <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
-                    <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>,
-                    <NavLink to={`/actor/${acteur[2].id}`}>{a[2].name}</NavLink>
-                </>
+                    <>
+                        <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
+                        <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>,
+                        <NavLink to={`/actor/${acteur[2].id}`}>{a[2].name}</NavLink>
+                    </>
                 )
-            } else if(a[1]) {
+            } else if (a[1]) {
                 return (
                     <>
                         <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>,
                         <NavLink to={`/actor/${acteur[1].id}`}>{a[1].name}</NavLink>;
                     </>
-                    )
-        } else {
-            return (
-                <>
-                    <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>;
-                </>
-            )
+                )
+            } else {
+                return (
+                    <>
+                        <NavLink to={`/actor/${acteur[0].id}`}>{a[0].name}</NavLink>;
+                    </>
+                )
+            }
         }
-    }
     }
 
     const checkCrew = (a) => {
 
-        if(a[0]) {
-            if(a[2]) {
+        if (a[0]) {
+            if (a[2]) {
                 return `${a[0].name}, ${a[1].name}, ${a[2].name}`
             }
-            if(a[1]) {
+            if (a[1]) {
                 return `${a[0].name}, ${a[1].name}`
-        } else {
-            return `${a[0].name}`
+            } else {
+                return `${a[0].name}`
+            }
+        }
+        return "Seigneur Poulet"
+    }
+
+
+    const checkCategorie = () => {
+        if (Movie.genres[0]) {
+            if (Movie.genres[1]) {
+                return `${Movie.genres[0].name}, ${Movie.genres[1].name}`
+            } else {
+                return `${Movie.genres[0].name}`
+            }
         }
     }
-    }
-
-
-const checkCategorie = () => {
-    if(Movie.genres[0]) {
-        if(Movie.genres[1]) {
-            return `${Movie.genres[0].name}, ${Movie.genres[1].name}`
-    } else {
-        return `${Movie.genres[0].name}`
-    }
-}
-}
 
 
     return (
         <div className="MovieCard">
-        <Navbar />
-        <h1>{Movie.title}</h1>
-        <div className="containerFlex">
-            <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
-            <div className="containerDetail">
-            <h3>Réalisateur : {Cast.crew ? `${real[0].name}` : null}</h3>
-            <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
-            <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
-            <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
-            <h3>Durée : {Movie.runtime} minutes</h3>
-            <h3>Date de sortie : {Movie.release_date}</h3>
-            <h3>Synopsis : {Movie.overview}
-            </h3>
-            <button className="favButton" type="button" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")}> + </button>
-            <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
-            <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
-            </a>
-            <h3>Note : {Movie.vote_average}/10</h3>
+            <Navbar />
+            <h1>{Movie.title}</h1>
+            <div className="containerFlex">
+                <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
+                <div className="containerDetail">
+                    <h3>Réalisateur : {Cast.crew ? checkCrew(real) : null}</h3>
+                    <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
+                    <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
+                    <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
+                    <h3>Durée : {Movie.runtime} minutes</h3>
+                    <h3>Date de sortie : {Movie.release_date}</h3>
+                    <h3>Synopsis : {Movie.overview}
+                    </h3>
+                    <button className="favButton" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")} type="button"> + </button>
+                    <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
+                        <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+                    </a>
+                    <h3>Note : {Movie.vote_average}/10</h3>
+                </div>
             </div>
-            {/* <Similar {...Movie}/> */}
+                <Similar id={IdMovie}/>
         </div>
-        </div>
-        )
+    )
 
 }
 
