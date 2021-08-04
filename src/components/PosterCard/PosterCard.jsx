@@ -8,23 +8,22 @@ const PosterCard = ({ id, poster_path, vote_average, release_date, first_air_dat
     const [showRate, setShowRate] = useState(false);
 
     let mediaType = null;
-    
+    { media_type === 'tv' ? mediaType = 'tv-card' : mediaType = 'movie-card' }
     return (
-            <div className="poster-card">
-              {media_type === 'tv' ? mediaType = 'tv-card' : mediaType = 'movie-card'}
-              <NavLink to={`/${mediaType}/${id}`} className='poster-img'>
-                    <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                        className='poster-img' alt='poster'
-                        onMouseEnter={() => setShowRate(true)}
-                        onMouseLeave={() => setShowRate(false)} />
-                    {showRate && (
-                            <div className="rate-overlay">
-                                <li><BsStar />  {vote_average}/10</li>
-                                <li>{release_date ? release_date.slice(0, 4) : first_air_date ? first_air_date.slice(0, 4) : null}</li>
-                            </div>
-                    )}
-              </NavLink>
-            </div>
+        <div className="poster-card">
+            <NavLink to={`/${mediaType}/${id}`} className='poster-img'>
+                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                    className='poster-img' alt='poster'
+                    onMouseEnter={() => setShowRate(true)}
+                    onMouseLeave={() => setShowRate(false)} />
+                {showRate && (
+                    <div className="rate-overlay">
+                        <li><BsStar />  {vote_average}/10</li>
+                        <li>{release_date ? release_date.slice(0, 4) : first_air_date ? first_air_date.slice(0, 4) : null}</li>
+                    </div>
+                )}
+            </NavLink>
+        </div>
     );
 }
 
