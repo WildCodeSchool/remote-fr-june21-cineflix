@@ -1,0 +1,39 @@
+.SimContainer {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-left: 50vh;
+    
+}
+
+.SimH2 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+    margin-top: 5vh;
+}
+
+.SimContainer p {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #f5e2ff;
+    padding: 5px;
+    font-size: 11px;
+    width: 125px;
+    text-align: center;
+    margin: 5px;
+}
+
+.SimContainer a {
+    text-decoration: none;
+    height: 25vh;
+    padding: 10px;
+}
+
+.SimImg {
+    height: 25vh;
+}

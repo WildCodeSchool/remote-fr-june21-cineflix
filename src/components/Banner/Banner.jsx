@@ -14,7 +14,7 @@ export default function Banner() {
         fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setMovie(
                     data.results[
                     Math.floor(Math.random() * data.results.length - 1)
@@ -23,7 +23,7 @@ export default function Banner() {
             })
     }, [])
 
-    console.log(movie);
+    // console.log(movie);
 
 
     function truncate(str, n) {

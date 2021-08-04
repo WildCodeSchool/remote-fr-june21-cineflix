@@ -1,7 +1,8 @@
 .MovieCard {
     background-color: #141414;
     padding-top: 100px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .navB {
