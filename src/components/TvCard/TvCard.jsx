@@ -16,7 +16,7 @@ function TvCard() {
 
     useEffect(() => {
         const getTv = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdTv}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdTv}?api_key=${api_key}&language=fr`)
             .then(response => response.json())
             .then(data => setTv(data))
         }
@@ -26,7 +26,7 @@ function TvCard() {
 
     useEffect(() => {
         const getCredit = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdTv}/credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdTv}/credits?api_key=${api_key}&language=fr`)
                 .then(response => response.json())
                 .then(data => setCredit(data))
         }
@@ -81,11 +81,11 @@ const checkActeur = (element) => {
         
 
 const checkGenre = () => {
-    if(movies.genres[0]) {
-        if(movies.genres[1]) {
-            return `${movies.genres[0].name}, ${movies.genres[1]}`
+    if(elem.genres[0]) {
+        if(elem.genres[1]) {
+            return `${elem.genres[0].name}, ${elem.genres[1]}`
         } else {
-            return `${movies.genres[0].name}`
+            return `${elem.genres[0].name}`
         }
     }
 }
@@ -97,17 +97,23 @@ return (
     <div className="TvCard">
         <Navbar />
         <h1>{tv.name}</h1>
+        <div className="flex">
             <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
                 <div className="detail-content">
                 <h3>Réalisateur : {credit.cast ? real[0].name : null} </h3>
                 <h3>Auteur : {credit.crew ? checkReal(real) : null}</h3>
                 <h3>Casting : {credit.cast ? checkActeur(acteur) : null}</h3>
-                <h3>Catégorie :{movies.genres ? checkGenre(movies) : null}</h3>
-                <h3>nombre de saisons : {movies.number_of_seasons}</h3>
-                <h3>Date de sortie : {movies.first_air_date}</h3>
-                <h3>Synopsis : {movies.overview}</h3>
-
+                <h3>Catégorie :{tv.genres ? checkGenre(elem) : null}</h3>
+                <h3>nombre de saisons : {tv.number_of_seasons}</h3>
+                <h3>Date de sortie : {tv.first_air_date}</h3>
+                <h3>Synopsis : {tv.overview}</h3>
+                <button className="favButton" type="button"> + </button>
+            <a href={`https://www.youtube.com/results?search_query=${tv.title}+bande+annonce`} target="_blank" rel="noreferrer">
+            <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+            </a>
+            <h3>Note : {tv.vote_average}/10</h3>
                 </div>
+        </div>
     </div>
             }
 
