@@ -85,7 +85,7 @@ const checkActeur = (element) => {
 const checkGenre = (movies) => {
     if(movies.genres[0]) {
         if(movies.genres[1]) {
-            return `${movies.genres[0].name}, ${movies.genres[1]}`
+            return `${movies.genres[0].name}, ${movies.genres[1].name}`
         } else {
             return `${movies.genres[0].name}`
         }
