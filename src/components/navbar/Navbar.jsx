@@ -50,6 +50,11 @@ const Navbar = () => {
                         borderBottomStyle: 'solid',
                     }} to="/serie-categories/tv" className="categoriesLink">Séries
                     </NavLink>
+                    <NavLink activeStyle={{
+                        borderColor: '#9d59d9',
+                        borderBottomStyle: 'solid',
+                    }} to="/favourites" className="categoriesLink">Favoris
+                    </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <img
                         className='navLogout'

@@ -10,6 +10,8 @@ function MovieCard() {
     let { IdMovie } = useParams()
     const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
+    const [isFavourite, setIsFavourite] = useState(false);
+    const [favourites, setFavourites] = useState([]);
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
@@ -18,7 +20,8 @@ function MovieCard() {
                 .then(response => response.json())
                 .then(data => setMovie(data))
         }
-        getMovie()
+        getMovie();
+        window.scrollTo(0,0);
     }, [IdMovie])
 
 
@@ -89,6 +92,12 @@ function MovieCard() {
         }
     }
 
+    const addFavourite = (Movie) => {
+        const newFavouriteList = [...favourites, Movie];
+        setFavourites(newFavouriteList);
+        localStorage.setItem('favourite', JSON.stringify(newFavouriteList));
+    }
+
 
     return (
         <div className="MovieCard">
@@ -105,7 +114,10 @@ function MovieCard() {
                     <h3>Date de sortie : {Movie.release_date}</h3>
                     <h3>Synopsis : {Movie.overview}
                     </h3>
-                    <button className="favButton" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")} type="button"> + </button>
+                    <button className={isFavourite ? "addedToFavourite" : "favButton"} 
+                    onClick={() =>{setIsFavourite(!isFavourite); addFavourite(Movie)}}
+                    favouriteItem={favourites}
+                    movie={Movie}> + </button>
                     <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                         <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                     </a>

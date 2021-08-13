@@ -1,0 +1,10 @@
+.favourite-container {
+    width: 100%;
+    position: relative;
+    background-color: var(--bg-color);
+    display: flex;
+    }
+
+.favourite-cards {
+    margin-top: 20vh;
+}
