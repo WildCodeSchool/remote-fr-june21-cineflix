@@ -1,8 +1,11 @@
 .favourite-container {
-    width: 100%;
-    position: relative;
+    width: 100vw;
+    height:100vh;
     background-color: var(--bg-color);
     display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    margin: auto;
     }
 
 .favourite-cards {
