@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/Navbar"
 
@@ -19,17 +20,21 @@ const Favorite = () => {
         fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
           .then((response) => response.json())
           .then((data) => {
-            setFavoriteList(currentFavorites => [...currentFavorites, data.results])
+            setFavoriteList(currentFavorites => [...currentFavorites, data])
           })
+
       } else {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
           .then((response) => response.json())
           .then((data) => {
-            setFavoriteList(currentFavorites => [...currentFavorites, data.results])
+            setFavoriteList(currentFavorites => [...currentFavorites, data])
           })
+
       }
         
     }
+
+    console.log(favoriteList)
 
     let favoriteDatas
 
@@ -42,9 +47,8 @@ const Favorite = () => {
 
     if(favoriteDatas) {
       console.log(favoriteDatas)
-      handleFavorite()
       favoriteDatas.map((element) => getFavoriteData(element['id'], element['type']))
-      
+      handleFavorite()
     }
   },[])
 
@@ -52,10 +56,10 @@ const Favorite = () => {
     <div className='favoriteContainer'>
       <Navbar />
       <div className='Favorite'>
-        <h2>Vos favoris</h2>
+        <h2>Vos favoris :</h2>
         {areFavorite ? 
         <ul>
-          {favoriteList.map((favorite, index) => <li><img key={index} src={`https://image.tmdb.org/t/p/w500${favorite.poster_path}`} alt='favorite' /></li>)}
+          { favoriteList && favoriteList.map((favorite, index) => (<li><NavLink to={favorite.seasons ? `/tv-card/${favorite.id}` : `/movie-card/${favorite.id}`}><img key={index} src={`https://image.tmdb.org/t/p/w300${favorite.poster_path}`} alt='favorite' /></NavLink></li>)) }
         </ul>
         :
         <h4>Votre liste de favoris est vide ...</h4>}
