@@ -9,3 +9,10 @@
   padding-top: 100px;
   color: white;
 }
+
+.Favorite ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+}
