@@ -1,0 +1,11 @@
+.favoriteContainer {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+}
+
+.Favorite {
+  padding-top: 100px;
+  color: white;
+}

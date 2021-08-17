@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
+import Favorite from "../../screens/Favorite/Favorite";
 import SearchBar from "../SearchBar/SearchBar";
 
 import exit from "../../assets/exit.png";
@@ -50,7 +51,13 @@ const Navbar = () => {
                         borderBottomStyle: 'solid',
                     }} to="/serie-categories/tv" className="categoriesLink">Séries
                     </NavLink>
+                    <NavLink activeStyle={{
+                        borderColor: '#9d59d9',
+                        borderBottomStyle: 'solid',
+                    }} to='/favorites' className="categoriesLink">Favoris
+                    </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                   {/* 
                     <img
                         className='navLogout'
                         src={exit}
@@ -64,6 +71,7 @@ const Navbar = () => {
                             alt='avatar'
                         />
                     </NavLink>
+                   */}
                 </div>
             </div>
         </div>
