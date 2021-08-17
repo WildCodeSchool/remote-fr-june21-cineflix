@@ -37,12 +37,7 @@
   border: none;
   font-size: 1.5em;
   border-radius: 10px 0 0 10px;
-  /* background-color: white */
-  background-color: black;
-  color: white;
+  background-color: white;
 }
 
 /* NONE */
-.search-elements button {
-  background-color: black;
-}
