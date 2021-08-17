@@ -2,13 +2,21 @@
   display: flex;
   justify-content: center;
   padding: 15px;
-  width: 100%;
+  /* width: 40% */
+  width: 25%;
 }
 
 .search-elements {
-  width: 40%;
+  /* width: 60% */
+  width: 100%;
   display: flex;
   justify-content: center;
+  opacity: 0.3;
+  transition: 0.2s linear;
+}
+
+.search-elements:hover {
+  opacity: 1;
 }
 
 .search-button {
@@ -29,5 +37,12 @@
   border: none;
   font-size: 1.5em;
   border-radius: 10px 0 0 10px;
-  background-color: white;
+  /* background-color: white */
+  background-color: black;
+  color: white;
+}
+
+/* NONE */
+.search-elements button {
+  background-color: black;
 }
