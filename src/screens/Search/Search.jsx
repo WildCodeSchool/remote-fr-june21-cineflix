@@ -11,9 +11,6 @@ const Search = () => {
   let { searchValue } = useParams();
 
   const [searchResult, setSearchResult] = useState()
-  const [showFavoriteButton, setShowFavoriteButton] = useState(false)
-
-  let mediaType = null;
 
 // Fetch to user search value
 
@@ -27,11 +24,6 @@ const Search = () => {
     }
     getData()
   }, [searchValue])
-
-  // ???
-  const switchFavorite = () => {
-    setShowFavoriteButton(!showFavoriteButton)
-  }
 
   // Reset the searchbar
   const resetSearch = () => {
@@ -61,7 +53,7 @@ const Search = () => {
         storedDatas.map(element => newDatas.push(element))
         newDatas.push(newFavorite)
         localStorage["favorites"] = JSON.stringify(newDatas)
-
+        alert('Bien ajouté à vos favoris')
       }
 
     // If there is not the favorites object, we create it
@@ -69,6 +61,7 @@ const Search = () => {
 
       let newFavorite = [{id: id, type: type}]
       localStorage["favorites"] = JSON.stringify(newFavorite)
+      alert('Bien ajouté à vos favoris')
     }
      
   }

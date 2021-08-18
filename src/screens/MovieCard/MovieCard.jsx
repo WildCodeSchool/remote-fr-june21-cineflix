@@ -89,6 +89,44 @@ function MovieCard() {
         }
     }
 
+    //***** Favorite's scripts
+
+  // Function to create-add or add the localstorage object of favorites
+  const handleFavorite = (id, type) => {
+
+    let storedDatas
+
+    // Try to get the favorites object in localstorage
+    try {
+      storedDatas = JSON.parse(localStorage["favorites"])
+    } catch(error) {
+
+    }
+    
+    // If there is already the favorites object
+    if(storedDatas) {
+
+      // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+      if(!storedDatas.some(element => (element.id === id) && (element.type === type))) {
+
+        let newFavorite = {id: id, type: type}
+        let newDatas = []
+        storedDatas.map(element => newDatas.push(element))
+        newDatas.push(newFavorite)
+        localStorage["favorites"] = JSON.stringify(newDatas)
+        alert('Bien ajouté à vos favoris')
+      }
+
+    // If there is not the favorites object, we create it
+    } else {
+
+      let newFavorite = [{id: id, type: type}]
+      localStorage["favorites"] = JSON.stringify(newFavorite)
+      alert('Bien ajouté à vos favoris')
+    }
+    
+  } 
+
 
     return (
         <div className="MovieCard">
@@ -105,7 +143,7 @@ function MovieCard() {
                     <h3>Date de sortie : {Movie.release_date}</h3>
                     <h3>Synopsis : {Movie.overview}
                     </h3>
-                    <button className="favButton" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")} type="button"> + </button>
+                    <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavorite(event.target.id, Movie.number_of_seasons ? 'tv' : 'movie')}> + </button>
                     <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                         <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                     </a>
