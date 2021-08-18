@@ -89,13 +89,10 @@ const Search = () => {
                 </NavLink>
                  : 
                 <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
-                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
-                </NavLink>}
-                {/* <i className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'} onClick={switchFavorite}></i> */}
-                {/* <input type="checkbox" className="add-to-favorite" id={`add-to-favorite-${index}`} onClick={(event) => console.log(event.target.id)} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label> */}
-                <input type="checkbox" className="add-to-favorite" id={movie.id} alt={movie.media_type} onClick={(event) => (console.log(event.target.id, event.target.alt), handleFavorite(event.target.id, event.target.alt))} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label>
-               
-               {/* <i onClick={setShowFavoriteButton(!showFavoriteButton)} className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'}></i> */}
+                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" title="Voir les infos" />
+                </NavLink>} 
+                <label for={movie.id} className="add-to-favortie-label"><i className='fas fa-star add-favorite-button checked' title="Ajouter aux favoris"></i></label>
+                <input type="checkbox" className="add-to-favorite" id={movie.id} alt={movie.media_type} onChange={(event) => handleFavorite(event.target.id, event.target.alt)} />
               </div>
               }
             </li>
