@@ -76,7 +76,8 @@ const Search = () => {
             <li key={index}>
               {movie.poster_path &&
               <div className="searchMovieCard">
-                {movie.media_type === 'tv' ? 
+                {/* movie.media_type === 'tv' ? */}
+                {movie.number_of_seasons ?
                 <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
@@ -85,7 +86,7 @@ const Search = () => {
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" title="Voir les infos" />
                 </NavLink>} 
                 <label for={movie.id} className="add-to-favortie-label"><i className='fas fa-star add-favorite-button checked' title="Ajouter aux favoris"></i></label>
-                <input type="checkbox" className="add-to-favorite" id={movie.id} alt={movie.media_type} onChange={(event) => handleFavorite(event.target.id, event.target.alt)} />
+                <input type="checkbox" className="add-to-favorite" id={movie.id} onChange={(event) => handleFavorite(event.target.id, movie.number_of_seasons ? 'tv' : 'movie')} />
               </div>
               }
             </li>
