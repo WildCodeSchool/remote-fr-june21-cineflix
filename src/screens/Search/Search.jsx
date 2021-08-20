@@ -11,7 +11,7 @@ const Search = () => {
   let { searchValue } = useParams();
 
   const [searchResult, setSearchResult] = useState()
-  const [showFavoriteButton, setShowFavoriteButton] = useState(false)
+  const [showFavoriteButton, setShowFavoriteButton] = useState(false);
 
   let mediaType = null;
 

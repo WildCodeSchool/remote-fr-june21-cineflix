@@ -95,7 +95,7 @@ function MovieCard() {
 
 
     const addFavourite = (Movie) => {
-        const newFavouriteList = [Movie, [...favourites]];
+        const newFavouriteList = [...favourites, Movie];
         setFavourites(newFavouriteList);
         localStorage.setItem('favourite', JSON.stringify(newFavouriteList));
     }

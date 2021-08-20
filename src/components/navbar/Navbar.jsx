@@ -8,12 +8,18 @@ import SearchBar from "../SearchBar/SearchBar";
 import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
+import { FaHome } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
+import { FiHeart } from 'react-icons/fi';
+import { VscAccount } from 'react-icons/vsc';
+
 
 import "./Navbar.css";
 
 const Navbar = () => {
     const [show, handleShow] = useState(false);
     const { dispatch } = useContext(AuthContext);
+    const [showSearchBar, setShowSearchBar] = useState(false);
 
     // Search value states
     const [searchValue, setSearchValue] = useState("")
@@ -31,47 +37,68 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", transitionNavBar)
     }, []);
 
+    const handleSearchClick = () => {
+        setShowSearchBar(!showSearchBar);
+        showSearchBar && (
+            <SearchBar />
+        )
+    }
+
     return (
-        <div className="Navbar">
-            <div className={`nav ${show && "navBlack"}`}>
-                <div className="navContents">
-                    <NavLink to="/home"><img
-                        className='navLogo'
-                        src={logo}
-                        alt='logo' />
-                    </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to="/movie-categories/movie" className="categoriesLink">Films
-                    </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to="/serie-categories/tv" className="categoriesLink">Séries
-                    </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to="/favourites" className="categoriesLink">Favoris
-                    </NavLink>
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                    <img
-                        className='navLogout'
-                        src={exit}
-                        alt='logout'
-                        onClick={() => dispatch(logout())}
-                    />
-                    <NavLink to="/login">
+        <>
+            <div className="Navbar">
+                <div className={`nav ${show && "navBlack"}`}>
+                    <div className="navContents">
+                        <NavLink to="/home"><img
+                            className='navLogo'
+                            src={logo}
+                            alt='logo' />
+                        </NavLink>
+                        <div className="categoriesLink">
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/movie-categories/movie">Films
+                            </NavLink>
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/serie-categories/tv">Séries
+                            </NavLink>
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/favourites">Favoris
+                            </NavLink>
+                        </div>
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                         <img
-                            className='navAvatar'
-                            src={avatar}
-                            alt='avatar'
+                            className='navLogout'
+                            src={exit}
+                            alt='logout'
+                            onClick={() => dispatch(logout())}
                         />
-                    </NavLink>
+                        <NavLink to="/login">
+                            <img
+                                className='navAvatar'
+                                src={avatar}
+                                alt='avatar'
+                            />
+                        </NavLink>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div className="mobile-navbar">
+                <NavLink to='/home'>
+                    <FaHome className="navbar-icons" /></NavLink>
+                <div onClick={handleSearchClick}>
+                    <FaSearch className="navbar-icons" /></div>
+                <NavLink to='/favourites'>
+                    <FiHeart className="navbar-icons" /></NavLink>
+                <NavLink to="/login">
+                    <VscAccount className="navbar-icons" /></NavLink>
+            </div>
+        </>
     );
 };
 
