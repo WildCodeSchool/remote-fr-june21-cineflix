@@ -1,8 +1,8 @@
 import  { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router";
-import Navbar from '../Navbar/Navbar';
-import Loading from '../Loading/Loading';
+import Navbar from '../../components/Navbar/Navbar';
+
 
 import './TvCard.css';
 
@@ -87,7 +87,7 @@ const checkGenre = (movies) => {
         if(movies.genres[1]) {
             return `${movies.genres[0].name}, ${movies.genres[1].name}`
         } else {
-            return `${tv.genres[0].name}`
+            return `${movies.genres[0].name}`
         }
     }
   return "Seigneur Poulet"
@@ -96,7 +96,7 @@ const checkGenre = (movies) => {
 
 return (
     <>
-        {loader ? <Loading /> : 
+         
     <div className="TvCard">
         <Navbar />
         <h1>{tv.name}</h1>
@@ -118,7 +118,7 @@ return (
                 </div>
         </div>
     </div>
-            }
+            
 
     </>
 
