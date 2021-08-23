@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 
 import PosterCard from "../PosterCard/PosterCard";
+import RandomMovies from '../../components/RandomMovies/RandomMovies'
 
 import './TopContainer.css';
 
@@ -34,7 +35,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const getUpCo = () => {
-            fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&&language=fr&page=2`)
+            fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&&language=fr&page=1`)
                 .then(response => response.json())
                 .then(data => setUpCo(data.results))
         }
@@ -92,6 +93,10 @@ const TopContainer = () => {
                 </div>
                 <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
             </div>
+            <div>
+                <RandomMovies />
+            </div>
+            
         </div>
     );
 }
