@@ -9,7 +9,8 @@ const TopContainer = () => {
     const [popularMovie, setPopularMovie] = useState([]);
     const [popularShow, setPopularShow] = useState([]);
     const [slideNumber, setSlideNumber] = useState(0);
-
+    const [upCo, setUpCo] = useState([])
+    
     const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
 
     useEffect(() => {
@@ -28,6 +29,16 @@ const TopContainer = () => {
                 .then((data) => setPopularShow(data.results));
         }
         fetchShows()
+    }, [])
+
+
+    useEffect(() => {
+        const getUpCo = () => {
+            fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&&language=fr&page=2`)
+                .then(response => response.json())
+                .then(data => setUpCo(data.results))
+        }
+        getUpCo()
     }, [])
 
 
@@ -70,6 +81,14 @@ const TopContainer = () => {
                 <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefShows)} />
                 <div className="popularLists" ref={listRefShows} >
                     {mapPoster(popularShow)}
+                </div>
+                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
+            </div>
+            <h2>Prochaines Sorties</h2>
+            <div className="top-cards">
+                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefShows)} />
+                <div className="popularLists" ref={listRefShows} >
+                    {mapPoster(upCo)}
                 </div>
                 <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
             </div>
