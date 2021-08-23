@@ -53,7 +53,7 @@ const Contact = () => {
                             <span>Prénom</span>
                         </div>
                         <div className="input-box y">
-                            <input type="email" required />
+                            <input type="text" required />
                             <span>Email</span>
                         </div>
                         <div className="input-box y">
