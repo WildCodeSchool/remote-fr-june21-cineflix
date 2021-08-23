@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './Contact.css';
 import loc from "../../assets/localisation.png";
 import mail from "../../assets/mail.png";
@@ -9,9 +11,20 @@ import pint from "../../assets/pinterest.png";
 import link from "../../assets/linkedin.png";
 
 const Contact = () => {
+    const [name, setName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState ("")
+    const [message, setMessage] = useState ("")
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+    }
+        
     return (
         
-            <section>
+        <form>
                 <div className="container-contact">
                     <div className="contact-info">
                         <div>
@@ -45,35 +58,37 @@ const Contact = () => {
                     <h2>Envoyez nous un message</h2>
                     <div className="form-box">
                         <div className="input-box y">
-                            <input type="text" required />
+                            <input type="text" id="name" name="name" onChange={(e) => setName(e.target.value)} value={name} required />
                             <span>Nom</span>
                         </div>
                         <div className="input-box y">
-                            <input type="text" required />
+                            <input type="text" id="lastName" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} required />
                             <span>Prénom</span>
                         </div>
                         <div className="input-box y">
-                            <input type="text" required />
+                            <label id="no-email">Email non valide</label>
+                            <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} required />
                             <span>Email</span>
                         </div>
                         <div className="input-box y">
-                            <input type="text" required />
+                            <input type="text" id="phone" name="phone" onChange={(e) => setPhone(e.target.value)} value={phone} required />
                             <span>Téléphone</span>
                         </div>
                         <div className="input-box y1">
-                            <textarea required></textarea>
+                            <textarea id="message" name="message" onChange={(e) => setMessage(e.target.value)} value={message} required></textarea>
                             <span>Ecrivez votre message ici...</span>
                         </div>
                         <div className="input-box y1">
-                            <input type="submit" value="Envoyer" />
+                            <input type="submit" value="Envoyer" onClick={handleSubmit}/>
+                            <div className="invalid-message"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </form>
         
-    )
-}
-
-
-export default Contact;
+        )
+    }
+    
+    
+    export default Contact;

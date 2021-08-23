@@ -2,29 +2,31 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
-section {
+form {
 display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
 background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://i.imgur.com/Abm0wRq.jpeg");
 background-size: cover;
+font-family: 'Poppins', sans-serif;
 }
 
-section::before {
+form::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-
-    
-    
 }
+
+#no-email {
+    display: none;
+}
+
 .container-contact {
     position: relative;
     min-width: 1100px;
@@ -198,7 +200,7 @@ section::before {
 }
 @media (max-width : 950px) {
     
-    section::before {
+    form::before {
         background: #240046;
         display: none;
     }
