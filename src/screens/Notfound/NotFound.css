@@ -1,30 +1,116 @@
 .notFound {
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding-top: 68px;
     overflow: hidden;
-    text-align: center;
+    position: fixed;
+    right: 0;
+    top: 0;
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://i.imgur.com/Abm0wRq.jpeg");
     background-size: cover;
 }
 
-.NotFoundTitle {
-    margin: 10% 25%;
-    width: 50%;
-    -webkit-box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0,0,0,0);
-    font-size: 10rem;
-    color: var(--third-color);
-    background-color: var(--bg-op-color);
-    border-radius: 20px;
+.notFoundContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    /* margin: 2em; */
 }
 
-.NotFoundTitle:hover {
-    font-size: 15rem;
-    color: var(--secondary-color);
-    transition: 2s;
-}
-
-.NotFoundTitle2, .NotFoundParagraphe{
-    font-size: 2rem;
+.notFoundContent span {
+    border-left: 2px solid var(--third-color);
+    font-size: 2.2em;
+    font-weight: 100;
+    letter-spacing: .1em;
+    line-height: 2.2em;
+    margin-top: 1em;
+    padding: 0 2vw;
     color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--bg-color);
+}
+
+.NotFoundTitle {
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--bg-color);
+    font-size: 6em;
+    font-weight: 700;
+    margin-bottom: 2vw;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.NotFoundParagraphe{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    width: 50vw;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--bg-color);
+    font-size: 2.2em;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.notFoundHomeButton{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+
+.notFoundHomeButton:hover{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    font-weight: 500;
+    font-size: 1.2em;
+
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.notFoundNavbar {
+    position: fixed;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    height: 9vh;
+    z-index: 20;
+    /* background: #000; */
+}
+
+
+.notFoundNavContents {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.notFoundNavLogo{
+    position: fixed;
+    top: 5px;
+    object-fit: contain;
+    margin-left: 3rem;
+    width: 80px;
+    cursor: pointer;
+    z-index: 30;
 }

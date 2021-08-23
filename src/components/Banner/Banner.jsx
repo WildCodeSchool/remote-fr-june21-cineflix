@@ -14,7 +14,6 @@ export default function Banner() {
         fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
-                // console.log(data)
                 setMovie(
                     data.results[
                     Math.floor(Math.random() * data.results.length - 1)
@@ -23,20 +22,16 @@ export default function Banner() {
             })
     }, [])
 
-    // console.log(movie);
-
-
     function truncate(str, n) {
         return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     }
 
-
     return (
         <header className="banner">
             <div className="bannerContents">
-              {movie &&
-               <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
-              }
+                {movie &&
+                    <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="poster" />
+                }
                 <div className="fillContainer">
                     <div className="bannerInfo">
                         <h1 className="bannerTitle">
