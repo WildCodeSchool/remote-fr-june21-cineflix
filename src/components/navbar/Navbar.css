@@ -78,6 +78,10 @@
     cursor: pointer;
 }
 
+.invisible-icons {
+    color: var(--bg-color);
+}
+
 @media screen and (max-width: 950px) {
     .Navbar {
         display: none;
@@ -86,7 +90,7 @@
     .mobile-navbar {
         color: white;
         width: 100%;
-        height: 40px;
+        height: 50px;
         background-color: var(--bg-color);
         display: flex;
         justify-content: space-around;

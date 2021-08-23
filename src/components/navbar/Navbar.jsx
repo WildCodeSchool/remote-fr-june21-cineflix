@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
-import SearchBar from "../SearchBar/SearchBar";
+
+import SearchBar from './../SearchBar/SearchBar';
+import Search from './../../screens/Search/Search';
 
 import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
@@ -15,6 +17,8 @@ import { VscAccount } from 'react-icons/vsc';
 
 
 import "./Navbar.css";
+
+
 
 const Navbar = () => {
     const [show, handleShow] = useState(false);
@@ -38,10 +42,9 @@ const Navbar = () => {
     }, []);
 
     const handleSearchClick = () => {
-        setShowSearchBar(!showSearchBar);
-        showSearchBar && (
-            <SearchBar />
-        )
+        if (showSearchBar) {
+            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+        }
     }
 
     return (
@@ -91,8 +94,12 @@ const Navbar = () => {
             <div className="mobile-navbar">
                 <NavLink to='/home'>
                     <FaHome className="navbar-icons" /></NavLink>
-                <div onClick={handleSearchClick}>
-                    <FaSearch className="navbar-icons" /></div>
+                <div>
+                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                    {showSearchBar && (
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                    )}
+                </div>
                 <NavLink to='/favourites'>
                     <FiHeart className="navbar-icons" /></NavLink>
                 <NavLink to="/login">

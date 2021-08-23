@@ -31,3 +31,10 @@
   border-radius: 10px 0 0 10px;
   background-color: white;
 }
+
+/* @media screen and (max-width: 950px) {
+  .search-menu {
+    width: 500px;
+    padding-left: 100px;
+  }
+} */

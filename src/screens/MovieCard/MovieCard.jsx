@@ -93,12 +93,11 @@ function MovieCard() {
         }
     }
 
-
-    const addFavourite = (Movie) => {
-        const newFavouriteList = [...favourites, Movie];
-        setFavourites(newFavouriteList);
-        localStorage.setItem('favourite', JSON.stringify(newFavouriteList));
-    }
+    // const addFavourite = (Movie) => {
+    //     const newFavouriteList = [...favourites, Movie];
+    //     setFavourites(newFavouriteList);
+    //     localStorage.setItem('favourite', JSON.stringify(newFavouriteList));
+    // }
 
     return (
         <div className="MovieCard">
@@ -115,9 +114,9 @@ function MovieCard() {
                     <h3>Date de sortie : {Movie.release_date}</h3>
                     <h3>Synopsis : {Movie.overview}
                     </h3>
-                    <div onClick={() => { setIsFavourite(!isFavourite); !isFavourite && addFavourite(Movie) }}>
+                    {/* <div onClick={() => { setIsFavourite(!isFavourite); !isFavourite && addFavourite(Movie) }}> */}
                         <button className={isFavourite ? "addedToFavourite" : "favButton"}> + </button>
-                    </div>
+                    {/* </div> */}
                     <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                         <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                     </a>
