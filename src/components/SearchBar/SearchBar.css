@@ -25,16 +25,19 @@
 .search-elements > input {
   text-align: center;
   height: 40px;
-  width: 100%;
+  width: 100vw;
   border: none;
   font-size: 1.5em;
   border-radius: 10px 0 0 10px;
   background-color: white;
 }
 
-/* @media screen and (max-width: 950px) {
+@media screen and (max-width: 950px) {
   .search-menu {
-    width: 500px;
+    width: 300px;
     padding-left: 100px;
   }
-} */
+  .search-elements {
+    width: 60%;
+  }
+}
