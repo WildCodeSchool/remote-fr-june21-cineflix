@@ -4,6 +4,10 @@ import { useParams } from "react-router";
 import Navbar from '../../components/Navbar/Navbar';
 
 
+
+import Loading from '../../components/Loading/Loading';
+
+
 import './TvCard.css';
 
 function TvCard() {
@@ -111,7 +115,7 @@ return (
                 <h3>Date de sortie : {tv.first_air_date}</h3>
                 <h3>Synopsis : {tv.overview}</h3>
                 <button className="favButton" type="button"> + </button>
-            <a href={`https://www.youtube.com/results?search_query=${tv.title}+bande+annonce`} target="_blank" rel="noreferrer">
+            <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
             <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
             </a>
             <h3>Note : {tv.vote_average}/10</h3>
