@@ -15,10 +15,9 @@ import Contact from './screens/Contact/Contact';
 import Loading from './screens/Loading/Loading';
 import ShowCategories from './screens/ShowCategories/ShowCategories';
 import TvCard from './screens/TvCard/TvCard';
-
 import './App.css';
-const App = () => {
 
+const App = () => {
 
   return (
     <>

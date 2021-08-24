@@ -47,7 +47,7 @@ const TopContainer = () => {
 
         if (direction === 'left' && slideNumber > 0) {
             setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${200 + distance}px)`
+            type.current.style.transform = `translateX(${225 + distance}px)`
         }
         if (direction === 'right' && slideNumber <= 13) {
             setSlideNumber(slideNumber + 1);

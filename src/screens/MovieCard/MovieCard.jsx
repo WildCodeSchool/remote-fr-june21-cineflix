@@ -1,3 +1,4 @@
+import { AlternateEmailOutlined } from '@material-ui/icons';
 import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
@@ -19,7 +20,8 @@ function MovieCard() {
                 .then(response => response.json())
                 .then(data => setMovie(data))
         }
-        getMovie()
+        getMovie();
+        window.scrollTo(0, 0);
     }, [IdMovie])
 
 
@@ -146,7 +148,7 @@ function MovieCard() {
                     <h3>Note : {Movie.vote_average}/10</h3>
                 </div>
             </div>
-                <Similar id={IdMovie}/>
+            <Similar id={IdMovie} />
         </div>
     )
 

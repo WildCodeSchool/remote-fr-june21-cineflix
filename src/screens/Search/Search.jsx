@@ -92,9 +92,9 @@ const Search = () => {
               }
             </li>
             ))}
-            </ul>
-        </div>
+        </ul>
       </div>
+    </div>
   )
 }
 

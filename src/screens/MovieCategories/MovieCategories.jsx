@@ -24,7 +24,8 @@ const MovieCategories = () => {
                 .then(res => res.json())
                 .then(data => setAnimationMovies(data.results));
         }
-        fetchAnimationMovies()
+        fetchAnimationMovies();
+        window.scrollTo(0,0);
     }, []);
 
     useEffect(() => {
