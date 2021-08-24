@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import Swal from "sweetalert2";
+
 import Navbar from "../../components/Navbar/Navbar"
 
 import './Favorite.css'
@@ -9,63 +11,6 @@ import './Favorite.css'
 const Favorite = () => {
   const [areFavorite, setAreFavorite] = useState(false)
   const [favoriteList, setFavoriteList] = useState([])
-
-  const [toRemove, setToRemove] = useState(false)
-
-  console.log('favoriteList start:')
-  console.log(favoriteList)
-
-  // useEffect(() => {
-  //   const handleFavorite = (favList) => {
-  //     setAreFavorite(true)
-  //   }
-
-  //   const getFavoriteData = (id, type) => {
-  //     if(type === 'tv') {
-  //       fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
-  //         .then((response) => response.json())
-  //         .then((data) => {
-  //           setFavoriteList(currentFavorites => [...currentFavorites, data])
-  //         })
-
-  //     } else {
-  //       fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
-  //         .then((response) => response.json())
-  //         .then((data) => {
-  //           setFavoriteList(currentFavorites => [...currentFavorites, data])
-  //         })
-
-  //     }
-        
-  //   }
-
-  //   let favoriteDatas
-
-  //   // Try if there is a favorites object in localstorage
-  //   try {
-  //     favoriteDatas = JSON.parse(localStorage["favorites"])
-  //   } catch(error) {
-      
-  //   }
-
-  //   if(favoriteDatas) {
-  //     console.log('favoriteDatas useEffect:')
-  //     console.log(favoriteDatas)
-  //     favoriteDatas.map((element) => getFavoriteData(element['id'], element['type']))
-  //     handleFavorite()
-  //   }
-  // },[])
-
-  // const removeFavorite = (id, type) => {
-
-  //   let favoriteDatas = JSON.parse(localStorage["favorites"])
-
-  //   let newFavorites = favoriteDatas.filter(element => element['id'] !== id)
-  //   console.log('id et newFavorites removeFavorite:')
-  //   console.log(id)
-  //   console.log(newFavorites)
-
-  // }
 
   useEffect(() => {
     const handleFavorite = (favList) => {
@@ -87,9 +32,7 @@ const Favorite = () => {
           .then((data) => {
             setFavoriteList(currentFavorites => [...currentFavorites, data])
           })
-
       }
-        
     }
 
     let favoriteDatas
@@ -102,53 +45,29 @@ const Favorite = () => {
     }
 
     if(favoriteDatas) {
-      console.log('favoriteDatas useEffect:')
-      console.log(favoriteDatas)
       favoriteDatas.map((element) => getFavoriteData(element.id, element.first_air_date ? true : false))
       handleFavorite()
     }
+
   },[])
 
-  // useEffect(() => {
-  //   const removeFavorite = (id, poster) => {
-
-  //     let favoriteDatas = JSON.parse(localStorage["favorites"])
-  
-  //     let newFavorites = favoriteDatas.filter(element => element.id !== id && element.poster_path !== poster)
-  //     localStorage["favorites"] = JSON.stringify(newFavorites)
-  //     alert('Favoris retiré')
-  
-  //   }
-
-  //   removeFavorite()
-  // }, [toRemove])
-
   const removeFavorite = (id, title) => {
-
     let favoriteDatas = JSON.parse(localStorage["favorites"])
-
     let newFavorites = favoriteDatas.filter(element => element.id !== id && element.title !== title)
     localStorage["favorites"] = JSON.stringify(newFavorites)
     setFavoriteList(newFavorites)
-    if(favoriteList[0].id) {
-      setAreFavorite(false)
-    }
-    alert('Favoris retiré')
-
+    Swal.fire('Favori retiré')
   }
 
   return (
     <div className='favoriteContainer'>
       <Navbar />
       <div className='Favorite'>
-        <h2>Vos favoris :</h2>
+        <h2>Vos favoris</h2>
         {areFavorite ? 
         <ul>
           { favoriteList && favoriteList.map((favorite, index) => (
-            // favorite.success !== false && 
             <li className="favoriteCard">
-              {console.log(favorite)}
-              
               <NavLink to={favorite.first_air_date ? `/tv-card/${favorite.id}` : `/movie-card/${favorite.id}`}>
                 <img key={index} src={`https://image.tmdb.org/t/p/w300${favorite.poster_path}`} alt='favorite' title={favorite.first_air_date ? `/tv-card/${favorite.id}` : `/movie-card/${favorite.id}`}/>
               </NavLink>

@@ -2,6 +2,8 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { NavLink, useParams } from "react-router-dom"
 
+import Swal from "sweetalert2";
+
 import Navbar from "../../components/Navbar/Navbar"
 
 import "./Search.css"
@@ -89,7 +91,7 @@ const Search = () => {
         storedDatas.map(element => newDatas.push(element))
         newDatas.push(media)
         localStorage["favorites"] = JSON.stringify(newDatas)
-        alert('Bien ajouté à vos favoris')
+        Swal.fire('Bien ajouté à vos favoris')
       }
 
     // If there is not the favorites object, we create it
@@ -97,7 +99,7 @@ const Search = () => {
 
       let newFavorite = [media]
       localStorage["favorites"] = JSON.stringify(newFavorite)
-      alert('Bien ajouté à vos favoris')
+      Swal.fire('Bien ajouté à vos favoris')
     }
      
   }

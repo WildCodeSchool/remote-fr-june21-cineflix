@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 import Navbar from '../../components/Navbar/Navbar';
 import Loading from '../../components/Loading/Loading';
 
+import Swal from "sweetalert2";
+
 import './TvCard.css';
 
 function TvCard() {
@@ -96,42 +98,6 @@ const checkGenre = (movies) => {
 
 //***** Favorite's scripts
 
-  // // Function to create-add or add the localstorage object of favorites
-  // const handleFavorite = (id, type) => {
-
-  //   let storedDatas
-
-  //   // Try to get the favorites object in localstorage
-  //   try {
-  //     storedDatas = JSON.parse(localStorage["favorites"])
-  //   } catch(error) {
-
-  //   }
-    
-  //   // If there is already the favorites object
-  //   if(storedDatas) {
-
-  //     // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
-  //     if(!storedDatas.some(element => (element.id === id) && (element.type === type))) {
-
-  //       let newFavorite = {id: id, type: type}
-  //       let newDatas = []
-  //       storedDatas.map(element => newDatas.push(element))
-  //       newDatas.push(newFavorite)
-  //       localStorage["favorites"] = JSON.stringify(newDatas)
-  //       alert('Bien ajouté à vos favoris')
-  //     }
-
-  //   // If there is not the favorites object, we create it
-  //   } else {
-
-  //     let newFavorite = [{id: id, type: type}]
-  //     localStorage["favorites"] = JSON.stringify(newFavorite)
-  //     alert('Bien ajouté à vos favoris')
-  //   }
-    
-  // } 
-
   const handleFavorite = (media) => {
 
     let storedDatas
@@ -153,7 +119,7 @@ const checkGenre = (movies) => {
         storedDatas.map(element => newDatas.push(element))
         newDatas.push(media)
         localStorage["favorites"] = JSON.stringify(newDatas)
-        alert('Bien ajouté à vos favoris')
+        Swal.fire('Bien ajouté à vos favoris')
       }
 
     // If there is not the favorites object, we create it
@@ -161,12 +127,11 @@ const checkGenre = (movies) => {
 
       let newFavorite = [media]
       localStorage["favorites"] = JSON.stringify(newFavorite)
-      alert('Bien ajouté à vos favoris')
+      Swal.fire('Bien ajouté à vos favoris')
     }
-     
+
   }
         
-
 return (
     <>
         {loader ? <Loading /> : 
