@@ -86,3 +86,18 @@ width: 100%;
       height: 40vh;
     }
   }
+
+  .selectB {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #240046;
+    border: none;
+    color: #f5e2ff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
