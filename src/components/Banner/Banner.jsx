@@ -45,7 +45,7 @@ export default function Banner() {
                                 </Link>
                             </div>
                             <h2 className="bannerDescription">
-                                {truncate(movie?.overview, 150)}
+                                {truncate(movie?.overview, 100)}
                             </h2>
                         </div>
                     </div>
