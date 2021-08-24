@@ -17,3 +17,26 @@
   justify-content: space-evenly;
   list-style: none;
 }
+
+.favoriteCard {
+  position: relative;
+}
+
+.remove-from-favorite {
+  display: none;
+}
+
+.remove-from-favorite-label {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  transition: 0.2s linear;
+  text-shadow: 0px 0px 3px black;
+}
+
+.remove-from-favorite-label:hover {
+  transform: scale(1.5);
+  color: red;
+}

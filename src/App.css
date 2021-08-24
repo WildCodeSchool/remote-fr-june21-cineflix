@@ -7,3 +7,7 @@
     --text-color: #fbf5ff;
     --text-op-color: #fbf5ffbe;
 }
+
+* { 
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
