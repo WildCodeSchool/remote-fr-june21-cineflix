@@ -90,15 +90,15 @@ const MovieCategories = () => {
     const refThriller = useRef();
 
     const handleClick = (direction, type) => {
-        let distance = type.current.getBoundingClientRect().x
+        let distance = type.current.getBoundingClientRect().x -30
 
         if (direction === 'left' && slideNumber > 0) {
             setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${200 + distance}px)`
+            type.current.style.transform = `translateX(${220 + distance}px)`
         }
         if (direction === 'right' && slideNumber <= 13) {
             setSlideNumber(slideNumber + 1);
-            type.current.style.transform = `translateX(${-255 + distance}px)`
+            type.current.style.transform = `translateX(${-220 + distance}px)`
         }
     }
 

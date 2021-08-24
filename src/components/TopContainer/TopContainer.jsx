@@ -9,6 +9,8 @@ const TopContainer = () => {
     const [popularMovie, setPopularMovie] = useState([]);
     const [popularShow, setPopularShow] = useState([]);
     const [slideNumber, setSlideNumber] = useState(0);
+    // const [slideNumberMovies, setSlideNumberMovies] = useState(0);
+    // const [slideNumberShows, setSlideNumberShows] = useState(0);
 
     const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
 
@@ -43,15 +45,15 @@ const TopContainer = () => {
     const listRefMovies = useRef();
     const listRefShows = useRef();
     const handleClick = (direction, type) => {
-        let distance = type.current.getBoundingClientRect().x
+        let distance = type.current.getBoundingClientRect().x -30
 
         if (direction === 'left' && slideNumber > 0) {
             setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${225 + distance}px)`
+            type.current.style.transform = `translateX(${220 + distance}px)`
         }
         if (direction === 'right' && slideNumber <= 13) {
             setSlideNumber(slideNumber + 1);
-            type.current.style.transform = `translateX(${-255 + distance}px)`
+            type.current.style.transform = `translateX(${-220 + distance}px)`
         }
     }
 
