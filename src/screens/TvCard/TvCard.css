@@ -54,6 +54,11 @@
     color: var(--secondary-color);
 }
 
+.diffImg {
+    width: 12vh;
+    height: auto
+}
+
 @media only screen and (max-width: 870px) {
     .flex {
         display: flex;

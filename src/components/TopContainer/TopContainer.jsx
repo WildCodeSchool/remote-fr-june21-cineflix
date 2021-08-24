@@ -111,6 +111,7 @@ const TopContainer = () => {
                 <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefUpCo)} />
             </div>
             <div>
+                <h2>Hoooooo</h2>
                 <select defaultValue="Choisir Catégorie" className="selectB" name="Catégorie" onChange={(e) => handeChange(e)}>
                     <option disabled selected>Choisir Catégorie</option>
                     <option select value='28'>Action</option>

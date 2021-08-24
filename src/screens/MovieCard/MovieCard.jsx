@@ -78,6 +78,7 @@ function MovieCard() {
         return "Seigneur Poulet"
     }
 
+    console.log(Movie)
 
     const checkCategorie = () => {
         if (Movie.genres[0]) {
