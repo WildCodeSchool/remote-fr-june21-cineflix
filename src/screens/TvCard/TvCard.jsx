@@ -62,11 +62,12 @@ function TvCard() {
                 return <h3>Auteur : {element[0].name}, {element[1].name} </h3>
             }
                 return <h3> Auteur : {element[0].name} </h3>
-        } else if(tv.created_by[0].name) {
+        } else if(tv.created_by.length > 0 ) {
             return <h3>Auteur : {tv.created_by[0].name}</h3>
+        } 
         }
-    }
-
+        
+        console.log(tv)
 
     const checkActeur = (element) => {
         if (element[0]) {
