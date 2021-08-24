@@ -129,6 +129,10 @@ const Favorite = () => {
 
     let newFavorites = favoriteDatas.filter(element => element.id !== id && element.title !== title)
     localStorage["favorites"] = JSON.stringify(newFavorites)
+    setFavoriteList(newFavorites)
+    if(favoriteList[0].id) {
+      setAreFavorite(false)
+    }
     alert('Favoris retiré')
 
   }
