@@ -11,8 +11,6 @@ function MovieCard() {
     let { IdMovie } = useParams()
     const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
-    const [isFavourite, setIsFavourite] = useState(false);
-    const [favourites, setFavourites] = useState([]);
     const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
@@ -93,12 +91,6 @@ function MovieCard() {
         }
     }
 
-    // const addFavourite = (Movie) => {
-    //     const newFavouriteList = [...favourites, Movie];
-    //     setFavourites(newFavouriteList);
-    //     localStorage.setItem('favourite', JSON.stringify(newFavouriteList));
-    // }
-
     return (
         <div className="MovieCard">
             <Navbar />
@@ -114,9 +106,7 @@ function MovieCard() {
                     <h3>Date de sortie : {Movie.release_date}</h3>
                     <h3>Synopsis : {Movie.overview}
                     </h3>
-                    {/* <div onClick={() => { setIsFavourite(!isFavourite); !isFavourite && addFavourite(Movie) }}> */}
-                        <button className={isFavourite ? "addedToFavourite" : "favButton"}> + </button>
-                    {/* </div> */}
+                        <button className="favButton"> + </button>
                     <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                         <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                     </a>

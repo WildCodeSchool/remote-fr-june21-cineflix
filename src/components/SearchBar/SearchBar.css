@@ -9,6 +9,7 @@
   width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .search-button {
@@ -34,10 +35,14 @@
 
 @media screen and (max-width: 950px) {
   .search-menu {
-    width: 300px;
+    width: 150px;
     padding-left: 100px;
   }
   .search-elements {
-    width: 60%;
+    padding-bottom: 25px;
+  }
+
+  .search-elements > input {
+    width: 180px;
   }
 }

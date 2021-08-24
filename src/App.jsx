@@ -14,7 +14,6 @@ import Contact from './screens/Contact/Contact';
 import Loading from './components/Loading/Loading';
 import ShowCategories from './screens/ShowCategories/ShowCategories';
 import TvCard from './screens/TvCard/TvCard';
-import Favourites from './screens/Favourites/Favourites';
 import './App.css';
 
 const App = () => {
@@ -59,9 +58,6 @@ const App = () => {
         </Route>
         <Route path="/serie-categories/:tv">
           <ShowCategories />
-        </Route>
-        <Route path="/favourites">
-          <Favourites />
         </Route>
         <Route component={NotFound} />
       </Switch>
