@@ -2,6 +2,8 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { NavLink, useParams } from "react-router-dom"
 
+import Swal from "sweetalert2";
+
 import Navbar from "../../components/Navbar/Navbar"
 
 import "./Search.css"
@@ -11,9 +13,8 @@ const Search = () => {
   let { searchValue } = useParams();
 
   const [searchResult, setSearchResult] = useState()
-  const [showFavoriteButton, setShowFavoriteButton] = useState(false)
 
-  let mediaType = null;
+// Fetch to user search value
 
   useEffect(() => {
     const getData = () => {
@@ -26,33 +27,67 @@ const Search = () => {
     getData()
   }, [searchValue])
 
-  const switchFavorite = () => {
-    setShowFavoriteButton(!showFavoriteButton)
-  }
-
+  // Reset the searchbar
   const resetSearch = () => {
     setSearchResult('')
+  }
+
+  // Function to create-add or add the localstorage object of favourites
+  const handleFavourite = (media) => {
+
+    let storedDatas
+
+    // Try to get the favourites object in localstorage
+    try {
+      storedDatas = JSON.parse(localStorage["favourites"])
+    } catch(error) {
+
+    }
+    
+    // If there is already the favourites object
+    if(storedDatas) {
+
+      // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+      if(!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {
+
+        let newDatas = []
+        storedDatas.map(element => newDatas.push(element))
+        newDatas.push(media)
+        localStorage["favourites"] = JSON.stringify(newDatas)
+        Swal.fire('Bien ajouté à vos favoris')
+      }
+
+    // If there is not the favourites object, we create it
+    } else {
+
+      let newFavourite = [media]
+      localStorage["favourites"] = JSON.stringify(newFavourite)
+      Swal.fire('Bien ajouté à vos favoris')
+    }
+     
   }
   
   return (
       <div className="searchContainer">
-        {console.log(showFavoriteButton)}
         <Navbar />
         <div className="Search searchShow">
           <ul>
             {searchResult &&
             searchResult.map((movie, index) => (
-            <li>
+            <li key={index}>
               {movie.poster_path &&
               <div className="searchMovieCard">
-                {movie.media_type === 'tv' ? mediaType = 'tv-card' : mediaType = 'movie-card'}
-                <NavLink to={`/${mediaType}/${movie.id}`} onChange={resetSearch}>
+                {/* movie.media_type === 'tv' ? */}
+                {movie.number_of_seasons ?
+                <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />
                 </NavLink>
-                {/* <i className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'} onClick={switchFavorite}></i> */}
-                <input type="checkbox" className="add-to-favorite" id={`add-to-favorite-${index}`} /><label for={`add-to-favorite-${index}`}><i className='fas fa-star add-favorite-button'></i></label>
-               
-               {/* <i onClick={setShowFavoriteButton(!showFavoriteButton)} className={showFavoriteButton ? 'fas fa-star add-favorite-button button-show' : 'fas fa-star add-favorite-button button-hide'}></i> */}
+                 : 
+                <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
+                  <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" title="Voir les infos" />
+                </NavLink>} 
+              <label for={movie.id} className="add-to-favourite-label"><i className='fas fa-star add-favourite-button checked' title="Ajouter aux favoris"></i></label>
+              <input type="checkbox" className="add-to-favourite" id={movie.id} onChange={(event) => handleFavourite(movie)} />
               </div>
               }
             </li>

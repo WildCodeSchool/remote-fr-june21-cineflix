@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect } from "react";
-import { Redirect, useHistory, useLocation, NavLink } from "react-router-dom";
+import { useHistory, useLocation, NavLink } from "react-router-dom";
 
 import "./SearchBar.css"
 
@@ -9,19 +9,6 @@ const SearchBar = ({searchValue, setSearchValue }) => {
     let history = useHistory();
     let location = useLocation();
 
-  
-/*
-    const handleClick = () => {
-      if(searchValue !== "") {
-        if(location.pathname.includes('search/')) {
-          history.push(`${searchValue}`);
-        } else {
-          history.push(`search/${searchValue}`);
-        }
-        <Redirect to={`/search/${searchValue}`} />;
-      }
-    }
-*/
     const handleKeyPress = (event) => {
       if(searchValue !== "") {
         if(event.charCode === 13 ) {

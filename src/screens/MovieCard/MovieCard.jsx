@@ -3,6 +3,7 @@ import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
 import Similar from '../../components/Similar/Similar';
 
+import Swal from "sweetalert2";
 
 import './MovieCard.css'
 
@@ -78,7 +79,6 @@ function MovieCard() {
         return "Seigneur Poulet"
     }
 
-
     const checkCategorie = () => {
         if (Movie.genres[0]) {
             if (Movie.genres[1]) {
@@ -89,6 +89,40 @@ function MovieCard() {
         }
     }
 
+    //***** Favourite's scripts
+    const handleFavourite = (media) => {
+
+    let storedDatas
+
+    // Try to get the favourites object in localstorage
+    try {
+      storedDatas = JSON.parse(localStorage["favourites"])
+    } catch(error) {
+
+    }
+    
+    // If there is already the favourites object
+    if(storedDatas) {
+
+      // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+      if(!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {
+
+        let newDatas = []
+        storedDatas.map(element => newDatas.push(element))
+        newDatas.push(media)
+        localStorage["favourites"] = JSON.stringify(newDatas)
+        Swal.fire('Bien ajouté à vos favoris')
+      }
+
+    // If there is not the favourites object, we create it
+    } else {
+
+      let newFavourite = [media]
+      localStorage["favourites"] = JSON.stringify(newFavourite)
+      Swal.fire('Bien ajouté à vos favoris')
+    }
+  
+  }
 
     return (
         <div className="MovieCard">
@@ -105,7 +139,7 @@ function MovieCard() {
                     <h3>Date de sortie : {Movie.release_date}</h3>
                     <h3>Synopsis : {Movie.overview}
                     </h3>
-                    <button className="favButton" onClick={() => alert("Pour accéder à cette fonctionnalité veuillez vous inscrire.")} type="button"> + </button>
+                    <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}> + </button>
                     <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                         <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                     </a>
