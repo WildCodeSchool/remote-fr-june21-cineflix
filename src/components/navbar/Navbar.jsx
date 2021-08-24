@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
-import Favorite from "../../screens/Favorite/Favorite";
+import Favorite from "../../screens/Favourite/Favourite";
 import SearchBar from "../SearchBar/SearchBar";
 
 import exit from "../../assets/exit.png";
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <NavLink activeStyle={{
                         borderColor: '#9d59d9',
                         borderBottomStyle: 'solid',
-                    }} to='/favorites' className="categoriesLink">Favoris
+                    }} to='/favourites' className="categoriesLink">Favoris
                     </NavLink>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                    {/* 

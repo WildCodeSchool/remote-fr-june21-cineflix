@@ -35,27 +35,14 @@
 
 .searchMovieCard:hover {
   z-index: 500;
-  /*transform: scale(1.2);*/
   box-shadow: 0px 0px 3px black;
 }
-/*
-.add-favorite-button {
-  position: absolute;
-  color: grey;
-  top: 0;
-  right: 0;
-  margin: 5px;
-  text-shadow: 0px 0px 3px black;
-  font-size: 2rem;
-}
-*/
 
-
-.add-to-favorite {
+.add-to-favourite {
   display: none;
 }
 
-.add-favorite-button {
+.add-favourite-button {
   cursor: pointer;
   position: absolute;
   top: 10px;
@@ -65,35 +52,7 @@
   text-shadow: 0px 0px 3px black;
 }
 
-.add-favorite-button:hover {
+.add-favourite-button:hover {
   transform: scale(1.5);
   color: gold;
 }
-
-
-/*
-.button-hide{
-  color: grey;
-  
-}
-
-.button-show {
-  color: gold;
-}
-
-input[type=checkbox] + .add-favorite-button {
-  position: absolute;
-  color: grey;
-  top: 0;
-  right: 0;
-  margin: 5px;
-  text-shadow: 0px 0px 3px black;
-  font-size: 2rem;
-
-}
-
-input[type=checkbox]:checked + .add-favorite-button {
-  color: gold;
-  border: 1px solid red;
-}
-*/
