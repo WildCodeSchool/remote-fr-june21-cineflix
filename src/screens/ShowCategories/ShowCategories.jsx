@@ -21,7 +21,8 @@ const ShowCategories = () => {
                 .then(res => res.json())
                 .then(data => setAnimationShows(data.results))
         }
-        fetchAnimationShows()
+        fetchAnimationShows();
+        window.scrollTo(0,0);
     }, [])
 
     useEffect(() => {

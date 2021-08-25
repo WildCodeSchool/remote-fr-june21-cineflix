@@ -1,6 +1,6 @@
 .searchContainer {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--bg-color);
 }
@@ -13,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  justify-content: space-evenly;
 }
 
 .Search li {
@@ -22,10 +23,10 @@
 }
 
 .searchMovieCard {
- position: relative;
- z-index: 1;
- margin: 20px;
- transition: 0.2s linear;
+position: relative;
+z-index: 1;
+margin: 20px;
+transition: 0.2s linear;
 }
 
 .searchMovieCard img {

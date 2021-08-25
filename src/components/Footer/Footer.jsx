@@ -14,8 +14,6 @@ function Footer() {
                     <li><a href="#"><i className="fab fa-github"></i></a></li>
                     <li><a href="#"><i className="fab fa-youtube"></i></a></li>
                 </ul>
-                
-
             </div>
             <div className="footer-containt">
                 <p>© 2021 Racoon Team - Hébergement GitHub, <NavLink to="/loading">À propos et mentions légales</NavLink> et <NavLink to="/contact">nous contacter</NavLink></p>

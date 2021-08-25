@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 
 
 
-import Loading from '../../components/Loading/Loading';
+//import Loading from '../../components/Loading/Loading';
 
 import Swal from "sweetalert2";
 

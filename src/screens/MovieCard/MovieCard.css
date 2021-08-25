@@ -55,6 +55,17 @@
     color: #f5e2ff;
     background-color: #141414;
     border: 2px solid white;
+    font-size: 17px;
+    border-radius: 50px;
+    padding: 3px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.addedToFavourite {
+    color: #f5e2ff;
+    background-color: var(--secondary-color);
+    border: 2px solid white;
     font-size: 25px;
     border-radius: 50px;
     padding: 3px 10px;
