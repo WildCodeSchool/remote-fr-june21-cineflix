@@ -129,10 +129,12 @@ function TvCard() {
                             <a href={tv.homepage} target="_blank" rel="noreferrer">
                                 <img className="diffImg" src={tv.networks ? `https://image.tmdb.org/t/p/w500${tv.networks[0].logo_path}` : null} alt="" />
                             </a>
+                            <div className="favDiv">
                             <button className="favButton" type="button"> + </button>
                             <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
                                 <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                             </a>
+                            </div>
                             <h3>Note : {tv.vote_average}/10</h3>
                         </div>
                     </div>
