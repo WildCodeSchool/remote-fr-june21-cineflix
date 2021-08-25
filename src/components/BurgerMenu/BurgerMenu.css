@@ -1,5 +1,5 @@
 .burger-list {
-    width: 100px;
+    width: 125px;
     height: 120px;
     color: white;
     display: flex;
@@ -9,7 +9,7 @@
     font-size: 20px;
     background-color: var(--bg-color);
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     left: 0;
     transition: transform 1s ease-in-out;
 }
@@ -26,5 +26,5 @@
 }
 
 .burger-list:hover {
-    transform: translateY(-50px);
+    transform: translateY(-90px);
 }
