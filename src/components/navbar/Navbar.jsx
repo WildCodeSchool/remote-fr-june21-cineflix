@@ -87,7 +87,7 @@ const Navbar = () => {
             </div>
             <div className="mobile-navbar">
                 <div>
-                    <FaHome className='navbar-icons' onClick={(e) => setShowBurger(!showBurger)} />
+                    <FaHome className='home-icons' onClick={(e) => setShowBurger(!showBurger)} />
                     {showBurger && (
                         <BurgerMenu />
                     )}

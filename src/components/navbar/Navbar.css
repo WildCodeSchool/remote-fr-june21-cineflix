@@ -80,6 +80,12 @@
     cursor: pointer;
 }
 
+.home-icons {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .invisible-icons {
     display:none;
 }
