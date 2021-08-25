@@ -105,3 +105,13 @@
         padding-left: 4vh;
     }
 }
+
+@media only screen and (min-width: 501px) and (max-width: 1025px) {
+    .ActorContainerFlex {
+        padding-left: 15vh;
+    }
+
+    .FilmoContainer {
+        padding-left: 30vh;
+    }
+}
