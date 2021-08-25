@@ -49,6 +49,7 @@ const Navbar = () => {
     }
 
     return (
+      <>
         <div className="Navbar">
             <div className={`nav ${show && "navBlack"}`}>
                 <div className="navContents">
@@ -57,23 +58,24 @@ const Navbar = () => {
                         src={logo}
                         alt='logo' />
                     </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to="/movie-categories/movie" className="categoriesLink">Films
-                    </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to="/serie-categories/tv" className="categoriesLink">Séries
-                    </NavLink>
-                    <NavLink activeStyle={{
-                        borderColor: '#9d59d9',
-                        borderBottomStyle: 'solid',
-                    }} to='/favourites' className="categoriesLink">Favoris
-                    </NavLink>
+                    <div className="categoriesLink">
+                      <NavLink activeStyle={{
+                          borderColor: '#9d59d9',
+                          borderBottomStyle: 'solid',
+                      }} to="/movie-categories/movie">Films
+                      </NavLink>
+                      <NavLink activeStyle={{
+                          borderColor: '#9d59d9',
+                          borderBottomStyle: 'solid',
+                      }} to="/serie-categories/tv">Séries
+                      </NavLink>
+                      <NavLink activeStyle={{
+                          borderColor: '#9d59d9',
+                          borderBottomStyle: 'solid',
+                      }} to="/favourites">Favoris
+                      </NavLink>
+                    </div>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                   {/* 
                     <img
                         className='navLogout'
                         src={exit}
@@ -88,14 +90,31 @@ const Navbar = () => {
                             onClick={() => dispatch(logout())}
                         />
                     </NavLink>
-                   */}
                 </div>
-                <NavLink to='/favourites'>
-                    <FiHeart className="navbar-icons" /></NavLink>
                 <NavLink to="/login">
-                    <VscAccount className="navbar-icons" /></NavLink>
+                    <img
+                        className='navAvatar'
+                        src={avatar}
+                        alt='avatar'
+                    />
+                </NavLink>
             </div>
         </div>
+        <div className="mobile-navbar">
+            <NavLink to='/home'>
+                <FaHome className="navbar-icons" /></NavLink>
+            <div>
+                <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                {showSearchBar && (
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                )}
+            </div>
+            <NavLink to='/favourites'>
+                <FiHeart className="navbar-icons" /></NavLink>
+            <NavLink to="/login">
+                <VscAccount className="navbar-icons" /></NavLink>
+        </div>
+      </>
     );
 };
 

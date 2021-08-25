@@ -7,9 +7,10 @@
 
 .search-elements {
   /* width: 60% */
-  width: 100%;
+  width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
   opacity: 0.3;
   transition: 0.2s linear;
 }
