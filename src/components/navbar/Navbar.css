@@ -81,8 +81,9 @@
 }
 
 .invisible-icons {
-    color: var(--bg-color);
+    display:none;
 }
+
 
 @media screen and (max-width: 950px) {
     .Navbar {
