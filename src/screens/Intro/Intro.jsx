@@ -7,7 +7,7 @@ import "./Intro.css";
 
 function Intro() {
     return (
-        <div className="container">
+        <div className="intro-container">
             <div className="videoContainer">
                 <video playsInline="playsinline" autoPlay="autoplay" muted="muted" loop="loop">
                     <source src={film} />

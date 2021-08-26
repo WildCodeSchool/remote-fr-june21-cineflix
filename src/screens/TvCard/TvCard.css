@@ -55,9 +55,22 @@
     color: var(--secondary-color);
 }
 
+.diffImg {
+    width: 12vh;
+    height: auto;
+    margin-left: 10px;
+    background-color: rgb(251, 251, 251);
+    padding: 7px;
+}
+
+.favDiv {
+    margin-top: 15px;
+}
+
 @media only screen and (max-width: 870px) {
     .flex {
         display: flex;
         flex-wrap: wrap;
     }
 }
+

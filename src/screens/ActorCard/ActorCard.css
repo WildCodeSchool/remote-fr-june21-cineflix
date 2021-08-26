@@ -75,3 +75,60 @@
 .FilmoImg {
     height: 25vh;
 }
+
+@media only screen and (max-width: 500px) {
+    .ActorContainerFlex {
+        flex-direction: column;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        text-align: center;
+    }
+
+    .ActorContainerFlex h3 {
+        padding-left: 6vh;
+        padding-right: 6vh;
+    }
+
+    .ActorContainerDetail p {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .FilmoContainer {
+        flex-direction: column;
+        padding-left: 10vh;
+        text-align: center;
+    }
+
+    .FilmoContainer p {
+        text-align: center;
+        padding-left: 4vh;
+    }
+
+    .ActorCard h3 {
+        width: 100%;
+    }
+
+    .FilmoImg {
+        padding-left: 20px;
+    }
+
+    .FilmoContainer figure {
+        text-align: center;
+    }
+
+    .FilmoContainer p {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1025px) {
+    .ActorContainerFlex {
+        padding-left: 15vh;
+    }
+
+    .FilmoContainer {
+        padding-left: 30vh;
+    }
+}

@@ -1,34 +1,34 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useState } from "react";
 
-import loginImg from "../../assets/loginImg.png";
 import logo from "../../assets/logo.png";
 
 import "./Register.css";
 
 export default function Register() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
 
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const usernameRef = useRef();
+    let history = useHistory();
 
-    
-    const handleStart = () => {
-        setEmail(emailRef.current.value);
-    };
+    const [fields, setFields] = useState({
+        email: "",
+        password: "",
+        username: ""
+    });
+
+    const handleInput = (e) => {
+        e.preventDefault();
+        setFields({ ...fields, [e.target.name]: e.target.value })
+    }
 
     const handleFinish = async (e) => {
         e.preventDefault();
-        setPassword(passwordRef.current.value);
-        setUsername(usernameRef.current.value);
         try {
-            await axios.post("auth/register", { email, username, password });
+            const { email, username, password } = fields;
+            axios.post("auth/register", { email, username, password }).then(() => {
+                history.push("/home");
+            });
         } catch (err) { }
-
     };
 
     return (
@@ -40,34 +40,27 @@ export default function Register() {
                         src={logo}
                         alt='logo' />
                     </Link>
-                    <Link to="/login"><img
-                        className='registerNavAvatar'
-                        src={loginImg}
-                        alt='avatar' />
+                    <Link to="/login">
+                        <button className="loginButton">
+                            S'identifier
+                        </button>
                     </Link>
                 </div>
             </div>
             <div className="register-container">
                 <h1>Toutes les infos sur vos films et séries préférés.</h1>
-                <p>
-                    Pour entrer créer votre compte, c'est 100% gratuit.
-                </p>
-                {!email ? (
-                    <div className="input">
-                        <input type="email" placeholder="addresse email" ref={emailRef} />
-                        <button className="registerButton" onClick={handleStart}>
-                            Suivant
-                        </button>
-                    </div>
-                ) : (
-                    <form className="input">
-                        <input type="username" placeholder="username" ref={usernameRef} /> <br />
-                        <input type="password" placeholder="mot de passe" ref={passwordRef} />
-                        <button className="registerButton" onClick={handleFinish}>
-                            Commencer
-                        </button>
-                    </form>
-                )}
+
+                <form className="input">
+                    <p>
+                        Inscrivez vous, c'est 100% gratuit.
+                    </p>
+                    <input type="email" placeholder="Adresse Email" onChange={handleInput} value={fields.email} name="email" />
+                    <input type="username" placeholder="Nom d'Utilisateur" onChange={handleInput} value={fields.username} name="username" />
+                    <input type="password" placeholder="Mot de Passe" onChange={handleInput} value={fields.password} name="password" />
+                    <button className="registerButton" onClick={handleFinish}>
+                        Commencer
+                    </button>
+                </form>
             </div>
         </div>
     );
