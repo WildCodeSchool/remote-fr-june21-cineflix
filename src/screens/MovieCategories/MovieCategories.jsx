@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 
 import Navbar from "../../components/Navbar/Navbar";
-import PosterCard from "../../components/PosterCard/PosterCard";
 import Footer from './../../components/Footer/Footer';
+
+import Carousel from './../../components/Carousel/Carousel';
 
 import './Categories.css';
 
@@ -24,7 +25,8 @@ const MovieCategories = () => {
                 .then(res => res.json())
                 .then(data => setAnimationMovies(data.results));
         }
-        fetchAnimationMovies()
+        fetchAnimationMovies();
+        window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {
@@ -72,87 +74,22 @@ const MovieCategories = () => {
         fetchThrillerMovies()
     }, []);
 
-    const mapPoster = (state) => {
-        return (
-            <>
-                {state.map((poster) =>
-                    <PosterCard key={poster.id} {...poster} />)}
-            </>
-        );
-    }
-
-    const refAnimation = useRef();
-    const refAction = useRef();
-    const refComedy = useRef();
-    const refDocumentary = useRef();
-    const refHorror = useRef();
-    const refThriller = useRef();
-
-    const handleClick = (direction, type) => {
-        let distance = type.current.getBoundingClientRect().x
-
-        if (direction === 'left' && slideNumber > 0) {
-            setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${200 + distance}px)`
-        }
-        if (direction === 'right' && slideNumber <= 13) {
-            setSlideNumber(slideNumber + 1);
-            type.current.style.transform = `translateX(${-255 + distance}px)`
-        }
-    }
-
     return (
         <div className="categorie-container">
             <Navbar />
             <div className="categorie-wrapper">
                 <h3>Animation</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAnimation)} />
-                    <div className="popularLists" ref={refAnimation}>
-                        {mapPoster(animationMovies)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAnimation)} />
-                </div>
+                <Carousel items={animationMovies} />
                 <h3>Action / Aventure</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAction)} />
-                    <div className="popularLists" ref={refAction}>
-                        {mapPoster(actionMovies)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAction)} />
-                </div>
+                <Carousel items={actionMovies} />
                 <h3>Comedie</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refComedy)} />
-                    <div className="popularLists" ref={refComedy}>
-                        {mapPoster(comedyMovies)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refComedy)} />
-                </div>
+                <Carousel items={comedyMovies} />
                 <h3>Documentaire</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refDocumentary)} />
-                    <div className="popularLists" ref={refDocumentary}>
-                        {mapPoster(documentaries)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refDocumentary)} />
-                </div>
+                <Carousel items={documentaries} />
                 <h3>Horreur</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refHorror)} />
-                    <div className="popularLists" ref={refHorror}>
-                        {mapPoster(horrorMovies)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refHorror)} />
-                </div>
+                <Carousel items={horrorMovies} />
                 <h3>Thriller / Policier</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refThriller)} />
-                    <div className="popularLists" ref={refThriller}>
-                        {mapPoster(thrillerMovies)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refThriller)} />
-                </div>
+                <Carousel items={thrillerMovies} />
             </div>
             <Footer />
         </div>

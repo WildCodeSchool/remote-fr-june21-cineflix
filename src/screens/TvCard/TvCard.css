@@ -1,0 +1,62 @@
+.TvCard {
+    background-color: #141414;
+    padding-top: 100px;
+    height: 100vh;
+    width: 100%;
+}
+
+.navB {
+    margin: 0px;
+    color: #f5e2ff;
+    background-color: hsl(0, 0%, 8%);
+    height: 80px;
+    text-align: center;
+    font-size: 50px;
+}
+.TvCard h1 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+}
+
+.TvCard .img-tv {
+    height: 72vh;
+}
+
+.TvCard h3 {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #141414;
+    color: #f5e2ff;
+    width: 65%;
+    padding: 15px;
+}
+
+.flex {
+    background-color: #141414;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 40vh;
+}
+
+.detail-content{
+    padding : 10px;
+}
+
+.detail-content a {
+    color: var(--text-color);
+    padding: 3px;
+}
+
+.detail-content a:visited {
+    color: var(--secondary-color);
+}
+
+@media only screen and (max-width: 870px) {
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

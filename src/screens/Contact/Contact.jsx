@@ -10,9 +10,8 @@ import link from "../../assets/linkedin.png";
 
 const Contact = () => {
     return (
-        <>
+        
             <section>
-
                 <div className="container-contact">
                     <div className="contact-info">
                         <div>
@@ -42,7 +41,6 @@ const Contact = () => {
                             <li><a href="#"><img src={link} /></a></li>
                         </ul>
                     </div>
-                </div>
                 <div className="contact-form">
                     <h2>Envoyez nous un message</h2>
                     <div className="form-box">
@@ -55,7 +53,7 @@ const Contact = () => {
                             <span>Prénom</span>
                         </div>
                         <div className="input-box y">
-                            <input type="email" required />
+                            <input type="text" required />
                             <span>Email</span>
                         </div>
                         <div className="input-box y">
@@ -71,8 +69,9 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
+        
     )
 }
 

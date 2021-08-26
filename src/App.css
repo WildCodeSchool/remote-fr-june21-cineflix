@@ -9,3 +9,19 @@
     --text-color: #fbf5ff;
     --text-op-color: #fbf5ffbe;
 }
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--bg-color)
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+}
+
+* { 
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
