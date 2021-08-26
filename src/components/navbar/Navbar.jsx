@@ -115,16 +115,9 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="mobile-navbar">
-               {/* <div>
-                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)} />
-                    {showBurger && (
-                        <BurgerMenu />
-                    )}
-                </div>
-                    */}
                     <BurgerMenu />
                 <div>
-                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                    <FaSearch className="navbar-icons" onClick={(e) => setShowSearchBar(!showSearchBar)} />
                     {showSearchBar && (
                         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     )}

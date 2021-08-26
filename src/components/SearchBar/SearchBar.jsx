@@ -30,12 +30,12 @@ const SearchBar = ({searchValue, setSearchValue }) => {
 
   return (
     <>
-    <span className="search-menu">
-      <span className="search-elements">
-        <input type="text" placeholder="Rechercher un film " value={searchValue}  onChange={(event) => setSearchValue(event.target.value)}/>
-        <NavLink to={`/search/${searchValue}`}><button className="search-button">🔎</button></NavLink>
+      <span className="search-menu">
+        <span className="search-elements">
+          <input type="text" placeholder="Rechercher un film " value={searchValue}  onChange={(event) => setSearchValue(event.target.value)}/>
+          <NavLink to={`/search/${searchValue}`}><button className="search-button">🔎</button></NavLink>
+        </span>
       </span>
-    </span>
     </>
   )
 }

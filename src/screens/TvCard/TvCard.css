@@ -66,8 +66,15 @@
 .favDiv {
     margin-top: 15px;
 }
-
+/*
 @media only screen and (max-width: 870px) {
+  .TvCard {
+    padding-top: 0px;
+  }
+  .TvCard img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
     .flex {
         display: flex;
         flex-direction: column;
@@ -77,6 +84,54 @@
     .detail-content {
         flex-wrap: wrap;
         width: 100%;
+    }
+
+    .TvCard h3 {
+      width: 100%;
+    }
+}
+*/
+@media screen and (min-width: 501px) and (max-width: 1025px) {
+  .TvCard {
+    padding-top: 100px;
+  }
+  .TvCard img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+    .flex {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .detail-content {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .detail-content h3 {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .TvCard {
+    padding-top: 0px;
+  }
+  .TvCard img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+    .flex {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .TvCard h3 {
+      width: 100%;
     }
 }
 

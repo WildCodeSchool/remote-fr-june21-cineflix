@@ -8,12 +8,16 @@
 .Search {
   padding-top: 100px;
 }
+.Search .searchTitle {
+  display: none;
+}
 
 .Search ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  padding-left: 0;
 }
 
 .Search li {
@@ -54,4 +58,18 @@ transition: 0.2s linear;
 .add-favourite-button:hover {
   transform: scale(1.5);
   color: gold;
+}
+
+@media screen and (max-width: 950px) {
+  .Search .searchTitle {
+    color: var(--text-color);
+    font-size: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .add-favourite-button {
+    transform: scale(1.5);
+  }
 }

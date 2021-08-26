@@ -17,7 +17,7 @@ const BurgerMenu = () => {
       <div className="sub-menu">
         <ul className={activeMenu ?  "menu-burger-active" : "menu-burger-inactive"}>
           <li className="menu-arrow" onClick={() => handleMenu()}>{activeMenu ? <i class="fas fa-sort-down"></i> : <i class="fas fa-sort-up"></i>}</li>
-          <li className="menu-element"><NavLink to="/home"><FaHome className='home-icon'/></NavLink></li>
+          <li className="menu-element"><NavLink to="/home">Accueil</NavLink></li>
           <li className="menu-element"><NavLink to='/movie-categories/movie'>Films</NavLink></li>
           <li className="menu-element"><NavLink to='/serie-categories/tv'>Séries</NavLink></li>
         </ul>

@@ -22,12 +22,15 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   list-style: none;
+  padding-left: 0px;
 }
 
 .favouriteCard {
   position: relative;
+  margin: 20px;
+
 }
 
 .remove-from-favourite {

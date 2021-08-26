@@ -31,7 +31,6 @@
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: #141414;
     color: #f5e2ff;
-    width: 65%;
     padding: 15px;
 }
 
@@ -76,7 +75,9 @@
     background-color: #141414;
     display: flex;
     justify-content: flex-start;
-    padding-left: 40vh;
+    padding-left: 10vw;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .containerDetail {
@@ -92,11 +93,40 @@
     color: var(--secondary-color);
   }
 
-@media (max-width: 870px) {
+@media screen and (min-width: 501px) and (max-width: 1025px) {
+  
+  .MovieCard img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
     .containerFlex {
         display: flex;
+        justify-content: flex-start;
         flex-direction: column;
         width: 100%;
         padding: 0;
+    }
+    .MovieCard h3 {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .MovieCard {
+    padding-top: 0px;
+  }
+  .MovieCard img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+    .containerFlex {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .MovieCard h3 {
+      width: 100%;
     }
 }

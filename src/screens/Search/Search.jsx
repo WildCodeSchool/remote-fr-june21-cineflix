@@ -71,6 +71,7 @@ const Search = () => {
       <div className="searchContainer">
         <Navbar />
         <div className="Search searchShow">
+        <h2 className="searchTitle">Recherches :</h2>
           <ul>
             {searchResult &&
             searchResult.map((movie, index) => (
