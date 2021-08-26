@@ -8,7 +8,6 @@ import Favorite from "../../screens/Favourite/Favourite";
 import BurgerMenu from './../BurgerMenu/BurgerMenu';
 import SearchBar from './../SearchBar/SearchBar';
 
-import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
 import { FaHome } from 'react-icons/fa';
@@ -43,77 +42,72 @@ const Navbar = () => {
     }, []);
 
     return (
-      <>
-        <div className="Navbar">
-            <div className={`nav ${show && "navBlack"}`}>
-                <div className="navContents">
-                    <NavLink to="/home"><img
-                        className='navLogo'
-                        src={logo}
-                        alt='logo' />
-                    </NavLink>
-                    <div className="categoriesLink">
-                      <NavLink activeStyle={{
-                          borderColor: '#9d59d9',
-                          borderBottomStyle: 'solid',
-                      }} to="/movie-categories/movie">Films
-                      </NavLink>
-                      <NavLink activeStyle={{
-                          borderColor: '#9d59d9',
-                          borderBottomStyle: 'solid',
-                      }} to="/serie-categories/tv">Séries
-                      </NavLink>
-                      <NavLink activeStyle={{
-                          borderColor: '#9d59d9',
-                          borderBottomStyle: 'solid',
-                      }} to="/favourites">Favoris
-                      </NavLink>
+        <>
+            <div className="Navbar">
+                <div className={`nav ${show && "navBlack"}`}>
+                    <div className="navContents">
+                        <NavLink to="/home"><img
+                            className='navLogo'
+                            src={logo}
+                            alt='logo' />
+                        </NavLink>
+                        <div className="categoriesLink">
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/movie-categories/movie">Films
+                            </NavLink>
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/serie-categories/tv">Séries
+                            </NavLink>
+                            <NavLink activeStyle={{
+                                borderColor: '#9d59d9',
+                                borderBottomStyle: 'solid',
+                            }} to="/favourites">Favoris
+                            </NavLink>
+                        </div>
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+
+                        <NavLink to="/login">
+                            <img
+                                className='navLogout'
+                                src={avatar}
+                                alt='logout'
+                                onClick={() => dispatch(logout())}
+                            />
+                        </NavLink>
                     </div>
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                    <img
-                        className='navLogout'
-                        src={exit}
-                        alt='logout'
-                        onClick={() => dispatch(logout())}
-                    />
+                </div>
+                <div className="mobile-navbar">
+                    <div>
+                        <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)} />
+                        {showBurger && (
+                            <BurgerMenu />
+                        )}
+                    </div>
+                    <div>
+                        <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                        {showSearchBar && (
+                            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                        )}
+                    </div>
+                    <NavLink to='/favourites'>
+                        <FiHeart className="navbar-icons" /></NavLink>
                     <NavLink to="/login">
                         <img
-                            className='navLogout'
-                            src={exit}
-                            alt='logout'
-                            onClick={() => dispatch(logout())}
+                            className='navAvatar'
+                            src={avatar}
+                            alt='avatar'
                         />
                     </NavLink>
                 </div>
             </div>
             <div className="mobile-navbar">
                 <div>
-                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)}/>
-                    {showBurger &&  (
-                        <BurgerMenu />
-                    )}
-                </div>
-                <div>
-                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
-                    {showSearchBar && (
-                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                    )}
-                </div>
-                <NavLink to='/favourites'>
-                    <FiHeart className="navbar-icons" /></NavLink>
-                <NavLink to="/login">
-                    <img
-                        className='navAvatar'
-                        src={avatar}
-                        alt='avatar'
-                    />
-                </NavLink>
-            </div>
-        </div>
-        <div className="mobile-navbar">
-                <div>
-                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)}/>
-                    {showBurger &&  (
+                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)} />
+                    {showBurger && (
                         <BurgerMenu />
                     )}
                 </div>
@@ -128,7 +122,7 @@ const Navbar = () => {
                 <NavLink to="/login">
                     <VscAccount className="navbar-icons" /></NavLink>
             </div>
-      </>
+        </>
     );
 };
 

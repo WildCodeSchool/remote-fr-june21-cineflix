@@ -34,20 +34,20 @@
     top: 25%;
     bottom: 35%;
     left: 4%;
-    width: 36%;
+    width: 40vw;
     z-index: 10;
 }
 
 .bannerTitle {
     width: 100%;
-    font-size: 3.5vw;
+    font-size: 5vw;
     padding: 20px;
 }
 
 .bannerDescription {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     padding: 10px;
-    width: 90%;
+    width: 40vw;
 }
 
 .bannerButton {  
