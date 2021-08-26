@@ -1,4 +1,3 @@
-import { AlternateEmailOutlined } from '@material-ui/icons';
 import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';

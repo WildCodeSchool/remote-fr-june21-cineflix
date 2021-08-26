@@ -1,15 +1,15 @@
 import { useState, useEffect, useContext } from "react";
+
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
-import Favorite from "../../screens/Favourite/Favourite";
 
 import BurgerMenu from './../BurgerMenu/BurgerMenu';
 import SearchBar from './../SearchBar/SearchBar';
 
-import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
+import exit from "../../assets/exit.png";
 import logo from "../../assets/logo.png";
 import { FaHome } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';

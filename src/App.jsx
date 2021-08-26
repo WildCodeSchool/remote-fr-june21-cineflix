@@ -1,4 +1,3 @@
-// import { AuthContext } from './authContext/AuthContext';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ActorCard from "./screens/ActorCard/ActorCard"
@@ -15,6 +14,7 @@ import Contact from './screens/Contact/Contact';
 import Loading from './screens/Loading/Loading';
 import ShowCategories from './screens/ShowCategories/ShowCategories';
 import TvCard from './screens/TvCard/TvCard';
+
 import './App.css';
 
 const App = () => {
@@ -25,19 +25,14 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Intro} />
         <Route exact path="/home">
-          {/* {user ? <Home /> : <Redirect to="/register" />} */}
           <Home />
         </Route>
         <Route exact path="/register">
-          {/* {!user ? <Register /> : <Redirect to="/home" />} */}
           <Register />
         </Route>
         <Route exact path="/login">
-          {/* {!user ? <Login /> : <Redirect to="/" />} */}
           <Login />
         </Route>
-        {/* {user && ( */}
-        {/* <> */}
         <Route path="/movie-card/:IdMovie">
           <MovieCard />
         </Route>
@@ -49,9 +44,10 @@ const App = () => {
         <Route path="/actor/:IdActor">
           <ActorCard />
         </Route>
-        {/* </> */}
-        {/* )} */}
         <Route path="/search/:searchValue">
+          <Search />
+        </Route>
+        <Route exact path="/search">
           <Search />
         </Route>
         <Route path="/movie-categories/:movie">

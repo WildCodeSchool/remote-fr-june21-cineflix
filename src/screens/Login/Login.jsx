@@ -42,9 +42,7 @@ export default function Login() {
                         placeholder="Mot de Passe"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    {/* <Redirect to="/home"> */}
                     <button className="loginButton" onClick={handleLogin}>S'identifier</button>
-                    {/* </Redirect> */}
                     <span>
                         Nouveau sur Cinéflix?<br />
                         <Link to="/register"><b>l'inscription c'est par ici.</b></Link>

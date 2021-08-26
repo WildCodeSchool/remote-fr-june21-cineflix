@@ -1,12 +1,12 @@
 import './Contact.css';
+import face from "../../assets/facebook.png";
+import insta from "../../assets/instagram.png";
+import link from "../../assets/linkedin.png";
 import loc from "../../assets/localisation.png";
 import mail from "../../assets/mail.png";
-import tel from "../../assets/tel.png";
-import face from "../../assets/facebook.png";
-import twit from "../../assets/twitter.png";
-import insta from "../../assets/instagram.png";
 import pint from "../../assets/pinterest.png";
-import link from "../../assets/linkedin.png";
+import tel from "../../assets/tel.png";
+import twit from "../../assets/twitter.png";
 
 const Contact = () => {
     return (

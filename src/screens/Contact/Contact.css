@@ -20,11 +20,9 @@ section::before {
     top: 0;
     left: 0;
     width: 50%;
-    height: 100%;
-
-    
-    
+    height: 100%;   
 }
+
 .container-contact {
     position: relative;
     min-width: 1100px;

@@ -30,7 +30,6 @@ function ActorCard() {
         getMovie()
     }, [IdActor])
 
-
     return (
         <div className="ActorCard">
             <Navbar />
@@ -56,11 +55,9 @@ function ActorCard() {
                         </NavLink>
                     </figure>
                 )) : null}
-
             </div>
         </div>
     )
-
 }
 
 export default ActorCard;
