@@ -38,12 +38,16 @@
   background-color: white;
 }
 
+.search-elements > input:focus{
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
 @media screen and (max-width: 950px) {
   .search-menu {
     width: 150px;
     padding-left: 100px;
   }
-
   .search-elements > input {
     width: 180px;
   }

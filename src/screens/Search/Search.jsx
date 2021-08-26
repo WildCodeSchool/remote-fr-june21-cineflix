@@ -77,7 +77,6 @@ const Search = () => {
             <li key={index}>
               {movie.poster_path &&
               <div className="searchMovieCard">
-                {/* movie.media_type === 'tv' ? */}
                 {movie.number_of_seasons ?
                 <NavLink to={`/tv-card/${movie.id}`} onChange={resetSearch}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" />

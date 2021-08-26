@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 .contactForm {
@@ -12,6 +12,8 @@ min-height: 100vh;
 background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://i.imgur.com/Abm0wRq.jpeg");
 background-size: cover;
 font-family: 'Poppins', sans-serif;
+z-index: 2;
+position: relative;
 }
 
 .contactForm::before {
@@ -115,7 +117,7 @@ font-family: 'Poppins', sans-serif;
     margin-left: 150px;
     width: calc(100% - 150px);
     height: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow:0 50px 50px rgba(0,0,0,0.25);
 }
 .container-contact .contact-form h2 {
@@ -143,6 +145,7 @@ font-family: 'Poppins', sans-serif;
 .input-box input,
 .input-box textarea {
     width: 100%;
+    background: rgba(255, 255, 255, 0.6);
     resize: none;
     padding: 5px 0;
     font-size: 18px;

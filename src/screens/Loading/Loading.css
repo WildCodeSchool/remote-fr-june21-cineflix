@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: consolas;
 }
@@ -35,13 +33,11 @@
     height: 25px;
     border-radius: 8px;
     left: 50%;
-    transform: content rotate(calc(18deg * attr(data-frame)" "));
-    360deg/20block = 18deg chacun 
+    transform: rotate(calc(18deg * var(--i)));
     transform-origin: 0 125px;
     animation: animate 1.9s ease-in-out infinite;
-    /*animation-delay: content calc(0.05s * attr(data-frame)" ");
-    /* 1 / 20 = 0.05
-}*/
+    animation-delay: calc(0.05s * var(--i))
+} */
 @keyframes animate {
     0%,50%
     {

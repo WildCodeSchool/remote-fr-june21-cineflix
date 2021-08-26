@@ -18,12 +18,17 @@
     justify-content: center;
     color: var(--text-color);
     text-shadow: 2px 2px 2px var(--bg-color);
+}
 
+.login-container h1 {
+    margin: -15px 10px 10px 10px;
+    text-align: center;
+    text-shadow: 2px 2px 2px var(--bg-color);
 }
 
 .login-container form {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     padding: 30px;
     border-radius: 5px;
     background-color: var(--bg-op-color);
@@ -35,12 +40,18 @@
 
 .login-container form input {
     height: 40px;
+    width: 96%;
     border-radius: 5px;
     background-color: var(--text-color);
     color: var(--bg-color);
     padding: 5px;
     margin: 5px;
 
+
+}
+
+.login-container input:focus {
+    outline: none;
 }
 
 .login-container form input::placeholder {
@@ -50,18 +61,19 @@
 .login-container form button {
     height: 40px;
     border-radius: 5px;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-op-color);
     color: var(--text-color);
     border: none;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+    width: 95%;
 }
 
 .login-container form button:hover {
     height: 40px;
     border-radius: 5px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-op-color);
     color: var(--text-color);
     border: none;
     font-size: 18px;
@@ -73,10 +85,11 @@
 .login-container form span {
     color: var(--text-op-color);
     text-align: center;
+    margin: 2px;
 }
 
 .login-container form span b {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-color);
     cursor: pointer;
 }
@@ -99,9 +112,7 @@
     height: 8vh;
     z-index: 20;
     color: var(--text-color);
-    /* Animations*/
-    transition-timing-function: ease-in;
-    transition: all 0.5s;
+    
 }
 
 
@@ -121,12 +132,3 @@
     z-index: 30;
 }
 
-.loginNavAvatar{
-    position: fixed;
-    top: 20px;
-    right: 3rem;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    z-index: 30;
-}
