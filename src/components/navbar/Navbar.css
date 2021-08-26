@@ -80,9 +80,16 @@
     cursor: pointer;
 }
 
-.invisible-icons {
-    color: var(--bg-color);
+.home-icon {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
+
+.invisible-icons {
+    display:none;
+}
+
 
 @media screen and (max-width: 950px) {
     .Navbar {
