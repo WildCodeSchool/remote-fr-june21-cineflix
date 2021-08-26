@@ -28,7 +28,7 @@ width: 100%;
     overflow: hidden;
     display: flex;
     height: 50vh;
-    margin-right: 20px;
+    margin-right: 15px;
     margin-left: 15px;
   }
   
@@ -38,7 +38,7 @@ width: 100%;
     height: 50vh;
     width: max-content;
     transform: translateX(0px);
-    transition: all 0.8s ease;
+    transition: all 0.4s ease;
   }
   
   .top-container h2 {
@@ -85,6 +85,15 @@ width: 100%;
     .top-cards {
       height: 40vh;
     }
+
+    .title-random {
+      font-size: 20px;
+    }
+
+    .selectB {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 
   .selectB {
@@ -93,7 +102,6 @@ width: 100%;
     border: none;
     color: #f5e2ff;
     margin-top: 10px;
-    margin-left: 1000px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -101,5 +109,12 @@ width: 100%;
     font-size: 16px;
     border-radius: 15px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+  }
+
+  .selectB::-webkit-scrollbar {
+    display: none;
   }

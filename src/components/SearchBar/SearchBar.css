@@ -1,7 +1,6 @@
 .search-menu {
   display: flex;
-  justify-content: center;
-  padding: 15px;
+  padding-left: 100px;
   width: 100%;
 }
 
@@ -9,6 +8,13 @@
   width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  transition: 0.2s linear;
+}
+
+.search-elements:hover {
+  opacity: 1;
 }
 
 .search-button {
@@ -24,10 +30,21 @@
 
 .search-elements > input {
   text-align: center;
-  height: 40px;
-  width: 100%;
+  height: 42px;
+  width: 100vw;
   border: none;
   font-size: 1.5em;
   border-radius: 10px 0 0 10px;
   background-color: white;
+}
+
+@media screen and (max-width: 950px) {
+  .search-menu {
+    width: 150px;
+    padding-left: 100px;
+  }
+
+  .search-elements > input {
+    width: 180px;
+  }
 }

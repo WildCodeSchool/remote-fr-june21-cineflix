@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router";
 import Navbar from '../../components/Navbar/Navbar';
-import Loading from '../../components/Loading/Loading';
+
+import CircularLoading from "../../components/CircularLoading/CircularLoading";
+
+
+import Swal from "sweetalert2";
 
 import './TvCard.css';
 
@@ -61,13 +65,13 @@ function TvCard() {
             if (element[1]) {
                 return <h3>Auteur : {element[0].name}, {element[1].name} </h3>
             }
-                return <h3> Auteur : {element[0].name} </h3>
-        } else if(tv.created_by.length > 0 ) {
+            return <h3> Auteur : {element[0].name} </h3>
+        } else if (tv.created_by.length > 0) {
             return <h3>Auteur : {tv.created_by[0].name}</h3>
-        } 
         }
-        
-        console.log(tv)
+    }
+
+    console.log(tv)
 
     const checkActeur = (element) => {
         if (element[0]) {
@@ -109,11 +113,58 @@ function TvCard() {
     }
 
 
+    //***** Favourite's scripts
+
+    const handleFavourite = (media) => {
+
+        let storedDatas
+
+        // Try to get the favourites object in localstorage
+        try {
+            storedDatas = JSON.parse(localStorage["favourites"])
+        } catch (error) {
+
+        }
+
+        // If there is already the favourites object
+        if (storedDatas) {
+
+            // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+            if (!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {  //&& (element.type === type)
+
+                let newDatas = []
+                storedDatas.map(element => newDatas.push(element))
+                newDatas.push(media)
+                localStorage["favourites"] = JSON.stringify(newDatas)
+                Swal.fire('Bien ajouté à vos favoris')
+            }
+
+            // If there is not the favourites object, we create it
+        } else {
+
+            let newFavourite = [media]
+            localStorage["favourites"] = JSON.stringify(newFavourite)
+            Swal.fire('Bien ajouté à vos favoris')
+        }
+
+    }
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+    }, []);
+
     return (
-        <>
-            {loader ? <Loading /> :
-                <div className="TvCard">
-                    <Navbar />
+
+        <div className="TvCard">
+            <Navbar />
+            {isLoading ? (
+                <CircularLoading />
+            ) : (
+                <>
                     <h1>{tv.name}</h1>
                     <div className="flex">
                         <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" className="img-tv" />
@@ -130,18 +181,18 @@ function TvCard() {
                                 <img className="diffImg" src={tv.networks ? `https://image.tmdb.org/t/p/w500${tv.networks[0].logo_path}` : null} alt="" />
                             </a>
                             <div className="favDiv">
-                            <button className="favButton" type="button"> + </button>
-                            <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
-                                <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
-                            </a>
+                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}> + </button>
+                                <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
+                                    <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+                                </a>
                             </div>
                             <h3>Note : {tv.vote_average}/10</h3>
                         </div>
                     </div>
-                </div>
-            }
+                </>
+            )}
+        </div>
 
-        </>
 
     )
 

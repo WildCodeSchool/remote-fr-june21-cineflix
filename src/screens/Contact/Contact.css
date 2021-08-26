@@ -1,42 +1,76 @@
-section {
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+}
+
+.contactForm {
 display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
-background: blueviolet
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://i.imgur.com/Abm0wRq.jpeg");
+background-size: cover;
+font-family: 'Poppins', sans-serif;
+z-index: 2;
+position: relative;
 }
-section::before {
-    content:'';
+
+.contactForm::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-    background: violet;
-}
-.container-contact {
-    position: relative;
 }
 
-.container-contact .contact-info {
+/*Popup demandant l'email*/
+#no-email {
+    display: none;
+    position: absolute;
+    top: 4px;
+    color: #ff4d4d;
+    right: 30px;
+}
+
+/*popup demandant de bien remplir les champs obligatoire*/
+.invalid-message {
+    margin-top: 20px;
+    background-color: #ff4d4d;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container-contact {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+}
+
+.contact-info {
     position: absolute;
     top: 40px;
     width: 350px;
     height: calc(100% - 80px);
-    background: blue;
+    background: #240046;
     z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction:column;
     justify-content: space-between;
     box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+    padding: 30px;
 }
-.container-contact .contact-info h2 {
+.contact-info h2 {
     color: #fff;
     font-size: 24px;
     font-weight: 500;
 }
-.container-contact .contact-info ul.info {
+.info {
     position: relative;
     margin: 20px 0;
 }
@@ -76,14 +110,14 @@ section::before {
     filter: invert(1);
 }
 
-.container-contact .contact-form {
+.contact-form {
     position: absolute;
     padding:70px 50px;
     padding-left: 250px;
     margin-left: 150px;
     width: calc(100% - 150px);
     height: 100%;
-    background: tomato;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow:0 50px 50px rgba(0,0,0,0.25);
 }
 .container-contact .contact-form h2 {
@@ -91,26 +125,27 @@ section::before {
     font-size: 24px;
     font-weight: 500;
 }
-.container-contact .contact-form .form-box {
+.form-box {
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top: 30px;
 }
-.container-contact .contact-form .form-box .input-box {
+.input-box {
     position: relative;
     margin-bottom: 35px;
 }
-.container-contact .contact-form .form-box .input-box.y {
+.input-box.y {
     width: 47%;
 }
-.container-contact .contact-form .form-box .input-box.y1 {
+.input-box.y1 {
     width: 100%;
 }
-.container-contact .contact-form .form-box .input-box input,
-.container-contact .contact-form .form-box .input-box textarea {
+.input-box input,
+.input-box textarea {
     width: 100%;
+    background: rgba(255, 255, 255, 0.6);
     resize: none;
     padding: 5px 0;
     font-size: 18px;
@@ -120,10 +155,10 @@ section::before {
     outline: none;
     border-bottom: 1px solid #777;
 }
-.container-contact .contact-form .form-box .input-box textarea {
+.input-box textarea {
     height: 120px;
 }
-.container-contact .contact-form .form-box .input-box span {
+.input-box span {
     position: absolute;
     left: 0;
     padding: 5px 0;
@@ -132,10 +167,10 @@ section::before {
     font-weight: 300;
     transition: 0.3s;
 }
-.container-contact .contact-form .form-box .input-box input:focus ~ span,
-.container-contact .contact-form .form-box .input-box input:valid ~ span,
-.container-contact .contact-form .form-box .input-box textarea:focus ~ span,
-.container-contact .contact-form .form-box .input-box textarea:valid ~ span {
+.input-box input:focus ~ span,
+.input-box input:valid ~ span,
+.input-box textarea:focus ~ span,
+.input-box textarea:valid ~ span {
     transform: translateY(-20px);
     font-size: 12px;
     font-weight: 400;
@@ -143,7 +178,7 @@ section::before {
     color:#095a55;
     font-weight: 500;
 }
-.container-contact .contact-form .form-box .input-box input[type="submit"] {
+.input-box input[type="submit"] {
     position: relative;
     cursor: pointer;
     color: #fff;
@@ -153,7 +188,7 @@ section::before {
     padding: 12px;
     border-radius: 15px 2px;
 }
-.container-contact .contact-form .form-box .input-box input[type="submit"]:hover {
+.input-box input[type="submit"]:hover {
     background: #9011ff;
 }
 
@@ -164,15 +199,15 @@ section::before {
         margin: 20px;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     }
-    .container-contact .contact-info {
+    .contact-info {
         top: 0;
         height: 550px;
         position: relative;
         box-shadow: none;
     }
-    .container-contact .contact-form {
+    .contact-form {
         position: relative;
-        width: calc(100% -350px);
+        width: calc(100% - 350px);
         padding-left: 0;
         margin-left: 0;
         padding: 40px;
@@ -181,7 +216,8 @@ section::before {
     }
 }
 @media (max-width : 950px) {
-    section::before {
+    
+    form::before {
         background: #240046;
         display: none;
     }
@@ -189,10 +225,15 @@ section::before {
         display: flex;
         flex-direction: column-reverse;
     }
-    .container-contact .contact-form {
+    .contact-form {
         width: 100%;
     }
-    .container-contact .contact-info {
+    .contact-info {
         width: 100%;
     } 
+
+    .input-box.y1 {
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-import Carousel from "../Carousel/Carousel";
+import Carousel from './../Carousel/Carousel';
 
 import './TopContainer.css';
 
@@ -68,7 +68,7 @@ const TopContainer = () => {
                 <Carousel items={upCo} />
       
             
-                <h2>Vous ne savez pas quoi regarder? Essayer notre filtre par catégorie :</h2>
+                <h2 className="title-random">Vous ne savez pas quoi regarder ? Essayer notre filtre par catégorie :</h2>
                 <select defaultValue="Catégorie" className="selectB" name="Catégorie" onChange={(e) => handeChange(e)}>
                     <option disabled selected> Catégorie</option>
                     <option select value='28'>Action</option>
