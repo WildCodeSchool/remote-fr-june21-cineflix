@@ -10,6 +10,7 @@ import twit from "../../assets/twitter.png";
 import insta from "../../assets/instagram.png";
 import pint from "../../assets/pinterest.png";
 import link from "../../assets/linkedin.png";
+import Navbar from '../../components/Navbar/Navbar';
 
 const Contact = () => {
     const [name, setName] = useState("")
@@ -70,6 +71,8 @@ const Contact = () => {
     }
 
     return (
+        <>
+        <Navbar />
         <form className="contactForm">
             <div className="container-contact">
                 <div className="contact-info">
@@ -130,7 +133,7 @@ const Contact = () => {
                 </div>
             </div>
         </form>
-
+        </>
     )
 }
 

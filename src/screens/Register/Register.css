@@ -21,8 +21,9 @@
 }
 
 .register-container h1 {
-    font-size: 50px;
+    font-size: 4vw;
     text-shadow: 2px 2px 2px var(--bg-color);
+    padding: 10px;
 }
 
 .register-container p {
@@ -64,7 +65,7 @@
 
 .register-container .input .registerButton {
     height: 40px;
-    width: 100%;
+    width: 95%;
     border-radius: 5px;
     background-color: var(--secondary-op-color);
     color: var(--text-color);
@@ -137,7 +138,7 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px;
 
 }
 

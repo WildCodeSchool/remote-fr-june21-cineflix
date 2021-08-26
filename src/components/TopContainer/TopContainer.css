@@ -85,4 +85,36 @@ width: 100%;
     .top-cards {
       height: 40vh;
     }
+
+    .title-random {
+      font-size: 20px;
+    }
+
+    .selectB {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .selectB {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #240046;
+    border: none;
+    color: #f5e2ff;
+    margin-top: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+  }
+
+  .selectB::-webkit-scrollbar {
+    display: none;
   }

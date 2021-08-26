@@ -27,14 +27,15 @@
 }
 
 .login-container form {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     padding: 30px;
     border-radius: 5px;
     background-color: var(--bg-op-color);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .login-container form input {
@@ -43,7 +44,9 @@
     border-radius: 5px;
     background-color: var(--text-color);
     color: var(--bg-color);
-    padding-left: 10px;
+    padding: 5px;
+    margin: 5px;
+
 
 }
 
@@ -64,6 +67,7 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+    width: 95%;
 }
 
 .login-container form button:hover {

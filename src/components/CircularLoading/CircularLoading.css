@@ -1,6 +1,7 @@
 .circle{
-  height: 100vh;
+  max-height: 100vh;
   width: 100%;
+  padding-top: 33vh;
   display: flex;
   align-items: center;
   justify-content: center;
