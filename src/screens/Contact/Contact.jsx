@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
+import Navbar from '../../components/Navbar/Navbar';
+
 import './Contact.css';
 import face from "../../assets/facebook.png";
 import insta from "../../assets/instagram.png";
@@ -31,19 +33,6 @@ const Contact = () => {
             return false
         }
     }
-    /*Methode qui sert à verifier si il y a 10 chiffres et envoyer un popup à l'utilisateur si c'est mal rempli*/
-    /*const isPhone = () => {
-        let iphone = document.getElementById('no-phone');
-        let regex = /^0[1-7]\d{8}$/;
-
-        if (phone.match(regex)) {
-            iphone.style.display = 'none';
-            return true
-        } else {
-            iphone.style.display = 'block'
-            return false
-        }
-    }*/
 
     const failMessage = () => {
         let formMessage = document.querySelector('.invalid-message')

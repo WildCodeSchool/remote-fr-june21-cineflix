@@ -5,7 +5,6 @@ import Navbar from '../../components/Navbar/Navbar';
 
 import CircularLoading from "../../components/CircularLoading/CircularLoading";
 
-import { useParams } from "react-router";
 import Swal from "sweetalert2";
 
 import './TvCard.css';
