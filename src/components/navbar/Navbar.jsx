@@ -5,8 +5,8 @@ import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthActions";
 import Favorite from "../../screens/Favourite/Favourite";
 
+import BurgerMenu from './../BurgerMenu/BurgerMenu';
 import SearchBar from './../SearchBar/SearchBar';
-import Search from './../../screens/Search/Search';
 
 import exit from "../../assets/exit.png";
 import avatar from "../../assets/avatar.png";
@@ -20,11 +20,11 @@ import { VscAccount } from 'react-icons/vsc';
 import "./Navbar.css";
 
 
-
 const Navbar = () => {
     const [show, handleShow] = useState(false);
     const { dispatch } = useContext(AuthContext);
     const [showSearchBar, setShowSearchBar] = useState(false);
+    const [showBurger, setShowBurger] = useState(false);
 
     // Search value states
     const [searchValue, setSearchValue] = useState("")
@@ -41,12 +41,6 @@ const Navbar = () => {
         window.addEventListener("scroll", transitionNavBar);
         return () => window.removeEventListener("scroll", transitionNavBar)
     }, []);
-
-    const handleSearchClick = () => {
-        if (showSearchBar) {
-            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-        }
-    }
 
     return (
       <>
@@ -91,6 +85,22 @@ const Navbar = () => {
                         />
                     </NavLink>
                 </div>
+            </div>
+            <div className="mobile-navbar">
+                <div>
+                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)}/>
+                    {showBurger &&  (
+                        <BurgerMenu />
+                    )}
+                </div>
+                <div>
+                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                    {showSearchBar && (
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                    )}
+                </div>
+                <NavLink to='/favourites'>
+                    <FiHeart className="navbar-icons" /></NavLink>
                 <NavLink to="/login">
                     <img
                         className='navAvatar'
@@ -101,19 +111,23 @@ const Navbar = () => {
             </div>
         </div>
         <div className="mobile-navbar">
-            <NavLink to='/home'>
-                <FaHome className="navbar-icons" /></NavLink>
-            <div>
-                <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
-                {showSearchBar && (
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                )}
+                <div>
+                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)}/>
+                    {showBurger &&  (
+                        <BurgerMenu />
+                    )}
+                </div>
+                <div>
+                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                    {showSearchBar && (
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                    )}
+                </div>
+                <NavLink to='/favourites'>
+                    <FiHeart className="navbar-icons" /></NavLink>
+                <NavLink to="/login">
+                    <VscAccount className="navbar-icons" /></NavLink>
             </div>
-            <NavLink to='/favourites'>
-                <FiHeart className="navbar-icons" /></NavLink>
-            <NavLink to="/login">
-                <VscAccount className="navbar-icons" /></NavLink>
-        </div>
       </>
     );
 };

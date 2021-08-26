@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
-import PosterCard from "../../components/PosterCard/PosterCard";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from './../../components/Footer/Footer';
 
-import '../MovieCategories/Categories.css'
+import Carousel from './../../components/Carousel/Carousel';
+
+import '../MovieCategories/Categories.css';
 
 const ShowCategories = () => {
     const [animationShows, setAnimationShows] = useState([]);
@@ -13,7 +14,6 @@ const ShowCategories = () => {
     const [documentaryShows, setDocumentaryShows] = useState([]);
     const [fantasyShows, setFantasyShows] = useState([]);
     const [thrillerShows, setThrillerShows] = useState([]);
-    const [slideNumber, setSlideNumber] = useState(0);
 
     useEffect(() => {
         const fetchAnimationShows = () => {
@@ -22,7 +22,7 @@ const ShowCategories = () => {
                 .then(data => setAnimationShows(data.results))
         }
         fetchAnimationShows();
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }, [])
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const ShowCategories = () => {
         }
         fetchActionShows()
     }, [])
-    
+
     useEffect(() => {
         const fetchComedyShows = () => {
             fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=35')
@@ -70,93 +70,25 @@ const ShowCategories = () => {
         fetchThrillerShows()
     }, [])
 
-    const mapPoster = (state) => {
-        return (
-            <>
-                {state.map((poster) =>
-                    <PosterCard key={poster.id} {...poster} />)}
-            </>
-        );
-    }
-
-    const refAnimation = useRef();
-    const refAction = useRef();
-    const refComedy = useRef();
-    const refDocumentary = useRef();
-    const refFantasy = useRef();
-    const refThriller = useRef();
-
-    const handleClick = (direction, type) => {
-        let distance = type.current.getBoundingClientRect().x
-
-        if (direction === 'left' && slideNumber > 0) {
-            setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${200 + distance}px)`
-        }
-        if (direction === 'right' && slideNumber <= 13) {
-            setSlideNumber(slideNumber + 1);
-            type.current.style.transform = `translateX(${-255 + distance}px)`
-        }
-    }
-
-
     return (
         <div className="categorie-container">
             <Navbar />
             <div className="categorie-wrapper">
                 <h3>Animation</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAnimation)} />
-                    <div className="popularLists" ref={refAnimation}>
-                        {mapPoster(animationShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAnimation)} />
-                </div>
+                <Carousel items={animationShows} />
                 <h3>Action/Aventure</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refAction)} />
-                    <div className="popularLists" ref={refAction}>
-                        {mapPoster(actionShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refAction)} />
-                </div>
+                <Carousel items={actionShows} />
                 <h3>Comedie</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refComedy)} />
-                    <div className="popularLists" ref={refComedy}>
-                        {mapPoster(comedyShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refComedy)} />
-                </div>
+                <Carousel items={comedyShows} />
                 <h3>Documentaire</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refDocumentary)} />
-                    <div className="popularLists" ref={refDocumentary}>
-                        {mapPoster(documentaryShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refDocumentary)} />
-                </div>
+                <Carousel items={documentaryShows} />
                 <h3>Science-Fiction/Fantasy</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refFantasy)} />
-                    <div className="popularLists" ref={refFantasy}>
-                        {mapPoster(fantasyShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refFantasy)} />
-                </div>
+                <Carousel items={fantasyShows} />
                 <h3>Thriller/Policier</h3>
-                <div className="categorie-cards">
-                    <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', refThriller)} />
-                    <div className="popularLists" ref={refThriller}>
-                        {mapPoster(thrillerShows)}
-                    </div>
-                    <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', refThriller)} />
-                </div>
+                <Carousel items={thrillerShows} />
             </div>
             <Footer />
         </div>
-
-
     );
 }
 
