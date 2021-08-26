@@ -93,8 +93,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  .bannerInfo {
+    width: 90%;
+  }
+    .bannerTitle {
+      font-size: 6vw;
+    }
     .bannerDescription {
         width: 300px;
+        font-size: 4vw;
     }
     .bannerImg {
         height: 100%;

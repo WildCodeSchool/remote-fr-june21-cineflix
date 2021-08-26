@@ -42,6 +42,15 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", transitionNavBar)
     }, []);
 
+    /********** */
+    const handleBurgerClick = () => {
+      const homeIcon = document.querySelector('.home-icon');
+      const burgerList = document.querySelector('.burger-list');
+      homeIcon.addEventListener('click', (e) => {
+          burgerList.classList.toggle('slide-burger');
+      })
+    }
+
     return (
         <>
             <div className="Navbar">
@@ -106,12 +115,14 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="mobile-navbar">
-                <div>
+               {/* <div>
                     <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)} />
                     {showBurger && (
                         <BurgerMenu />
                     )}
                 </div>
+                    */}
+                    <BurgerMenu />
                 <div>
                     <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
                     {showSearchBar && (

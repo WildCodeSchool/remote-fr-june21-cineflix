@@ -98,6 +98,8 @@ position: relative;
 .container-contact .contact-info ul.sci {
     position: relative;
     display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
 }
 .container-contact .contact-info ul.sci li {
     list-style: none;
@@ -108,6 +110,7 @@ position: relative;
 }
 .container-contact .contact-info ul.sci li a img {
     filter: invert(1);
+    height: 30px;
 }
 
 .contact-form {
