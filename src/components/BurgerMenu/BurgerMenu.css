@@ -1,0 +1,30 @@
+.burger-list {
+    width: 125px;
+    height: 120px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    font-size: 20px;
+    background-color: var(--bg-color);
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    transition: transform 1s ease-in-out;
+}
+
+.burger-list > a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 7px;
+}
+
+.burger-list > a:hover {
+    color: var(--secondary-color);
+
+}
+
+.burger-list:hover {
+    transform: translateY(-90px);
+}
