@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
-form {
+.contactForm {
 display: flex;
 justify-content: center;
 align-items: center;
@@ -14,7 +14,7 @@ background-size: cover;
 font-family: 'Poppins', sans-serif;
 }
 
-form::before {
+.contactForm::before {
     content: '';
     position: absolute;
     top: 0;
