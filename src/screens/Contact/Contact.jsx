@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Navbar from '../../components/Navbar/Navbar';
 import Swal from 'sweetalert2';
 
 import './Contact.css';
@@ -70,32 +71,34 @@ const Contact = () => {
             }
         
     return (
-        <form>
+        <>
+        <Navbar />
+        <form className="contactForm">
             <div className="container-contact">
                 <div className="contact-info">
                     <div>
                         <h2>Contact Info</h2>
                             <ul className="info">
                                 <li>
-                                    <span><img src={loc} /></span>
+                                    <span><img src={loc} alt="" /></span>
                                     <span>9 Allée Serr<br />33100 Bordeaux</span>
                                 </li>
                                 <li>
-                                    <span><img src={mail} /></span>
+                                    <span><img src={mail} alt="" /></span>
                                     <span>lorem@ipsum.com</span>
                                 </li>
                                 <li>
-                                    <span><img src={tel} /></span>
+                                    <span><img src={tel} alt="" /></span>
                                     <span>01.40.24.12.78</span>
                                 </li>
                             </ul>
                         </div>
                             <ul className="sci">
-                                <li><a href="#"><img src={face} /></a></li>
-                                <li><a href="#"><img src={twit} /></a></li>
-                                <li><a href="#"><img src={insta} /></a></li>
-                                <li><a href="#"><img src={pint} /></a></li>
-                                <li><a href="#"><img src={link} /></a></li>
+                                <li><a href="#"><img src={face} alt="" /></a></li>
+                                <li><a href="#"><img src={twit} alt="" /></a></li>
+                                <li><a href="#"><img src={insta} alt="" /></a></li>
+                                <li><a href="#"><img src={pint} alt="" /></a></li>
+                                <li><a href="#"><img src={link} alt="" /></a></li>
                             </ul>
                         </div>
                         <div className="contact-form">
@@ -130,7 +133,7 @@ const Contact = () => {
                 </div>
             </div>
         </form>
-        
+        </>
         )
     }
     

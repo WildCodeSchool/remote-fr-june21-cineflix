@@ -88,7 +88,7 @@ transition-delay: 0.5s;
     color: #fff;
     font-size: 30px;
     transition: 0.5s;
-    transform: translate(-15px, -15px)
+    transform: translate(-30px, -15px)
 }
 .button-intro span:nth-child(1) {
     transition-delay: 0.75s;
@@ -111,6 +111,6 @@ transition-delay: 0.5s;
     z-index: 10;
     color: #111;
     transition-delay: 0.5s;
-    transform:translate(-15px, -15px)
+    transform:translate(-30px, -15px)
     
 }

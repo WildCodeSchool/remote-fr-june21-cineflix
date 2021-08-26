@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .login-container form input {
@@ -37,7 +38,9 @@
     border-radius: 5px;
     background-color: var(--text-color);
     color: var(--bg-color);
-    padding-left: 10px;
+    padding: 5px;
+    margin: 5px;
+
 }
 
 .login-container form input::placeholder {
