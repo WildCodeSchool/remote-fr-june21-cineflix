@@ -2,6 +2,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ActorCard from "./screens/ActorCard/ActorCard"
+import Favourite from "./screens/Favourite/Favourite";
 import Home from "./screens/Home/Home";
 import Intro from './screens/Intro/Intro';
 import Login from './screens/Login/Login';
@@ -11,7 +12,7 @@ import MovieCategories from './screens/MovieCategories/MovieCategories';
 import NotFound from "./screens/Notfound/NotFound";
 import Search from './screens/Search/Search';
 import Contact from './screens/Contact/Contact';
-import Loading from './components/Loading/Loading';
+import Loading from './screens/Loading/Loading';
 import ShowCategories from './screens/ShowCategories/ShowCategories';
 import TvCard from './screens/TvCard/TvCard';
 import './App.css';
@@ -59,6 +60,7 @@ const App = () => {
         <Route path="/serie-categories/:tv">
           <ShowCategories />
         </Route>
+        <Route path="/favourites" component={Favourite} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
