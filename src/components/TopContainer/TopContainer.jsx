@@ -29,12 +29,14 @@ const TopContainer = () => {
     }, [])
 
     return (
+        <>
         <div className="top-container">
             <h2>Top 20 Films</h2>
             <Carousel items={popularMovie} />
             <h2>Top 20 Séries</h2>
             <Carousel items={popularShow} />
         </div>
+    </>
     );
 }
 
