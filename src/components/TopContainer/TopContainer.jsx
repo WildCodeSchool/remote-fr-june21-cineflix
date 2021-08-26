@@ -56,6 +56,7 @@ const TopContainer = () => {
     }
 
     return (
+        <>
         <div className="top-container">
             <h2>Top 20 Films</h2>
             <div className="top-cards">
@@ -74,6 +75,7 @@ const TopContainer = () => {
                 <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
             </div>
         </div>
+    </>
     );
 }
 

@@ -23,8 +23,22 @@ form::before {
     height: 100%;
 }
 
+/*Popup demandant l'email*/
 #no-email {
     display: none;
+    position: absolute;
+    top: 4px;
+    color: #ff4d4d;
+    right: 30px;
+}
+
+/*popup demandant de bien remplir les champs obligatoire*/
+.invalid-message {
+    margin-top: 20px;
+    background-color: #ff4d4d;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .container-contact {
