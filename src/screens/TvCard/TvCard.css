@@ -70,7 +70,13 @@
 @media only screen and (max-width: 870px) {
     .flex {
         display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .detail-content {
         flex-wrap: wrap;
+        width: 100%;
     }
 }
 

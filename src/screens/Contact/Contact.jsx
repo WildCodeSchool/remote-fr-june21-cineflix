@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Navbar from '../../components/Navbar/Navbar';
 import Swal from 'sweetalert2';
 
 import Navbar from '../../components/Navbar/Navbar';
@@ -122,8 +123,8 @@ const Contact = () => {
             </div>
         </form>
         </>
-    )
-}
-
-
-export default Contact;
+        )
+    }
+    
+    
+    export default Contact;
