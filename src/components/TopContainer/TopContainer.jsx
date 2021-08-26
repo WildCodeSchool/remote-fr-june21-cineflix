@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
 
-import PosterCard from "../PosterCard/PosterCard";
+import Carousel from "../Carousel/Carousel";
 
 import './TopContainer.css';
 
 const TopContainer = () => {
     const [popularMovie, setPopularMovie] = useState([]);
     const [popularShow, setPopularShow] = useState([]);
-    const [slideNumber, setSlideNumber] = useState(0);
     const [upCo, setUpCo] = useState([])
     const [RandMovies, setRandMovies] = useState([])
     const [selectCat, setSelectCat] = useState("")
@@ -54,63 +52,22 @@ const TopContainer = () => {
     }, [selectCat]);
 
 
-    const mapPoster = (state) => {
-        return (
-            <>
-                {state.map((poster) =>
-                    <PosterCard key={poster.id} {...poster} />)}
-            </>
-        );
-    }
-
     const handeChange = (e) => {
         setSelectCat(e.target.value)
     }
 
-    const listRefMovies = useRef();
-    const listRefShows = useRef();
-    const listRefUpCo = useRef();
-    const listRefRand = useRef();
-    const handleClick = (direction, type) => {
-        let distance = type.current.getBoundingClientRect().x
-
-        if (direction === 'left' && slideNumber > 0) {
-            setSlideNumber(slideNumber - 1);
-            type.current.style.transform = `translateX(${200 + distance}px)`
-        }
-        if (direction === 'right' && slideNumber <= 13) {
-            setSlideNumber(slideNumber + 1);
-            type.current.style.transform = `translateX(${-255 + distance}px)`
-        }
-    }
 
     return (
-        <div className="top-container">
-            <h2>Top 20 Films</h2>
-            <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefMovies)} />
-                <div className="popularLists" ref={listRefMovies}>
-                    {mapPoster(popularMovie)}
-                </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefMovies)} />
-            </div>
-            <h2>Top 20 Séries</h2>
-            <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefShows)} />
-                <div className="popularLists" ref={listRefShows} >
-                    {mapPoster(popularShow)}
-                </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefShows)} />
-            </div>
-            <h2>Récents</h2>
-            <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefUpCo)} />
-                <div className="popularLists" ref={listRefUpCo} >
-                    {mapPoster(upCo)}
-                </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefUpCo)} />
-            </div>
-            <div>
+            <>
+            <div className="top-container">
+                <h2>Top 20 Films</h2>
+                <Carousel items={popularMovie} />
+                <h2>Top 20 Séries</h2>
+                <Carousel items={popularShow} />
+                <h2>Récents</h2>
+                <Carousel items={upCo} />
+      
+            
                 <h2>Vous ne savez pas quoi regarder? Essayer notre filtre par catégorie :</h2>
                 <select defaultValue="Catégorie" className="selectB" name="Catégorie" onChange={(e) => handeChange(e)}>
                     <option disabled selected> Catégorie</option>
@@ -134,15 +91,11 @@ const TopContainer = () => {
                     <option select value='10752'>Guerre</option>
                     <option select value='37'>Western</option>
                 </select>
+            
+            
+                <Carousel items={RandMovies} />
             </div>
-            <div className="top-cards">
-                <ArrowBackIosOutlined className="sliderArrowLeft" onClick={() => handleClick('left', listRefRand)} />
-                <div className="popularLists" ref={listRefRand} >
-                    {mapPoster(RandMovies)}
-                </div>
-                <ArrowForwardIosOutlined className="sliderArrowRight" onClick={() => handleClick('right', listRefRand)} /> 
-            </div>
-        </div>
+        </>
     );
 }
 
