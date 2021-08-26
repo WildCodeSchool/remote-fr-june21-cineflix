@@ -111,19 +111,23 @@ const Navbar = () => {
             </div>
         </div>
         <div className="mobile-navbar">
-            <NavLink to='/home'>
-                <FaHome className="navbar-icons" /></NavLink>
-            <div>
-                <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
-                {showSearchBar && (
-                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                )}
+                <div>
+                    <FaHome className='home-icon' onClick={(e) => setShowBurger(!showBurger)}/>
+                    {showBurger &&  (
+                        <BurgerMenu />
+                    )}
+                </div>
+                <div>
+                    <FaSearch className={showSearchBar ? "invisible-icons" : "navbar-icons"} onClick={(e) => setShowSearchBar(true)} />
+                    {showSearchBar && (
+                        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+                    )}
+                </div>
+                <NavLink to='/favourites'>
+                    <FiHeart className="navbar-icons" /></NavLink>
+                <NavLink to="/login">
+                    <VscAccount className="navbar-icons" /></NavLink>
             </div>
-            <NavLink to='/favourites'>
-                <FiHeart className="navbar-icons" /></NavLink>
-            <NavLink to="/login">
-                <VscAccount className="navbar-icons" /></NavLink>
-        </div>
       </>
     );
 };
