@@ -155,7 +155,7 @@ function MovieCard() {
                             <h3>Synopsis : {Movie.overview}
                             </h3>
                             <div className="buttonCard">
-                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite far fa-plus-square"></i></button>
+                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite fas fa-heart"></i></button>
                               <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                                   <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                               </a>

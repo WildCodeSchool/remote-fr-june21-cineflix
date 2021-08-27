@@ -76,7 +76,7 @@ export default function Banner() {
                             <div className="bannerButtons">
                                 <button className="bannerButton" id={movie?.id} onClick={(event) => handleFavourite(movie)}>liste</button>
                                 <Link to={`/movie-card/${movie?.id}`}>
-                                    <button className="bannerButton">infos</button>
+                                    <button className="bannerButton">Ajouter aux favoris</button>
                                 </Link>
                             </div>
                             <h2 className="bannerDescription">

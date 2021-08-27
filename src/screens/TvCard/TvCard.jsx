@@ -64,8 +64,6 @@ function TvCard() {
         }
     }
 
-    console.log(tv)
-
     const checkActeur = (element) => {
         if (element[0]) {
             if (element[2]) {
@@ -174,7 +172,7 @@ function TvCard() {
                                 <img className="diffImg" src={tv.networks ? `https://image.tmdb.org/t/p/w500${tv.networks[0].logo_path}` : null} alt="" />
                             </a>
                             <div className="buttonCard">
-                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}><i class="icon-favourite far fa-plus-square"></i></button>
+                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}><i class="icon-favourite fas fa-heart"></i></button>
                                 <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
                                     <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                                 </a>
