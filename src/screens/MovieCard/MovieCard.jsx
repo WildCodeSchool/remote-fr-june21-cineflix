@@ -154,10 +154,12 @@ function MovieCard() {
                             <h3>Date de sortie : {Movie.release_date}</h3>
                             <h3>Synopsis : {Movie.overview}
                             </h3>
-                            <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite far fa-plus-square"></i></button>
-                            <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
-                                <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
-                            </a>
+                            <div className="buttonCard">
+                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite far fa-plus-square"></i></button>
+                              <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
+                                  <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+                              </a>
+                            </div>
                             <h3>Note : {Movie.vote_average}/10</h3>
                         </div>
                     </div>

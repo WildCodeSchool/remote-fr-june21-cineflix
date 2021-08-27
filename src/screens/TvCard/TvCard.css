@@ -63,21 +63,17 @@
     padding: 7px;
 }
 
-.favDiv {
-    margin-top: 15px;
-}
-
 .favButton {
   border-radius: 0;
   border: none;
   font-size: 1.8rem;
   transition: 0.2s linear;
   color: #f5e2ff;
-  background-color: #141414;
   font-size: 17px;
   padding: 3px 10px;
   margin-left: 10px;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .favButton:hover {
@@ -107,31 +103,7 @@
   box-shadow: 0px 0px 2px var(--bg-op-color);
   border: 1px solid var(--bg-op-color);
 }
-/*
-@media only screen and (max-width: 870px) {
-  .TvCard {
-    padding-top: 0px;
-  }
-  .TvCard img {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-    .flex {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-    .detail-content {
-        flex-wrap: wrap;
-        width: 100%;
-    }
 
-    .TvCard h3 {
-      width: 100%;
-    }
-}
-*/
 @media screen and (min-width: 501px) and (max-width: 1025px) {
   .TvCard {
     padding-top: 100px;
