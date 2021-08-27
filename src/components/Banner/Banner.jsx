@@ -9,10 +9,9 @@ import "./Banner.css";
 export default function Banner() {
 
     const [movie, setMovie] = useState([]);
-    const API_KEY = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&language=fr`)
+        fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
             .then(response => response.json())
             .then(data => {
                 setMovie(
@@ -75,7 +74,7 @@ export default function Banner() {
                         </h1>
                         <div className="flex-banner">
                             <div className="bannerButtons">
-                                <button className="bannerButton" id={movie.id} onClick={(event) => handleFavourite(movie)}>liste</button>
+                                <button className="bannerButton" id={movie?.id} onClick={(event) => handleFavourite(movie)}>liste</button>
                                 <Link to={`/movie-card/${movie?.id}`}>
                                     <button className="bannerButton">infos</button>
                                 </Link>

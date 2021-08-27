@@ -14,11 +14,9 @@ function TvCard() {
     const [tv, setTv] = useState([])
     const [credit, setCredit] = useState([])
 
-    const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
-
     useEffect(() => {
         const getTv = () => {
-            fetch(`https://api.themoviedb.org/3/tv/${IdTv}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdTv}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setTv(data))
         }
@@ -27,7 +25,7 @@ function TvCard() {
 
     useEffect(() => {
         const getCredit = () => {
-            fetch(`https://api.themoviedb.org/3/tv/${IdTv}/credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/tv/${IdTv}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setCredit(data))
         }
@@ -175,8 +173,8 @@ function TvCard() {
                             <a href={tv.homepage} target="_blank" rel="noreferrer">
                                 <img className="diffImg" src={tv.networks ? `https://image.tmdb.org/t/p/w500${tv.networks[0].logo_path}` : null} alt="" />
                             </a>
-                            <div className="favDiv">
-                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}> + </button>
+                            <div className="buttonCard">
+                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}><i class="icon-favourite far fa-plus-square"></i></button>
                                 <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
                                     <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                                 </a>

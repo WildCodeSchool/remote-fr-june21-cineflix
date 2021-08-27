@@ -45,10 +45,18 @@
 
 @media screen and (max-width: 950px) {
   .search-menu {
-    width: 150px;
-    padding-left: 100px;
+    position: absolute;
+    display: block;
+    top: -50px;
+    left: 0px;
+    opacity: 1;
+    padding-left: 0px;
+    transition: 0.5s linear;
   }
-  .search-elements > input {
-    width: 180px;
+  .search-elements {
+    opacity: 1;
+    width: 80%;
+    margin: 0 auto;
+    transition: 0.5s linear;
   }
 }

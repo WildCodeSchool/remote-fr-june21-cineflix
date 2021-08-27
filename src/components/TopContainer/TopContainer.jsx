@@ -11,11 +11,9 @@ const TopContainer = () => {
     const [RandMovies, setRandMovies] = useState([])
     const [selectCat, setSelectCat] = useState("")
 
-    const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
-
     useEffect(() => {
         const fetchMovies = () => {
-            fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then((res) => res.json())
                 .then((data) => setPopularMovie(data.results));
         }
@@ -24,7 +22,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const fetchShows = () => {
-            fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then((res) => res.json())
                 .then((data) => setPopularShow(data.results));
         }
@@ -34,7 +32,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const getUpCo = () => {
-            fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&&language=fr&page=1`)
+            fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&&language=fr&page=1`)
                 .then(response => response.json())
                 .then(data => setUpCo(data.results))
         }
@@ -43,7 +41,7 @@ const TopContainer = () => {
 
     useEffect(() => {
         const getMovieCat = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${selectCat}&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${selectCat}&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setRandMovies(data.results));
         }

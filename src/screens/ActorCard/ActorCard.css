@@ -44,15 +44,15 @@
 .ActorContainerDetail p {
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     padding: 15px;
-    width: 70vh;
+    max-width: 50vw;
 }
 
 .FilmoContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 50%;
-    padding-left: 50vh;
+    margin: 0 auto;
 }
 
 
@@ -74,6 +74,7 @@
 
 .FilmoImg {
     height: 25vh;
+    margin: 25px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -123,12 +124,18 @@
     }
 }
 
-@media only screen and (min-width: 501px) and (max-width: 1025px) {
+@media only screen and (min-width: 501px) and (max-width: 1111px) {
     .ActorContainerFlex {
         padding-left: 15vh;
         text-align: center;
         flex-direction: column;
+
     }
+    .ActorContainerFlex img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
 
     .FilmoContainer {
         padding-left: 30vh;

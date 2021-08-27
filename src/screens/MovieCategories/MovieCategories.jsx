@@ -9,7 +9,6 @@ import Carousel from './../../components/Carousel/Carousel';
 import './Categories.css';
 
 const MovieCategories = () => {
-    const apiKey = 'cda80ca49e23464f07b0b27ac89f1fdd';
     const [animationMovies, setAnimationMovies] = useState([]);
     const [actionMovies, setActionMovies] = useState([]);
     const [comedyMovies, setComedyMovies] = useState([]);
@@ -21,7 +20,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchAnimationMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setAnimationMovies(data.results));
         }
@@ -31,7 +30,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchActionMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=28,12&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=28,12&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setActionMovies(data.results));
         }
@@ -40,7 +39,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchComedyMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setComedyMovies(data.results));
         }
@@ -49,7 +48,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchDocumentaries = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${apiKey}&language=fr&primary_release_year=2021`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${process.env.REACT_APP_API_KEY}&language=fr&primary_release_year=2021`)
                 .then(res => res.json())
                 .then(data => setDocumentaries(data.results));
         }
@@ -58,7 +57,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchHorrorMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=27&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setHorrorMovies(data.results));
         }
@@ -67,7 +66,7 @@ const MovieCategories = () => {
 
     useEffect(() => {
         const fetchThrillerMovies = () => {
-            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=53,80&api_key=${apiKey}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=53,80&api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(res => res.json())
                 .then(data => setThrillerMovies(data.results));
         }

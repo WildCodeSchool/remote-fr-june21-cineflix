@@ -10,9 +10,8 @@ footer {
     background-color:transparent;
     margin: 20px;
 }
-
 .list-media {
-    padding-left: 0;
+  padding-left: 0px;
 }
 
 .list-media ul{
