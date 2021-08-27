@@ -50,11 +50,12 @@ font-family: 'Poppins', sans-serif;
 }
 
 .contact-info {
+    border-radius: 0 0 10px 10px ;
     position: absolute;
     top: 40px;
     width: 350px;
     height: calc(100% - 80px);
-    background: #240046;
+    background: #2400468c;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -79,6 +80,7 @@ font-family: 'Poppins', sans-serif;
     margin: 20px 0;
     cursor: pointer;
     align-items: flex-start;
+    
 }
 .container-contact .contact-info ul.info li span:nth-child(1) {
     width: 30px;
@@ -96,6 +98,8 @@ font-family: 'Poppins', sans-serif;
 .container-contact .contact-info ul.sci {
     position: relative;
     display: flex;
+    justify-content: space-evenly;
+
 }
 .container-contact .contact-info ul.sci li {
     list-style: none;
@@ -106,16 +110,19 @@ font-family: 'Poppins', sans-serif;
 }
 .container-contact .contact-info ul.sci li a img {
     filter: invert(1);
+    height: 30px;
 }
 
 .contact-form {
+border-radius: 10px 10px 0 0;
+
     position: absolute;
     padding:70px 50px;
     padding-left: 250px;
     margin-left: 150px;
     width: calc(100% - 150px);
     height: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.527);
     box-shadow:0 50px 50px rgba(0,0,0,0.25);
 }
 .container-contact .contact-form h2 {
