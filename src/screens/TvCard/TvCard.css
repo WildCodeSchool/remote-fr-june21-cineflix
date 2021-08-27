@@ -78,5 +78,14 @@
         flex-wrap: wrap;
         width: 100%;
     }
+    .TvCard h3 {
+        width: 100%;
+    }
+    .TvCard {
+        padding-top: 0;
+    }
+    .TvCard img {
+        max-width: 90%
+    }
 }
 

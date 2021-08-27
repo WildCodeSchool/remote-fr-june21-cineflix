@@ -10,6 +10,11 @@ footer {
     background-color:transparent;
     margin: 20px;
 }
+
+.list-media {
+    padding-left: 0;
+}
+
 .list-media ul{
     list-style: none;
 }

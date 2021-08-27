@@ -99,4 +99,10 @@
         width: 100%;
         padding: 0;
     }
+    .MovieCard h3 {
+        width: 100%;
+    }
+    .MovieCard {
+        padding-top: 0;
+    }
 }

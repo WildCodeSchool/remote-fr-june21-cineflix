@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Swal from 'sweetalert2';
 
-import Navbar from '../../components/Navbar/Navbar';
+
 
 import './Contact.css';
 import face from "../../assets/facebook.png";
