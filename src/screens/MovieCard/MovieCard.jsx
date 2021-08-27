@@ -13,11 +13,10 @@ function MovieCard() {
     let { IdMovie } = useParams()
     const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
-    const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setMovie(data))
         }
@@ -29,7 +28,7 @@ function MovieCard() {
 
     useEffect(() => {
         const getCast = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setCast(data))
         }
@@ -155,7 +154,7 @@ function MovieCard() {
                             <h3>Date de sortie : {Movie.release_date}</h3>
                             <h3>Synopsis : {Movie.overview}
                             </h3>
-                            <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}> + </button>
+                            <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite far fa-plus-square"></i></button>
                             <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                                 <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                             </a>

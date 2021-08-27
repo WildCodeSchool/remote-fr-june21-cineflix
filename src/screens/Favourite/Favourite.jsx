@@ -19,14 +19,14 @@ const Favourite = () => {
 
     const getFavouriteData = (id, typeTv) => {
       if(typeTv) {
-        fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
+        fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
           .then((response) => response.json())
           .then((data) => {
             setFavouriteList(currentFavourites => [...currentFavourites, data])
           })
 
       } else {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
           .then((response) => response.json())
           .then((data) => {
             setFavouriteList(currentFavourites => [...currentFavourites, data])

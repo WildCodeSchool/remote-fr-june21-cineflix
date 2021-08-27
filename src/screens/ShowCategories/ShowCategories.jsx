@@ -17,7 +17,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchAnimationShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=16')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=16`)
                 .then(res => res.json())
                 .then(data => setAnimationShows(data.results))
         }
@@ -27,7 +27,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchActionShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=10759')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=10759`)
                 .then(res => res.json())
                 .then(data => setActionShows(data.results))
         }
@@ -36,7 +36,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchComedyShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=35')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=35`)
                 .then(res => res.json())
                 .then(data => setComedyShows(data.results))
         }
@@ -45,7 +45,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchDocumentaryShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=99')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=99`)
                 .then(res => res.json())
                 .then(data => setDocumentaryShows(data.results))
         }
@@ -54,7 +54,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchFantasyShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=10765')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=10765`)
                 .then(res => res.json())
                 .then(data => setFantasyShows(data.results))
         }
@@ -63,7 +63,7 @@ const ShowCategories = () => {
 
     useEffect(() => {
         const fetchThrillerShows = () => {
-            fetch('https://api.themoviedb.org/3/discover/tv?api_key=cda80ca49e23464f07b0b27ac89f1fdd&language=fr&with_genres=80')
+            fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=fr&with_genres=80`)
                 .then(res => res.json())
                 .then(data => setThrillerShows(data.results))
         }
