@@ -106,7 +106,7 @@
 
 @media screen and (min-width: 501px) and (max-width: 1025px) {
   .TvCard {
-    padding-top: 100px;
+    padding-top: 0px;
   }
   .TvCard img {
     max-width: 100%;
