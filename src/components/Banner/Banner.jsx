@@ -76,7 +76,7 @@ export default function Banner() {
                         </h1>
                         <div className="flex-banner">
                             <div className="bannerButtons">
-                                <button className="bannerButton" id={movie.id} onClick={(event) => handleFavourite(movie)}>liste</button>
+                                <button className="bannerButton" id={movie?.id} onClick={(event) => handleFavourite(movie)}>liste</button>
                                 <Link to={`/movie-card/${movie?.id}`}>
                                     <button className="bannerButton">infos</button>
                                 </Link>

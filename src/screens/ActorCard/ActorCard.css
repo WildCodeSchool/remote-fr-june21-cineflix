@@ -126,6 +126,8 @@
 @media only screen and (min-width: 501px) and (max-width: 1025px) {
     .ActorContainerFlex {
         padding-left: 15vh;
+        flex-direction: column;
+        text-align: center;
     }
 
     .FilmoContainer {
