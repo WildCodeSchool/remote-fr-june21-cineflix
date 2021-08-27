@@ -10,6 +10,9 @@ footer {
     background-color:transparent;
     margin: 20px;
 }
+.list-media {
+  padding-left: 0px;
+}
 
 .list-media ul{
     list-style: none;
@@ -23,7 +26,6 @@ footer {
     color: var(--text-color);
 }
 .footer-container {
-    /* width: 1200px; */
     margin-top: 30px;
     display: flex;
     justify-content: center;

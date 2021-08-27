@@ -7,11 +7,10 @@ import './Similar.css'
 
 const Similar = ({ id }) => {
     const [SimMovies, setSimMovies] = useState([])
-    const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
         const getSimMovies = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=frpage=1`)
+            fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_API_KEY}&language=frpage=1`)
                 .then(response => response.json())
                 .then(data => setSimMovies(data))
         }

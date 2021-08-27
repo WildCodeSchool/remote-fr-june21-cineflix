@@ -1,7 +1,7 @@
 .SimContainer {
     background-color: var(--bg-color);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 50%;
     margin: 0 auto;
@@ -36,4 +36,5 @@
 
 .SimImg {
     height: 25vh;
+    margin: 25px;
 }

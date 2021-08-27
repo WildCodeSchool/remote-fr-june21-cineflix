@@ -10,11 +10,9 @@ function ActorCard() {
     const [Actor, setActor] = useState([])
     const [ActorMovies, setActorMovies] = useState([])
 
-    const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
-
     useEffect(() => {
         const getActor = () => {
-            fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${process.env.REACT_APP_API_KEY}}&language=fr`)
                 .then(response => response.json())
                 .then(data => setActor(data))
         }
@@ -23,13 +21,12 @@ function ActorCard() {
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}}&language=fr`)
                 .then(response => response.json())
                 .then(data => setActorMovies(data))
         }
         getMovie()
     }, [IdActor])
-
 
     return (
         <div className="ActorCard">
@@ -56,11 +53,9 @@ function ActorCard() {
                         </NavLink>
                     </figure>
                 )) : null}
-
             </div>
         </div>
     )
-
 }
 
 export default ActorCard;

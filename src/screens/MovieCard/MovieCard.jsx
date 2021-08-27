@@ -1,4 +1,3 @@
-import { AlternateEmailOutlined } from '@material-ui/icons';
 import { useState, useEffect } from 'react'
 import { useParams, NavLink } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
@@ -6,17 +5,18 @@ import Similar from '../../components/Similar/Similar';
 
 import Swal from "sweetalert2";
 
+import CircularLoading from "../../components/CircularLoading/CircularLoading";
+
 import './MovieCard.css'
 
 function MovieCard() {
     let { IdMovie } = useParams()
     const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
-    const api_key = 'cda80ca49e23464f07b0b27ac89f1fdd'
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setMovie(data))
         }
@@ -28,7 +28,7 @@ function MovieCard() {
 
     useEffect(() => {
         const getCast = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${api_key}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/movie/${IdMovie}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setCast(data))
         }
@@ -94,61 +94,78 @@ function MovieCard() {
     //***** Favourite's scripts
     const handleFavourite = (media) => {
 
-    let storedDatas
+        let storedDatas
 
-    // Try to get the favourites object in localstorage
-    try {
-      storedDatas = JSON.parse(localStorage["favourites"])
-    } catch(error) {
+        // Try to get the favourites object in localstorage
+        try {
+            storedDatas = JSON.parse(localStorage["favourites"])
+        } catch (error) {
+
+        }
+
+        // If there is already the favourites object
+        if (storedDatas) {
+
+            // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+            if (!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {
+
+                let newDatas = []
+                storedDatas.map(element => newDatas.push(element))
+                newDatas.push(media)
+                localStorage["favourites"] = JSON.stringify(newDatas)
+                Swal.fire('Bien ajouté à vos favoris')
+            }
+
+            // If there is not the favourites object, we create it
+        } else {
+
+            let newFavourite = [media]
+            localStorage["favourites"] = JSON.stringify(newFavourite)
+            Swal.fire('Bien ajouté à vos favoris')
+        }
 
     }
-    
-    // If there is already the favourites object
-    if(storedDatas) {
 
-      // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
-      if(!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {
+    const [isLoading, setIsLoading] = useState(true);
 
-        let newDatas = []
-        storedDatas.map(element => newDatas.push(element))
-        newDatas.push(media)
-        localStorage["favourites"] = JSON.stringify(newDatas)
-        Swal.fire('Bien ajouté à vos favoris')
-      }
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+    }, []);
 
-    // If there is not the favourites object, we create it
-    } else {
-
-      let newFavourite = [media]
-      localStorage["favourites"] = JSON.stringify(newFavourite)
-      Swal.fire('Bien ajouté à vos favoris')
-    }
-  
-  }
 
     return (
         <div className="MovieCard">
             <Navbar />
-            <h1>{Movie.title}</h1>
-            <div className="containerFlex">
-                <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
-                <div className="containerDetail">
-                    <h3>Réalisateur : {Cast.crew ? checkCrew(real) : null}</h3>
-                    <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
-                    <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
-                    <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
-                    <h3>Durée : {Movie.runtime} minutes</h3>
-                    <h3>Date de sortie : {Movie.release_date}</h3>
-                    <h3>Synopsis : {Movie.overview}
-                    </h3>
-                    <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}> + </button>
-                    <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
-                        <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
-                    </a>
-                    <h3>Note : {Movie.vote_average}/10</h3>
-                </div>
-            </div>
-            <Similar id={IdMovie} />
+            {isLoading ? (
+                <CircularLoading />
+            ) : (
+                <>
+                    <h1>{Movie.title}</h1>
+                    <div className="containerFlex">
+                        <img src={`https://image.tmdb.org/t/p/w500${Movie.poster_path}`} alt="" className="image-movie-card" />
+                        <div className="containerDetail">
+                            <h3>Réalisateur : {Cast.crew ? checkCrew(real) : null}</h3>
+                            <h3>Auteur : {Cast.crew ? checkCrew(auteur) : null}</h3>
+                            <h3>Casting : {Cast.cast ? checkCast(acteur) : null}</h3>
+                            <h3>Catégorie : {Movie.genres ? checkCategorie(Movie) : null}</h3>
+                            <h3>Durée : {Movie.runtime} minutes</h3>
+                            <h3>Date de sortie : {Movie.release_date}</h3>
+                            <h3>Synopsis : {Movie.overview}
+                            </h3>
+                            <div className="buttonCard">
+                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite far fa-plus-square"></i></button>
+                              <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
+                                  <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
+                              </a>
+                            </div>
+                            <h3>Note : {Movie.vote_average}/10</h3>
+                        </div>
+                    </div>
+                    <Similar id={IdMovie} />
+                </>
+            )}
         </div>
     )
 

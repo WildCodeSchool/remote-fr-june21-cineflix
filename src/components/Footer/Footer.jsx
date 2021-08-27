@@ -1,12 +1,11 @@
-import { Link, NavLink } from 'react-router-dom';
-import './Footer.css';
+import { NavLink } from 'react-router-dom';
 
+import './Footer.css';
 
 function Footer() {
     return (
         <footer>
             <div className="footer-container">
-
                 <ul className="list-media">
                     <li><a href="#"><i className="fab fa-facebook"></i></a></li>
                     <li><a href="#"><i className="fab fa-instagram"></i></a></li>

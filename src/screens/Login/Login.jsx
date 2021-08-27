@@ -1,5 +1,5 @@
 import { AuthContext } from "../../authContext/AuthContext";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { login } from "../../authContext/apiCalls";
 import { useContext, useState } from "react";
 
@@ -9,6 +9,9 @@ import "./Login.css";
 
 export default function Login() {
 
+    let history = useHistory();
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { dispatch } = useContext(AuthContext);
@@ -16,6 +19,7 @@ export default function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
         login({ email, password }, dispatch);
+        history.push("/home");
     };
 
     return (
@@ -42,9 +46,7 @@ export default function Login() {
                         placeholder="Mot de Passe"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    {/* <Redirect to="/home"> */}
                     <button className="loginButton" onClick={handleLogin}>S'identifier</button>
-                    {/* </Redirect> */}
                     <span>
                         Nouveau sur Cinéflix?<br />
                         <Link to="/register"><b>l'inscription c'est par ici.</b></Link>

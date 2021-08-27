@@ -34,20 +34,20 @@
     top: 25%;
     bottom: 35%;
     left: 4%;
-    width: 36%;
+    width: 40vw;
     z-index: 10;
 }
 
 .bannerTitle {
     width: 100%;
-    font-size: 3.5vw;
+    font-size: 4vw;
     padding: 20px;
 }
 
 .bannerDescription {
     font-size: 1.5vw;
     padding: 10px;
-    width: 90%;
+    width: 40vw;
 }
 
 .bannerButton {  
@@ -82,7 +82,7 @@
     flex-direction: column;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 601px) and (max-width: 850px) {
     .bannerDescription, .bannerButton {
         font-size: 2.5vw;
     }
@@ -93,10 +93,21 @@
 }
 
 @media screen and (max-width: 600px) {
+  .bannerInfo {
+    width: 90%;
+  }
+    .bannerTitle {
+      margin-top: -50px;
+      font-size: 6vw;
+    }
     .bannerDescription {
-        width: 300px;
+        width: 100%;
+        font-size: 3vw;
     }
     .bannerImg {
         height: 100%;
+    }
+    .bannerButton {
+      font-size: 2.5vw;
     }
 }
