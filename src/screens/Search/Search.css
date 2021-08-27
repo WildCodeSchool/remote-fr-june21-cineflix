@@ -1,0 +1,75 @@
+.searchContainer {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+}
+
+.Search {
+  padding-top: 100px;
+}
+.Search .searchTitle {
+  display: none;
+}
+
+.Search ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+.Search li {
+  cursor: pointer;
+}
+
+.searchMovieCard {
+position: relative;
+z-index: 1;
+margin: 20px;
+transition: 0.2s linear;
+}
+
+.searchMovieCard img {
+  width: 250px;
+  min-height: 380px;
+}
+
+.searchMovieCard:hover {
+  z-index: 500;
+  box-shadow: 0px 0px 3px black;
+}
+
+.add-to-favourite {
+  display: none;
+}
+
+.add-favourite-button {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  transition: 0.2s linear;
+  text-shadow: 0px 0px 3px black;
+}
+
+.add-favourite-button:hover {
+  transform: scale(1.5);
+  color: gold;
+}
+
+@media screen and (max-width: 950px) {
+  .Search .searchTitle {
+    color: var(--text-color);
+    font-size: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .add-favourite-button {
+    transform: scale(1.5);
+  }
+}

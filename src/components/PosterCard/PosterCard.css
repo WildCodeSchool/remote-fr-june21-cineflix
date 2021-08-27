@@ -1,0 +1,37 @@
+.poster-card img {
+  padding: 3px;
+  height: 40vh;
+  transition: transform 0.5s ease-in-out;
+}
+
+.poster-card img:hover {
+  transform: scale(1.2);
+}
+
+.poster-img {
+  text-decoration: none;
+}
+
+.rate-overlay {
+  background-color: var(--bg-color);
+  top: 80%;
+  transform: translate(25%, -50%);
+  width: 65%;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--text-color);
+  border-width: 1px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.rate-overlay li {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 700px) {
+  .poster-card img {
+    height: 30vh;
+  }
+}
+

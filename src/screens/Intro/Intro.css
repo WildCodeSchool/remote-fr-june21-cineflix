@@ -1,0 +1,108 @@
+.intro-container{
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    height: 100vh;
+    min-height: 25rem;
+    max-width: 100vw;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.videoContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-height: 100vh;
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.logo-intro {
+  width: 70%;
+  position: relative;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+
+/*lien vers page d'acceuil*/
+.button-intro {
+    position: relative;
+    width: 160px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding-left: 20px;
+    text-decoration: none;
+    background: #222;
+    opacity: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px black;
+}
+.button-intro::before {
+    position: absolute;
+    content:'';
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary-color);
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.5s;
+}
+.button-intro::after {
+    position: absolute;
+    content:'';
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #9D59D9;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.button-intro:hover::before,
+.button-intro:hover::after {
+width: 50%;
+transition-delay: 0.5s;
+}
+.button-intro span {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 30px;
+    transition: 0.5s;
+}
+.button-intro span:nth-child(1) {
+    transition-delay: 0.75s;
+}
+.button-intro:hover span:nth-child(1) {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.button-intro span:nth-child(2) {
+    transform: scale(3);
+    opacity: 0;
+    transition-delay: 0s;
+    color: #111;
+}
+.button-intro:hover span:nth-child(2) {
+    transform: scale(1);
+    transition-delay: 0s;
+    opacity: 1;
+    z-index: 10;
+    color: #111;
+    transition-delay: 0.5s;
+}

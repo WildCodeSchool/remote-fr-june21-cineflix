@@ -1,0 +1,120 @@
+.top-container {
+position: relative;
+margin-top: 25vh;
+width: 100%;
+}
+
+.top-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-x: auto;
+  height: 50vh;
+  position: relative;
+}
+
+.top-container h2 {
+  color: var(--text-color);
+  padding-left: 2rem;
+  text-shadow: 2px 2px 2px var(--bg-color);
+}
+
+.top-cards::-webkit-scrollbar {
+  display: none;
+}
+
+  .top-cards {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    height: 50vh;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  .top-cards .popularLists {
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    width: max-content;
+    transform: translateX(0px);
+    transition: all 0.4s ease;
+  }
+  
+  .top-container h2 {
+    color: var(--text-color);
+    padding-top: 20px;
+    padding-left: 30px;
+    text-shadow: 2px 2px 2px var(--bg-color);
+  }
+  
+.sliderArrowLeft, .sliderArrowRight {
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    position: absolute;
+    z-index: 50;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.8;
+  }
+
+  .top-cards .sliderArrowLeft {
+    left: 0;
+    height: 82%;
+    width: 30px;
+  }
+
+  .top-cards .sliderArrowRight {
+    height: 82%;
+    right: 0;
+    width: 30px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .top-container {
+      margin-top: 25px;
+    }
+    .top-container h3 {
+      font-size: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 725px) {
+    .top-cards {
+      height: 40vh;
+    }
+
+    .title-random {
+      font-size: 20px;
+    }
+
+    .selectB {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .selectB {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: #240046;
+    border: none;
+    color: #f5e2ff;
+    margin-top: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+  }
+
+  .selectB::-webkit-scrollbar {
+    display: none;
+  }

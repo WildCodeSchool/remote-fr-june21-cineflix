@@ -1,0 +1,114 @@
+.Navbar .nav{
+    position: fixed;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    height: 12vh;
+    z-index: 20;
+    color: var(--text-color);
+    /* Animations*/
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.Navbar .navBlack{
+    background: var(--bg-color);
+}
+
+.navContents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 250px;
+}
+
+.categoriesLink {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    padding-left: 150px;
+    margin-top: 15px;
+    height: 35px;
+}
+
+.categoriesLink > a {
+    text-decoration: none;
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--bg-color);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+.Navbar .navLogo {
+    position: fixed;
+    top: 5px;
+    object-fit: contain;
+    margin-left: 3rem;
+    width: 80px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.Navbar .navLogout{
+    position: fixed;
+    top: 20px;
+    right: 3rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.Navbar .navAvatar{
+    position: fixed;
+    top: 20px;
+    right: 7rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+.navbar-icons {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.home-icon {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.invisible-icons {
+    display:none;
+}
+
+
+@media screen and (max-width: 950px) {
+    .Navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        color: white;
+        width: 100%;
+        height: 50px;
+        background-color: var(--bg-color);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 600;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+}
