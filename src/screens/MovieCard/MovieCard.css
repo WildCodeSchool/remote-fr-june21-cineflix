@@ -78,8 +78,6 @@
 .buttonBA:hover {
   background-color: white;
   color: var(--bg-op-color);
-  box-shadow: 0px 0px 2px var(--bg-op-color);
-  border: 1px solid var(--bg-op-color);
 }
 
 .addedToFavourite {

@@ -52,9 +52,7 @@ const Favourite = () => {
 
   const removeFavourite = (id, title, name) => {
     let favouriteDatas = JSON.parse(localStorage["favourites"])
-    console.log(favouriteDatas)
     let newFavourites = favouriteDatas.filter(element => (element.id !== id && element.title !== title) || (element.id !== id && element.name !== name))
-    console.log(newFavourites)
     localStorage["favourites"] = JSON.stringify(newFavourites)
     setFavouriteList(newFavourites)
     Swal.fire('Favori retiré')

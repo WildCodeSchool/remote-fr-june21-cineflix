@@ -106,6 +106,30 @@ function TvCard() {
 
     //***** Favourite's scripts
 
+    const [inFavourite, setInFavourite] = useState(false)
+
+    useEffect(() => {
+      const checkIsFavourite = (id) => {
+        let storedDatas
+
+        // Try to get the favourites object in localstorage
+        try {
+            storedDatas = JSON.parse(localStorage["favourites"])
+        } catch (error) {
+        }
+
+        // If there is already the favourites object
+        if (storedDatas) {
+
+          // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+          if (storedDatas.some(element => (element.id == id))) {
+            setInFavourite(true)
+          }
+        } 
+      }
+      checkIsFavourite(IdTv)
+    },[])
+
     const handleFavourite = (media) => {
 
         let storedDatas
@@ -128,6 +152,9 @@ function TvCard() {
                 newDatas.push(media)
                 localStorage["favourites"] = JSON.stringify(newDatas)
                 Swal.fire('Bien ajouté à vos favoris')
+                setInFavourite(true)
+            } else {
+                Swal.fire('Déjà dans vos favoris')
             }
 
             // If there is not the favourites object, we create it
@@ -136,6 +163,7 @@ function TvCard() {
             let newFavourite = [media]
             localStorage["favourites"] = JSON.stringify(newFavourite)
             Swal.fire('Bien ajouté à vos favoris')
+            setInFavourite(true)
         }
 
     }
@@ -172,7 +200,7 @@ function TvCard() {
                                 <img className="diffImg" src={tv.networks ? `https://image.tmdb.org/t/p/w500${tv.networks[0].logo_path}` : null} alt="" />
                             </a>
                             <div className="buttonCard">
-                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}><i class="icon-favourite fas fa-heart"></i></button>
+                                <button className="favButton" type="button" id={tv.id} onClick={(event) => handleFavourite(tv)}><i class={inFavourite ? "icon-favourite inFav fas fa-heart" : "icon-favourite notInFav fas fa-heart"}></i></button>
                                 <a href={`https://www.youtube.com/results?search_query=${tv.name}+bande+annonce`} target="_blank" rel="noreferrer">
                                     <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                                 </a>

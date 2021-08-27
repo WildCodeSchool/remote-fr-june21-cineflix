@@ -11,6 +11,7 @@ import './MovieCard.css'
 
 function MovieCard() {
     let { IdMovie } = useParams()
+   
     const [Cast, setCast] = useState([])
     const [Movie, setMovie] = useState([])
 
@@ -92,6 +93,31 @@ function MovieCard() {
     }
 
     //***** Favourite's scripts
+
+    const [inFavourite, setInFavourite] = useState(false)
+
+    useEffect(() => {
+      const checkIsFavourite = (id) => {
+        let storedDatas
+
+        // Try to get the favourites object in localstorage
+        try {
+            storedDatas = JSON.parse(localStorage["favourites"])
+        } catch (error) {
+        }
+
+        // If there is already the favourites object
+        if (storedDatas) {
+
+          // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+          if (storedDatas.some(element => (element.id == id))) {
+            setInFavourite(true)
+          }
+        } 
+      }
+      checkIsFavourite(IdMovie)
+    },[])
+
     const handleFavourite = (media) => {
 
         let storedDatas
@@ -109,11 +135,14 @@ function MovieCard() {
             // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
             if (!storedDatas.some(element => (element.id === media.id && element.title === media.title))) {
 
-                let newDatas = []
-                storedDatas.map(element => newDatas.push(element))
-                newDatas.push(media)
-                localStorage["favourites"] = JSON.stringify(newDatas)
-                Swal.fire('Bien ajouté à vos favoris')
+              let newDatas = []
+              storedDatas.map(element => newDatas.push(element))
+              newDatas.push(media)
+              localStorage["favourites"] = JSON.stringify(newDatas)
+              Swal.fire('Bien ajouté à vos favoris')
+              setInFavourite(true)
+            } else {
+              Swal.fire('Déjà dans vos favoris')
             }
 
             // If there is not the favourites object, we create it
@@ -122,6 +151,7 @@ function MovieCard() {
             let newFavourite = [media]
             localStorage["favourites"] = JSON.stringify(newFavourite)
             Swal.fire('Bien ajouté à vos favoris')
+            setInFavourite(true)
         }
 
     }
@@ -155,7 +185,7 @@ function MovieCard() {
                             <h3>Synopsis : {Movie.overview}
                             </h3>
                             <div className="buttonCard">
-                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class="icon-favourite fas fa-heart"></i></button>
+                              <button className="favButton" type="button" id={Movie.id} onClick={(event) => handleFavourite(Movie)}><i class={inFavourite ? "icon-favourite inFav fas fa-heart" : "icon-favourite notInFav fas fa-heart"}></i></button>
                               <a href={`https://www.youtube.com/results?search_query=${Movie.title}+bande+annonce`} target="_blank" rel="noreferrer">
                                   <button className="buttonBA" type="button" alt="Bande-Annonce">Bande-Annonce</button>
                               </a>
