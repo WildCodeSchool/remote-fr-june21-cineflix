@@ -65,7 +65,9 @@ export default function Banner() {
         <header className="banner">
             <div className="bannerContents">
                 {movie &&
-                    <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                  <div className="bannerImg">
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                  </div>
                 }
                 <div className="fillContainer">
                     <div className="bannerInfo">

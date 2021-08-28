@@ -32,6 +32,39 @@ const Search = () => {
     setSearchResult('')
   }
 
+
+
+/*
+
+
+  const [inFavourite, setInFavourite] = useState(false)
+
+
+  const checkIsFavourite = (id, title) => {
+    let storedDatas
+
+    // Try to get the favourites object in localstorage
+    try {
+        storedDatas = JSON.parse(localStorage["favourites"])
+    } catch (error) {
+    }
+
+    // If there is already the favourites object
+    if (storedDatas) {
+
+      // Check if there is not already in the array, if not we retrieve all the data, add the new one and push it all
+      if (storedDatas.some(element => (element.id === result.id && element.title === result.title))) {
+        return 
+      }
+    } 
+  }
+
+
+*/
+
+
+
+
   // Function to create-add or add the localstorage object of favourites
   const handleFavourite = (media) => {
 
@@ -56,6 +89,9 @@ const Search = () => {
         localStorage["favourites"] = JSON.stringify(newDatas)
         Swal.fire('Bien ajouté à vos favoris')
       }
+      else {
+        Swal.fire('Déjà dans vos favoris')
+      }
 
     // If there is not the favourites object, we create it
     } else {
@@ -76,6 +112,7 @@ const Search = () => {
             {searchResult &&
             searchResult.map((movie, index) => (
             <li key={index}>
+              {/* <li key={index} onLoad={() => }> */}
               {movie.poster_path &&
               <div className="searchMovieCard">
                 {movie.number_of_seasons ?
@@ -86,7 +123,7 @@ const Search = () => {
                 <NavLink to={`/movie-card/${movie.id}`} onChange={resetSearch}>
                   <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-img" title="Voir les infos" />
                 </NavLink>} 
-              <label for={movie.id} className="add-to-favourite-label"><i className='fas fa-star add-favourite-button checked' title="Ajouter aux favoris"></i></label>
+              <label for={movie.id} className="add-to-favourite-label"><i className='fas fa-heart add-favourite-button checked' title="Ajouter aux favoris"></i></label>
               <input type="checkbox" className="add-to-favourite" id={movie.id} onChange={(event) => handleFavourite(movie)} />
               </div>
               }
