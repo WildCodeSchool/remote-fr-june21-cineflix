@@ -74,7 +74,7 @@ const Contact = () => {
                             </li>
                             <li>
                                 <span><img src={mail} alt="" /></span>
-                                <span>lorem@ipsum.com</span>
+                                <span>support@cineflix.com</span>
                             </li>
                             <li>
                                 <span><img src={tel} alt="" /></span>
@@ -107,7 +107,7 @@ const Contact = () => {
                             <span>Email</span>
                         </div>
                         <div className="input-box y">
-                            <input type="text" id="phone" name="phone" /*pattern="^0[1-7]\d{8}$" */ onChange={(e) => setPhone(e.target.value)} value={phone} required />
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" onChange={(e) => setPhone(e.target.value)} value={phone} required />
                             <span>Téléphone</span>
                         </div>
                         <div className="input-box y1">

@@ -65,7 +65,9 @@ export default function Banner() {
         <header className="banner">
             <div className="bannerContents">
                 {movie &&
-                    <img className="bannerImg" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                  <div className="bannerImg">
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                  </div>
                 }
                 <div className="fillContainer">
                     <div className="bannerInfo">
@@ -74,9 +76,9 @@ export default function Banner() {
                         </h1>
                         <div className="flex-banner">
                             <div className="bannerButtons">
-                                <button className="bannerButton" id={movie?.id} onClick={(event) => handleFavourite(movie)}>liste</button>
+                                <button className="bannerButton" id={movie?.id} onClick={(event) => handleFavourite(movie)}>Ajouter aux favoris</button>
                                 <Link to={`/movie-card/${movie?.id}`}>
-                                    <button className="bannerButton">Ajouter aux favoris</button>
+                                    <button className="bannerButton">Info</button>
                                 </Link>
                             </div>
                             <h2 className="bannerDescription">
