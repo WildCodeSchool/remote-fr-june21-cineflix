@@ -15,7 +15,7 @@ function Intro() {
             </div>
             <div className="buttonContainer">
                 <img src={logo} className="logo-intro" alt="logo du site" />
-                <NavLink to="/home" className="button-intro">
+                <NavLink to="/login" className="button-intro">
                     <span>ENTRER</span>
                     <span>ENTRER</span>
                 </NavLink>

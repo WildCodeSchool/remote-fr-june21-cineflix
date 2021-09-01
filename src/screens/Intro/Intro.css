@@ -18,6 +18,11 @@
     overflow-y: hidden;
 }
 
+.videoContainer video {
+  width: 100vw;
+  height: auto;
+}
+
 .buttonContainer {
   position: absolute;
   top: 50%;

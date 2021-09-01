@@ -12,7 +12,7 @@ function ActorCard() {
 
     useEffect(() => {
         const getActor = () => {
-            fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${process.env.REACT_APP_API_KEY}}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/person/${IdActor}?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setActor(data))
         }
@@ -21,7 +21,7 @@ function ActorCard() {
 
     useEffect(() => {
         const getMovie = () => {
-            fetch(`https://api.themoviedb.org/3//person/${IdActor}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}}&language=fr`)
+            fetch(`https://api.themoviedb.org/3/person/${IdActor}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}&language=fr`)
                 .then(response => response.json())
                 .then(data => setActorMovies(data))
         }

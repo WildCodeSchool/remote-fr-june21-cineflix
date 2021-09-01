@@ -57,7 +57,7 @@ export default function Register() {
                     <input type="email" placeholder="Adresse Email" onChange={handleInput} value={fields.email} name="email" />
                     <input type="username" placeholder="Nom d'Utilisateur" onChange={handleInput} value={fields.username} name="username" />
                     <input type="password" placeholder="Mot de Passe" onChange={handleInput} value={fields.password} name="password" />
-                    <button className="registerButton" onClick={handleFinish}>
+                    <button className="registerButton" onClick={() => handleFinish()}>
                         Commencer
                     </button>
                 </form>
