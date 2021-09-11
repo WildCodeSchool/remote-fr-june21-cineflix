@@ -62,12 +62,12 @@ width: 100%;
 
   .top-cards .sliderArrowLeft {
     left: 0;
-    height: 82%;
+    height: 80%;
     width: 30px;
   }
 
   .top-cards .sliderArrowRight {
-    height: 82%;
+    height: 80%;
     right: 0;
     width: 30px;
   }
